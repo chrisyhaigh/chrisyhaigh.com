@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geonames API Task</title>
+    <link rel="stylesheet" href="task.css">
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>API Name</th>
+                <th>API Description</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Timezone</td>
+                <td>latitude: <input class="input-data" type="text" id="latitude">
+                    longitude:<input class="input-data" type="text" id="longitude"></td>
+                <td><button id="timezoneBtn">Submit</button></td>
+            </tr>
+            <tr>
+                <td>Earthquakes</td>
+                <td>North: <input class="input-data" type="text" id="north">
+                    South: <input class="input-data" type="text" id="south">
+                    East:  <input class="input-data" type="text" id="east">
+                    West:  <input class="input-data" type="text" id="west"></td>
+                <td><button id="earthquakeBtn">Submit</button></td>
+            </tr>
+            <tr>
+                <td>Neighbours</td>
+                <td>Country: <input class="input-data" type="text" id="country"></td>
+                <td><button id="neighbourBtn">Submit</button></td>
+            </tr>
+            <tr>
+                <td id="results" colspan="3"></td>
+            </tr>
+        </tbody>
+    </table>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
