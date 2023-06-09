@@ -4,7 +4,7 @@ $('#timezoneBtn').click(function() {
     let longitude = $('#longitude').val();
 
     $.ajax({
-        url: "task/php/getTimezoneInfo.php",
+        url: "php/getTimezoneInfo.php",
         type: 'POST',
         dataType: 'json',
         data: {
@@ -13,11 +13,11 @@ $('#timezoneBtn').click(function() {
         },
         
         success: function(response) {
-            $('#results').text(JSON.stringify(response));
+            $('#results').text(response);
         },
 
         error: function(jqXHR, textStatus, errorThrown) {
-            console.log(error);
+            console.log(jqXHR, textStatus, errorThrown);
         }
     }); 
 
@@ -31,7 +31,7 @@ $('#earthquakeBtn').click(function() {
     let west = $('#west').val();
 
     $.ajax({
-        url: "task/php/getEarthquakeInfo.php",
+        url: "php/getEarthquakeInfo.php",
         type: 'POST',
         dataType: 'json',
         data: {
@@ -42,11 +42,11 @@ $('#earthquakeBtn').click(function() {
         },
 
         success: function(response) {
-            $('#results').text(JSON.stringify(response));
+            $('#results').text(response);
         },
 
         error: function(jqXHR, textStatus, errorThrown) {
-            console.log(error);
+            console.log(jqXHR, textStatus, errorThrown);
         }
     }); 
 
@@ -56,7 +56,7 @@ $('#neighbourBtn').click(function() {
     let country = $('#country').val();
 
     $.ajax({
-        url: "task/php/getNeighbourInfo.php",
+        url: "php/getNeighbourInfo.php",
         type: 'POST',
         dataType: 'json',
         data: {
@@ -64,11 +64,11 @@ $('#neighbourBtn').click(function() {
         },
 
         success: function(response) {
-            $('#results').text(JSON.stringify(response));
+            $('#results').text(response);
         },
 
         error: function(jqXHR, textStatus, errorThrown) {
-            console.log(error);
+            console.log(jqXHR, textStatus, errorThrown);
         }
     }); 
 

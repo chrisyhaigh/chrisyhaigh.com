@@ -8,7 +8,7 @@
 	$executionStartTime = microtime(true);
 
 	// Construct the URL for the API request
-	$url='http://api.geonames.org/earthquakesJSON?north=' . $_REQUEST['north'] . '&south=' . $_REQUEST['south'] . '&east=' . $_REQUEST['east'] . '&west=' . $_REQUEST['west'] . '&username=chrisyhai&style=full';
+	$url='http://api.geonames.org/earthquakesJSON?north=' . $_REQUEST['north'] . '&south=' . $_REQUEST['south'] . '&east=' . $_REQUEST['east'] . '&west=' . $_REQUEST['west'] . '&username=chrisyhaigh&style=full';
 
 	// Initialize a cURL session
 	$ch = curl_init();
@@ -32,12 +32,14 @@
 	$output['status']['name'] = "ok";
 	$output['status']['description'] = "success";
 	$output['status']['returnedIn'] = intval((microtime(true) - $executionStartTime) * 1000) . " ms";
-	$output['data'] = $decode['geonames'];
+	$output['data'] = $decode;
 
 	//Response headers
 	header('Content-Type: application/json; charset=UTF-8');
 
-	// Encode the output array as JSON and echo it
-	echo json_encode($output); 
+	//variable created to make JSON look more presentable
+	$jsonOutput = json_encode($output, JSON_PRETTY_PRINT);
+
+	echo $jsonOutput;
 
 ?>

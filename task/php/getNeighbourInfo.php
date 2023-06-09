@@ -31,12 +31,14 @@
 	$output['status']['name'] = "ok";
 	$output['status']['description'] = "success";
 	$output['status']['returnedIn'] = intval((microtime(true) - $executionStartTime) * 1000) . " ms";
-	$output['data'] = $decode['geonames'];
+	$output['data'] = $decode;
 
 	//Response headers
 	header('Content-Type: application/json; charset=UTF-8');
 
-	
-	echo json_encode($output); 
+	//variable created to make JSON look more presentable
+	$jsonOutput = json_encode($output, JSON_PRETTY_PRINT);
+
+	echo $jsonOutput;
 
 ?>
