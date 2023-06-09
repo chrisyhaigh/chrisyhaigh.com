@@ -4,7 +4,7 @@ $('#timezoneBtn').click(function() {
     let longitude = $('#longitude').val();
 
     $.ajax({
-        url: "php/getTimezoneInfo.php",
+        url: "getTimezoneInfo.php",
         type: 'POST',
         dataType: 'json',
         data: {
@@ -31,7 +31,7 @@ $('#earthquakeBtn').click(function() {
     let west = $('#west').val();
 
     $.ajax({
-        url: "php/getEarthquakeInfo.php",
+        url: "getEarthquakeInfo.php",
         type: 'POST',
         dataType: 'json',
         data: {
@@ -56,7 +56,7 @@ $('#neighbourBtn').click(function() {
     let country = $('#country').val();
 
     $.ajax({
-        url: "php/getNeighbourInfo.php",
+        url: "getNeighbourInfo.php",
         type: 'POST',
         dataType: 'json',
         data: {
