@@ -36,9 +36,6 @@
 	//Response headers
 	header('Content-Type: application/json; charset=UTF-8');
 
-	//variable created to make JSON look more presentable
-	$jsonOutput = json_encode($output, JSON_PRETTY_PRINT);
-
-	echo $jsonOutput;
+	echo json_encode($output);
 
 ?>
