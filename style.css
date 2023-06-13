@@ -1,3 +1,15 @@
+
+.social-media {
+    margin: 0;
+    text-align: center;
+    background-color: #000000;
+    color: white;
+}
+
+.white-icons i {
+    color: white;
+}
+
 #preloader {
     position: fixed;
     top: 0;
@@ -6,7 +18,7 @@
     bottom: 0;
     z-index: 9999;
     overflow: hidden;
-    background: #fff;
+    background: #000000;
 }
 
 #preloader::before {
@@ -14,8 +26,8 @@
     position: fixed;
     top: calc(50% - 30px);
     left: calc(50% - 30px);
-    border: 6px solid #f2f2f2;
-    border-top: 6px solid #56829e ;
+    border: 6px solid #000000;
+    border-top: 6px solid #03fa6e ;
     border-radius: 50%;
     width: 60px;
     height: 60px;
