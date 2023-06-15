@@ -6,33 +6,105 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chrisy Haigh</title>
     <link href="images\favicon.ico" rel="icon">
+    <script src="https://kit.fontawesome.com/b08248e95b.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!---Navbar-->
-    <h1>Chrisy Haigh</h1>
-        <ul>
-            <li><a href="task/task.html">Task</a></li>
-            <li><a href="">Project 1</a></li>
-            <li><a href="">Project 2</a></li>
-            <li><a href="">Profile</a></li>
-            <li><a href="">Skills</a></li>
-            <li><a href="">Experience</a></li>
-            <li><a href="">Contact</a></li>
-       </ul>
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #000000;">
+        <a class="navbar-brand" href="#"><img src="images\logo.png" width="200" height="80"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon custom-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav p-2 ml-auto" style="color: white;">
+            <a class="nav-item nav-link ml-auto" href="#">Profile</a>
+            <a class="nav-item nav-link ml-auto" href="#">Experience</a>
+            <a class="nav-item nav-link ml-auto" href="#">Skills</a>
+            <a class="nav-item nav-link ml-auto" href="#">Portfolio</a>
+            <a class="nav-item nav-link ml-auto" href="task\task.html">Task</a>
+            <a class="nav-item nav-link ml-auto" href="#">Project 1</a>
+            <a class="nav-item nav-link ml-auto" href="#">Project 2</a>
+          </div>
+        </div>
+    </nav>
        <!--Jumbotron/Banner-->
+    <div class="container-fluid landing-section p-4" style="background-color: #2c2c2c;">
+        <div class="row">
+            <div class="col-6 text-white text-center">
+                <h1>Hello, Im Chrisy</h1>
+                <p>Full Stack Web Developer</p>
+                <button class="btn">My Portfolio</button>
+            </div>
+            <div class="col-6 image-col">
+                <div class="image-container align-content-center">
+                    <img src="images\image.png" width="100" height="150">
+                </div>
+            </div>
+        </div>
+    </div>
+    
        <!--ProfileSection/Container-->
+    <div class="container-fluid text-white" style="background-color: #171717;" id="profile">
+        <br><p>Welcome to my portfolio page! I'm Chrisy Haigh, a newly qualified web developer from Edinburgh, Scotland. 
+                I have a strong passion for web development and a desire to continuously learn new skills.<br><br>
+                I am proficient in front-end and back-end development, utilizing HTML, CSS, JavaScript, jQuery & PHP. 
+                I strive to create visually appealing and user-friendly websites that work seamlessly across devices.
+                I am a dedicated problem solver with excellent communication skills. 
+                I enjoy collaborating with clients, designers, and fellow developers to bring ideas to life.<br><br>
+                I believe in the importance of lifelong learning & personal growth and I'm eager to contribute my skills to impactful projects. 
+                If you're looking for a dedicated and adaptable web developer, I would love to connect with you.
+                Thank you for visiting my portfolio page!</p><br>
+    </div>
        <!--Skills/Container-->
        <!--Experience/Container-->
        <!--Contact/Container-->
+    <div class="container-fluid text-white" style="background-color: #000000;">
+        <div class="row justify-content-center">
+            <div class="col-md-4 mt-4 mb-4" id="contact-form"><!---USE PHP MAILER-->
+                <h2 class="text-center">Contact Me</h2>
+                <form action="#" method="POST">
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" class="form-control" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message:</label>
+                        <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+      <!--Social Media Links-->
+        <ul class="social-media white-icons">
+            <a href="https://www.facebook.com/chrisy.haigh" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.linkedin.com/in/chrisy-haigh-620a47251/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.instagram.com/chrisyhaigh/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://github.com/chrisyhaigh" target="_blank"><i class="fa-brands fa-github"></i></a>
+        </ul>
        <!--Footer/Container-->
 
-       <div id="preloader"></div>
+        <footer>
+            <p>&copy; Chrisy Haigh</p>
+        </footer>
 
-       <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-       <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-       <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-       <script src="website.js"></script>
+    <div id="preloader"></div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="website.js"></script>
 </body>
 </html>
