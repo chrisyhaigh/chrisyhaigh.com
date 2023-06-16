@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $mail->Body = 'This is the message body of the email.';
 
         if ($mail->send()) {
-            echo 'Thank you for contacting us. Your message has been sent.';
+            echo 'Thank you for contacting. Your message has been sent.';
         } else {
             echo 'Sorry, there was an error sending your message. Please try again later.';
         }

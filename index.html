@@ -12,20 +12,22 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">      
 </head>
 <body>
     <!---Navbar-->
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #000000;">
-        <a class="navbar-brand" href="#"><img src="images\logo.png" width="180" height="70"></a>
+        <a class="navbar-brand" href="#"><img src="images\logo.png" width="150" height="50"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon custom-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav p-2 ml-auto">
-            <a class="nav-item nav-link ml-auto" href="#">Profile</a>
-            <a class="nav-item nav-link ml-auto" href="#">Experience</a>
-            <a class="nav-item nav-link ml-auto" href="#">Skills</a>
-            <a class="nav-item nav-link ml-auto" href="#">Portfolio</a>
+            <a class="nav-item nav-link ml-auto" href="#profile">Profile</a>
+            <a class="nav-item nav-link ml-auto" href="#experience">Experience</a>
+            <a class="nav-item nav-link ml-auto" href="#skills">Skills</a>
+            <a class="nav-item nav-link ml-auto" href="#portfolio">Portfolio</a>
+            <a class="nav-item nav-link ml-auto" href="#contact">Contact</a>
             <a class="nav-item nav-link ml-auto" href="task\task.html">Task</a>
             <a class="nav-item nav-link ml-auto" href="#">Project 1</a>
             <a class="nav-item nav-link ml-auto" href="#">Project 2</a>
@@ -33,51 +35,69 @@
         </div>
     </nav>
        <!--Jumbotron/Banner-->
-    <div class="container-fluid landing-section p-4" style="background-color: #2c2c2c;">
+       <div class="container-fluid landing-section p-4" style="background-color: #111111;">
         <div class="row">
             <div class="col-6 text-white text-center">
-                <h1>Hello, Im Chrisy</h1>
-                <p>Full Stack Web Developer</p>
-                <button class="btn">My Portfolio</button>
+                <h1 style="font-size: 48px; margin-bottom: 20px;">Hello, I'm Chrisy</h1>
+                <p style="font-size: 24px; margin-bottom: 30px;">Full Stack Web Developer</p>
+                <a href="#portfolio" class="btn">My Portfolio</a>
             </div>
             <div class="col-6 image-col">
                 <div class="image-container align-content-center">
-                    <img src="images\image.png" width="100" height="150">
+                    <img src="images\image.png" width="200" height="300" style="border-radius: 50%;">
                 </div>
             </div>
         </div>
     </div>
-    
-       <!--ProfileSection/Container-->
-    <div class="container-fluid text-white" style="background-color: #171717;" id="profile">
-        <br><p>Welcome to my portfolio page! I'm Chrisy Haigh, a newly qualified web developer from Edinburgh, Scotland. 
-                I have a strong passion for web development and a desire to continuously learn new skills.<br><br>
-                I am proficient in front-end and back-end development, utilizing HTML, CSS, JavaScript, jQuery & PHP. 
-                I strive to create visually appealing and user-friendly websites that work seamlessly across devices.
-                I am a dedicated problem solver with excellent communication skills. 
-                I enjoy collaborating with clients, designers, and fellow developers to bring ideas to life.<br><br>
-                I believe in the importance of lifelong learning & personal growth and I'm eager to contribute my skills to impactful projects. 
-                If you're looking for a dedicated and adaptable web developer, I would love to connect with you.
-                Thank you for visiting my portfolio page!</p><br>
+           <!--ProfileSection/Container-->
+    <div class="container-fluid text-white" id="profile" style="background-color: #222222;">
+        <br>
+        <p>Welcome to my portfolio page! I'm Chrisy Haigh, a newly qualified web developer from Edinburgh, Scotland. I have been on a self-learning journey, balancing my passion for web development with my work and family life. 
+        Learning on my own has its challenges, but it has also shown me the importance of perseverance and determination.<br><br>
+        With my foundation in front-end and back-end development, I am proficient in HTML, CSS, JavaScript, jQuery, and PHP. 
+        Although I'm still on my learning path, I am eager to grow and expand my skill set. My focus is on creating visually appealing and user-friendly websites that provide seamless experiences across different devices.<br><br>
+        As a dedicated problem solver, I enjoy collaborating with clients, designers, and fellow developers to transform ideas into reality. 
+        Effective communication is one of my strengths, allowing me to understand project requirements and deliver solutions that meet expectations.<br><br>
+        I strongly believe in the value of lifelong learning and personal growth, and I'm excited to contribute my skills to meaningful projects. 
+        While I may not be a whizz kid just yet, I am committed to continuous improvement and embracing new challenges.<br><br>
+        If you're searching for a dedicated and adaptable web developer, I would be thrilled to connect with you. Thank you for visiting my portfolio page!</p>
+        <br>
     </div>
-       <!--Skills/Container-->
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col"></div>
+        <!--Skills/Container-->
+    <div class="container-fluid text-white" id="skills" style="background-color: #333333">
+        <div class="row justify-content-center">
+            <div class="col-md-4 mt-4 mb-4">
+                <h2 class="text-center">Skills</h2>
+                <div class="skill-icons d-flex justify-content-between p-4">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original-wordmark.svg" height="60" width="80"/>
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original-wordmark.svg" height="60" width="80"/>
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" height="60" width="80"/>
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" height="70" width="80"/>
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" height="70" width="80"/>
+                </div>
+            </div>
         </div>
     </div>   
        <!--Experience/Container-->
-    <div class="container experience">
-        <div class="row">
-            <div class="col">
-
+    <div class="container-fluid text-white" id="experience" style="background-color: #222222" >
+        <div class="row justify-content-center">
+            <div class="col-md-4 mt-4 mb-4">
+                <h2 class="text-center">Experience</h2>
+            </div>
+        </div>
+    </div>   
+       <!---Portoflio Container --->
+    <div class="container-fluid text-white" id="portfolio" style="background-color: #111111" >
+        <div class="row justify-content-center">
+            <div class="col-md-4 mt-4 mb-4">
+                <h2 class="text-center">Portfolio</h2>
             </div>
         </div>
     </div>   
        <!--Contact/Container-->
-    <div class="container-fluid text-white" style="background-color: #000000;">
+    <div class="container-fluid text-white" id="contact" style="background-color: #000000;">
         <div class="row justify-content-center">
-            <div class="col-md-4 mt-4 mb-4" id="contact-form">
+            <div class="col-md-4 mt-4 mb-4">
                 <h2 class="text-center">Contact Me</h2>
                 <form action="email_contact.php" method="POST">
                     <div class="form-group">
