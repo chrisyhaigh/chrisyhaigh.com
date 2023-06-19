@@ -1,12 +1,18 @@
 
+body {
+    background-color: #a39d9d6c;
+}
+
 table, th, tr, td {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    border: .2em;
+    border: .1em;
     height: 2rem;
-    width: 500px;
+    width: 100vh;
+    margin-top: 1em;
+    padding: .5em;
     font-size: small;
-    text-align: center;
     border-style: groove;
+    text-align: center;
     border-color: black;
     border-collapse: collapse;
     background-color: white;
@@ -18,16 +24,12 @@ th {
     background-color: aqua;
 }
 
-.input-data {
-    display: flex;
-    align-items: center;
-    margin-left: 2.1875rem;
-}
 
 button {
     background-color: lightseagreen;
     color: white;
-    border-radius: 4cm;
+    padding: .2em;
+    border-radius: .4em;
 }
 
 button:hover {
@@ -35,5 +37,5 @@ button:hover {
 }
 
 #results {
-    height: 50vh;
+    height: 30vh;
 }
