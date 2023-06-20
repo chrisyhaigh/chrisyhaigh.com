@@ -19,7 +19,8 @@ body {
     border: solid 5px purple;
 }
 
-.skill-icons {
+.carousel-image {
+    opacity: 0.5;
 }
 
 .social-media {
