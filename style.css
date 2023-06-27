@@ -6,22 +6,131 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
-.image-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: white;
-    border-radius: 50%;
-    width: 160px;
-    height: 160px;
-    margin: 0 auto;
+.landing-section {
+    position: relative;
     overflow: hidden;
-    border: solid 5px purple;
 }
 
-.carousel-image {
-    opacity: 0.5;
+#background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+
 }
+
+.nav-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    background: linear-gradient(to right, #03fa6e 37%, #8a2be2 63%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 1.805rem;
+    font-weight: light;
+
+}
+
+.landing-section {
+    display: flex;
+    justify-content: center;
+}
+
+.intro-text {
+    text-align: left;
+    font-weight: 900;
+    color: white;
+    font-size: 3rem;
+}
+
+
+.intro-text span {
+    color: #03fa6e;
+    font-size: 7rem;
+}
+
+.web-dev {
+    text-align: left;
+    font-weight: 200;
+    color: white;
+    font-size: 1rem;
+    margin-left: .275em;
+}
+
+
+.portfolio-btn {
+    width: auto;
+    margin-left: .275em;
+}
+
+.image-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.profile-picture {
+    height: 270px;
+    margin-bottom: 1em;
+    background-color: #8a2be2;
+    border-radius: 10%;
+}
+
+#profile p {
+    font-size: 15px;
+}
+
+.experience-paragraph {
+    text-align: left;
+}
+
+.line {
+background: linear-gradient(to right, #03fa6e 37%, #8a2be2 63%);
+    width: 172px;
+    height: 4px;
+    margin-bottom: 14px;
+}
+
+.line-1 {
+    background: linear-gradient(to right, #03fa6e 37%, #8a2be2 63%);
+    width: 76px;
+    height: 4px;
+    margin-bottom: 14px;
+}
+
+span {
+    color: #03fa6e;
+}
+
+.card-body {
+    background-color: #111111;
+    color: white;
+    text-align: center;
+}
+
+.card-image {
+    filter: brightness(50%);
+}
+
+.card-image:hover {
+    filter: brightness(100%);
+}
+
+.card-title {
+    text-align: center;
+}
+
+.card-title:hover {
+    color: #03fa6e;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.card-text {
+    font-size: 14px;
+}
+
 
 .social-media {
     margin: 0;
@@ -63,10 +172,28 @@ button {
     transition: background-color 0.1s;
 }
 
+.cv-btn {
+}
+
 .btn:hover {
     background-color: #03fa6e;
     color: white;
 }
+
+.input-label {
+    color: #ffffff9d;
+    position: absolute;
+    padding-left: .65em;
+    padding-top: .45em;
+    pointer-events: none;
+    transition: 0.05s;
+}
+
+.hidden {
+    opacity: 0;
+    transform: translateY(-20px);
+}
+
 
 footer {
     background-color: #8a2be2;

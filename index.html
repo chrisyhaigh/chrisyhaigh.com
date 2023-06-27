@@ -11,156 +11,170 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins&family=Quicksand:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">      
 </head>
 <body>
     <!---Navbar-->
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #000000;">
-        <a class="navbar-brand" href="#"><img src="images\logo.png" width="150" height="50"></a>
+        <a class="nav-logo" href="#">Chrisy Haigh</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon custom-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div class="navbar-nav p-2 ml-auto">
-            <a class="nav-item nav-link ml-auto" href="#profile">Profile</a>
-            <a class="nav-item nav-link ml-auto" href="#experience">Experience</a>
-            <a class="nav-item nav-link ml-auto" href="#skills">Skills</a>
-            <a class="nav-item nav-link ml-auto" href="#portfolio">Portfolio</a>
-            <a class="nav-item nav-link ml-auto" href="#contact">Contact</a>
+          <div class="navbar-nav ml-auto">
+            <a class="nav-item nav-link mr-4 text-center" href="#profile">Profile</a>
+            <a class="nav-item nav-link mr-4 text-center" href="#experience">Experience</a>
+            <a class="nav-item nav-link mr-4 text-center" href="#skills">Skills</a>
+            <a class="nav-item nav-link mr-4 text-center" href="#portfolio">Portfolio</a>
+            <a class="nav-item nav-link text-center" href="#contact">Contact</a>
           </div>
         </div>
     </nav>
        <!--Jumbotron/Banner-->
-       <div class="container-fluid landing-section p-4" style="background-color: #111111;">
-        <div class="row">
-            <div class="col-6 text-white text-center">
-                <h1 style="font-size: 48px; margin-bottom: 20px;">Hello, I'm Chrisy</h1>
-                <p style="font-size: 24px; margin-bottom: 30px;">Full Stack Web Developer</p>
-                <a href="#portfolio" class="btn">My Portfolio</a>
-            </div>
-            <div class="col-6 image-col">
-                <div class="image-container align-content-center">
-                    <img src="images\image.png" width="200" height="300" style="border-radius: 50%;">
-                </div>
+    <div class="container-fluid landing-section pt-4 pb-4 pr-4">
+        <video autoplay muted loop id="background-video">
+            <source src="images/black_-_13495 (540p).mp4" type="video/mp4">
+        </video>
+        <div class="row intro-section">
+            <div class="col-8">
+                <h1 class="intro-text">Hello, Im<br><span>Chrisy</span></h1>
+                <p class="web-dev text-white">Web Developer</p>
+                <a href="#portfolio" class="btn portfolio-btn">Portfolio</a> 
             </div>
         </div>
     </div>
+    
            <!--ProfileSection/Container-->
-    <div class="container-fluid text-white" id="profile" style="background-color: #222222;">
-        <br>
-        <p>Welcome to my portfolio page! I'm Chrisy Haigh, a newly qualified web developer from Edinburgh, Scotland. I have been on a self-learning journey, balancing my passion for web development with my work and family life. 
-        Learning on my own has its challenges, but it has also shown me the importance of perseverance and determination.<br><br>
-        With my foundation in front-end and back-end development, I am proficient in HTML, CSS, JavaScript, jQuery, and PHP. 
-        Although I'm still on my learning path, I am eager to grow and expand my skill set. My focus is on creating visually appealing and user-friendly websites that provide seamless experiences across different devices.<br><br>
-        As a dedicated problem solver, I enjoy collaborating with clients, designers, and fellow developers to transform ideas into reality. 
-        Effective communication is one of my strengths, allowing me to understand project requirements and deliver solutions that meet expectations.<br><br>
-        I strongly believe in the value of lifelong learning and personal growth, and I'm excited to contribute my skills to meaningful projects. 
-        While I may not be a whizz kid just yet, I am committed to continuous improvement and embracing new challenges.<br><br>
-        If you're searching for a dedicated and adaptable web developer, I would be thrilled to connect with you. Thank you for visiting my portfolio page!</p>
-        <br>
-    </div>
-        <!--Skills/Container-->
-    <div class="container-fluid text-white" id="skills" style="background-color: #333333">
-        <div class="row justify-content-center">
-            <div class="col-md-6 mt-4 mb-4">
-                <h2 class="text-center">Skills</h2>
-                <div class="d-flex justify-content-center">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original-wordmark.svg" height="60" width="80"/>
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original-wordmark.svg" height="60" width="80"/>
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" height="60" width="80"/>
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" height="70" width="80"/>
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" height="70" width="80"/>
-                </div>
+    <div class="container-fluid text-white p-4" id="profile" style="background-color: #222222;">
+        <div class="row">
+            <div class="col-md-3">
+                <img src="images/image (1).png" class="img-fluid profile-picture" alt="Profile Picture">
+            </div>
+            <div class="col-md-9">
+                <h2>About Me</h2>
+                <p>
+                    I'm Chrisy Haigh, a web developer from Edinburgh, Scotland. I've recently qualified and have been on a self-learning journey, balancing web development with work and family.<br><br>
+                    I'm proficient in HTML, CSS, JavaScript, jQuery, and PHP.
+                    I focus on creating visually appealing and user-friendly websites that work well on different devices. I enjoy collaborating with clients, designers, and developers to turn ideas into reality.<br><br>
+                    Effective communication is one of my strengths, helping me understand project requirements and deliver satisfactory solutions.
+                    I believe in lifelong learning and personal growth. Though I'm still learning, I'm dedicated to continuous improvement and embracing new challenges.<br><br>
+                    If you're looking for a dedicated and adaptable web developer, I'd love to connect with you. Thank you for visiting my portfolio page!
+                </p>
             </div>
         </div>
-    </div>   
+    </div>
+        
+        <!--Skills/Container-->
        <!--Experience/Container-->
-    <div class="container-fluid text-white" id="experience" style="background-color: #222222" >
-        <div class="row justify-content-center">
-            <div class="col-md-4 mt-4 mb-4">
-                <h2 class="text-center">Experience</h2>
+    <div class="container-fluid text-white p-4" style="background-color: #333333" >
+        <div class="row justify-content-center skills-content" id="skills">
+            <div class="col-md-6 mt-4 mb-4">
+                <h2 class="text-left">Skills</h2>
+                <div class="skills-container">
+                    <div class="line-1"></div>
+                </div>
+            </div>
+            <div class="col-md-4 mt-4 mb-4" id="experience">
+                <h2 class="text-left">Experience</h2>
+                <div class="experience-timeline">
+                    <div class="line"></div>
+                    <span class="year"> 2016-2023</span><p class="experience-paragraph">Self-Employed (Taxi-Driver)</p><br>
+                    <span class="year"> 2012-2016</span><p class="experience-paragraph">Walker Love (Sheriff Court Officer/Messenger-at-Arms)</p><br>
+                    <span class="year"> 2011-2012</span><p class="experience-paragraph">Travel Break to Australia</p><br>
+                    <span class="year"> 2005-2011</span><p class="experience-paragraph">Walker Love (Administrative Assistant)</p><br>
+                    <a href="#cv" class="btn CV-btn">Download CV</a>
+                </div>
             </div>
         </div>
     </div>   
        <!---Portoflio Container --->
-    <div class="container-fluid text-white" id="portfolio" style="background-color: #111111" >
+    <div class="container-fluid text-white p-4" id="portfolio" style="background-color: #111111" >
         <div class="row justify-content-center">
             <div class="col-md-4 mt-4 mb-2">
                 <h2 class="text-center">Portfolio</h2>
             </div>
         </div>
-    </div>   
-    <div id="carouselExampleControls" class="carousel slide pb-4 text-white text-center" style="background-color: #111111" data-ride="carousel">
-        <ol class="carousel-indicators p-4">
-            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
-        </ol>
-        <div class="carousel-inner d-flex justify-content-center align-items-center">
-          <div class="carousel-item active">
-            <a href="https://lottoluckydip.netlify.app/"><img class="carousel-image rounded" src="images\lottery-powerball.webp" height="280" width="500" alt="Lottery Number Generator"></a>
-            <div class="carousel-caption d-md-block">
-                <h5>Lottery Number Generator</h5>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <a href="https://score-tennis.netlify.app/"><img class="carousel-image rounded" src="images\2019-Wimbledon-final-scoreboard-PA.jpg" height="280" width="500" alt="Tennis Scoreboard"></a>
-            <div class="carousel-caption d-md-block">
-                <h5>Tennis Scoreboard</h5>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <a href="https://calculatorbsjs.netlify.app/"><img class="carousel-image rounded" src="images\calculator.jpg" height="280" width="500" alt="Calculator"></a>
-            <div class="carousel-caption d-md-block">
-                <h5>Calculator</h5>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img class="carousel-image rounded" src="images\earth_globe_map_maps.jpg" height="280" width="500" alt="Gazetteer">
-            <div class="carousel-caption d-md-block">
-                <h5>Gazetteer</h5>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img class="d-block" src="..." alt="Project 2">
-            <div class="carousel-caption d-md-block">
-                <h5>Project 2</h5>
+        <div class="row row-cols-1 row-cols-md-3 p-4" style="background-color: #111111">
+            <div class="col mb-4">
+             <div class="card h-100">
+               <a href="https://lottoluckydip.netlify.app/">
+                <img class="card-img-top card-image" src="images\lottery-powerball.webp" alt="Lottery Number Generator">
+               </a>
+            <div class="card-body">
+              <h5 class="card-title">Lottery Number Generator</h5>
+              <p class="card-text">Provides user interactive and effortless way to pick 6 random lottery numbers. HTML CSS Javascript</p>
             </div>
           </div>
         </div>
-        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
+        <div class="col mb-4">
+          <div class="card h-100">
+            <a href="https://score-tennis.netlify.app/">
+                <img class="card-img-top card-image" src="images\2019-Wimbledon-final-scoreboard-PA.jpg" alt="Tennis Scoreboard">
+            </a>
+            <div class="card-body">
+              <h5 class="card-title">Tennis Scoreboard</h5>
+              <p class="card-text">Scoreboard with functioning controls for games, sets, points etc. HTML, CSS & Javascript</p>
+            </div>
+          </div>
+        </div>
+        <div class="col mb-4">
+          <div class="card h-100">
+            <a href="https://calculatorbsjs.netlify.app/">
+                <img class="card-img-top card-image" src="images\calculator.jpg" alt="Calculator">
+            </a>
+            <div class="card-body">
+              <h5 class="card-title">Calculator</h5>
+              <p class="card-text">Calculator enabling users to perform quick mathematical calculations. HTML, CSS & Javascript</p>
+            </div>
+          </div>
+        </div>
+        <div class="col mb-4">
+          <div class="card h-100">
+            <a href="#">
+                <img class="card-img-top card-image" src="images\earth_globe_map_maps.jpg" alt="Gazetteer">
+            </a>
+            <div class="card-body">
+              <h5 class="card-title">Gazetteer</h5>
+              <p class="card-text">Using HTML, CSS, Javascript & PHP with API integration</p>
+            </div>
+          </div>
+        </div>
       </div>
-
+    </div> 
+    
        <!--Contact/Container-->
     <div class="container-fluid text-white" id="contact" style="background-color: #000000;">
-        <div class="row justify-content-center">
+        <div class="row justify-content-center p-4">
             <div class="col-md-4 mt-4 mb-4">
-                <h2 class="text-center">Contact Me</h2>
+                <h2 class="text-center pb-3">Contact</h2>
                 <form action="email_contact.php" method="POST">
-                    <div class="form-group">
-                        <label for="name">Name:</label>
-                        <input type="text" class="form-control" id="name" name="name" required>
+                    <div class="form-group pb-1">
+                        <label for="name" class="input-label">Name</label>
+                        <input type="text" class="form-control border-0 text-white" id="name" name="name" required style="background-color: #222222"
+                            onfocus="this.style.boxShadow='0 0 0 0.2rem #03fa6e';"
+                            onblur="this.style.boxShadow='';"
+                            oninput="handleInput(this);">
                     </div>
-                    <div class="form-group">
-                        <label for="email">Email:</label>
-                        <input type="email" class="form-control" id="email" name="email" required>
+                    <div class="form-group pb-1">
+                        <label for="email" class="input-label">Email</label>
+                        <input type="email" class="form-control border-0 text-white" id="email" name="email" required style="background-color: #222222"
+                            onfocus="this.style.boxShadow='0 0 0 0.2rem #03fa6e';"
+                            onblur="this.style.boxShadow='';"
+                            oninput="handleInput(this);">
                     </div>
-                    <div class="form-group">
-                        <label for="message">Message:</label>
-                        <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                    <div class="form-group pb-1">
+                        <label for="message" class="input-label">Message</label>
+                        <textarea class="form-control border-0 text-white" id="message" name="message" rows="5" required style="background-color: #222222"
+                            onfocus="this.style.boxShadow='0 0 0 0.2rem #03fa6e';"
+                            onblur="this.style.boxShadow='';"
+                            oninput="handleInput(this);"></textarea>
                     </div>
-                    <div class="text-center">
-                        <button type="submit" class="btn">Submit</button>
+                    <div class="text-center pt-3">
+                        <button type="submit" class="btn">Message</button>
                     </div>
                 </form>
             </div>
@@ -185,4 +199,3 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="website.js"></script>
 </body>
-</html>
