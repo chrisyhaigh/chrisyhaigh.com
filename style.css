@@ -17,17 +17,19 @@ body {
 
 }
 
-
 .nav-logo {
     font-family: 'Bebas Neue', sans-serif;
     background: linear-gradient(to right, #03fa6e 37%, #8a2be2 63%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    background-clip: text;
     font-size: 1.705rem;
     font-weight: light;
-
 }
 
+.navbar-background {
+    background-color: #000000;
+}
 
 .intro-text {
     text-align: left;
@@ -35,7 +37,6 @@ body {
     color: white;
     font-size: 3rem;
 }
-
 
 .intro-text span {
     color: #03fa6e;
@@ -53,7 +54,6 @@ body {
     }
 }
 
-
 .web-dev {
     text-align: left;
     font-weight: 200;
@@ -61,7 +61,6 @@ body {
     font-size: 1rem;
     margin-left: .275em;
 }
-
 
 .portfolio-btn {
     width: auto;
@@ -73,7 +72,6 @@ body {
     align-items: center;
     justify-content: center;
 }
-
 
 .profile-picture {
     height: 270px;
@@ -87,7 +85,6 @@ body {
     font-size: 15px;
 }
 
-
 .line {
     background: linear-gradient(to right, #03fa6e 37%, #8a2be2 63%);
     width: 172px;
@@ -95,7 +92,6 @@ body {
     margin-bottom: 14px;
     border-radius: 90%;
 }
-
 
 .logo-container {
     display: none;
@@ -144,6 +140,10 @@ span {
     color: #03fa6e;
 }
 
+.portfolio-bg-container {
+    background-color: #080808;
+}
+
 .card-body {
     background-color: #111111;
     color: white;
@@ -170,6 +170,10 @@ span {
 
 .card-text {
     font-size: 14px;
+}
+
+.contact-bg-container {
+    background-color: #000000;
 }
 
 .social-media {
@@ -212,12 +216,13 @@ button {
     transition: background-color 0.1s;
 }
 
-.cv-btn {
-}
-
 .btn:hover {
     background-color: #03fa6e;
     color: white;
+}
+
+.custom-background {
+    background-color: #222222;
 }
 
 
@@ -229,6 +234,7 @@ button {
     pointer-events: none;
     transition: 0.05s;
 }
+
 
 .hidden {
     opacity: 0;

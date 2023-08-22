@@ -23,8 +23,7 @@ function experienceClick() {
 
 const experienceButton = document.getElementById('experience-button');
 experienceButton.addEventListener('click', experienceClick);
-
-  
+ 
 //label input in Contact form
 function handleInput(element) {
     const label = element.previousElementSibling;
