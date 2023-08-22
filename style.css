@@ -3,38 +3,31 @@ html {
 }
 
 body {
+    background-color: #0f0f0f;
     font-family: 'Poppins', sans-serif;
 }
 
 .landing-section {
+    display: flex;
+    justify-content: center;
+    background-color: #000000;
     position: relative;
     overflow: hidden;
-}
-
-#background-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    min-width: 100%;
-    min-height: 100%;
-    z-index: -1;
+    border-bottom-right-radius: 60%;
 
 }
+
 
 .nav-logo {
     font-family: 'Bebas Neue', sans-serif;
     background: linear-gradient(to right, #03fa6e 37%, #8a2be2 63%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-size: 1.805rem;
+    font-size: 1.705rem;
     font-weight: light;
 
 }
 
-.landing-section {
-    display: flex;
-    justify-content: center;
-}
 
 .intro-text {
     text-align: left;
@@ -46,8 +39,20 @@ body {
 
 .intro-text span {
     color: #03fa6e;
+    font-family: 'Readex Pro', sans-serif;
     font-size: 7rem;
 }
+
+@media (max-width: 600px) {
+    .intro-text {
+        font-size: 1.875rem;
+    }
+
+    .intro-text span {
+        font-size: 5rem;
+    }
+}
+
 
 .web-dev {
     text-align: left;
@@ -73,7 +78,8 @@ body {
 .profile-picture {
     height: 270px;
     margin-bottom: 1em;
-    background-color: #8a2be2;
+    background: #8a2be2;
+    background: linear-gradient(180deg, #0f0f0f 40%, #8a2be2);
     border-radius: 10%;
 }
 
@@ -83,16 +89,37 @@ body {
 
 
 .line {
-background: linear-gradient(to right, #03fa6e 37%, #8a2be2 63%);
+    background: linear-gradient(to right, #03fa6e 37%, #8a2be2 63%);
     width: 172px;
     height: 4px;
     margin-bottom: 14px;
+    border-radius: 90%;
 }
 
 
+.logo-container {
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-container i {
+    flex: 1;
+}
+
+@media (max-width: 768px) {
+    .skills-container {
+        flex-wrap: wrap;
+    }
+
+    .logo-container {
+        flex-basis: 33.33%;
+    }
+}
+
 .skill-logos {
     list-style: none;
-    font-size: 20px;
+    font-size: 26px;
     text-align: left;
 }
 
@@ -102,12 +129,14 @@ background: linear-gradient(to right, #03fa6e 37%, #8a2be2 63%);
 
 .line-1 {
     background: linear-gradient(to right, #03fa6e 37%, #8a2be2 63%);
-    width: 76px;
+    width: 172px;
     height: 4px;
     margin-bottom: 14px;
+    border-radius: 90%;
 }
 
 .experience-container {
+    display: none;
     text-align: left;
 }
 
@@ -191,6 +220,7 @@ button {
     color: white;
 }
 
+
 .input-label {
     color: #ffffff9d;
     position: absolute;
@@ -215,53 +245,7 @@ footer {
 }
 
 footer p {
-    font-size: 14px;
+    font-size: 13px;
     padding-top: 4px;
 }
 
-#preloader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 9999;
-    overflow: hidden;
-    background: #000000;
-}
-
-#preloader::before {
-    content: "";
-    position: fixed;
-    top: calc(50% - 30px);
-    left: calc(50% - 30px);
-    border: 6px solid #000000;
-    border-top: 6px solid #03fa6e;
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    -webkit-animation: animate-preloader 1s linear infinite;
-    animation: animate-preloader 1s linear infinite;
-}
-
-@-webkit-keyframes animate-preloader {
-     0% {
-        -webkit-transform: rotate(0deg);
-        transform: rotate(0deg);
-    }
-    100% {
-        -webkit-transform: rotate(360deg);
-        transform: rotate(360deg);
-    }
-}
-
-@keyframes animate-preloader {
-     0% {
-        -webkit-transform: rotate(0deg);
-        transform: rotate(0deg);
-    }
-    100% {
-        -webkit-transform: rotate(360deg);
-        transform: rotate(360deg);
-    }
-}   

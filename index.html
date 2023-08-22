@@ -13,6 +13,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins&family=Quicksand:wght@700&family=Readex+Pro:wght@500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins&family=Quicksand:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">      
@@ -34,14 +37,12 @@
           </div>
         </div>
     </nav>
+
        <!--Jumbotron/Banner-->
     <div class="container-fluid landing-section pt-4 pb-4 pr-4">
-        <video autoplay muted loop id="background-video">
-            <source src="images/black_-_13495 (540p).mp4" type="video/mp4">
-        </video>
         <div class="row intro-section">
             <div class="col-8">
-                <h1 class="intro-text">Hello, Im<br><span>Chrisy</span></h1>
+                <h1 class="intro-text">Hello, I'm<br><span>Chrisy</span></h1>
                 <p class="web-dev text-white">Web Developer</p>
                 <a href="#portfolio" class="btn portfolio-btn">Portfolio</a> 
             </div>
@@ -49,7 +50,7 @@
     </div>
     
            <!--ProfileSection/Container-->
-    <div class="container-fluid text-white p-4" id="profile" style="background-color: #222222;">
+    <div class="container-fluid text-white p-4" id="profile">
         <div class="row">
             <div class="col-md-3">
                 <img src="images/image (1).png" class="img-fluid profile-picture" alt="Profile Picture">
@@ -64,59 +65,46 @@
                     I believe in lifelong learning and personal growth. Though I'm still learning, I'm dedicated to continuous improvement and embracing new challenges.<br><br>
                     If you're looking for a dedicated and adaptable web developer, I'd love to connect with you. Thank you for visiting my portfolio page!
                 </p>
+                <div class="row justify-content-center" id="skills">
+                    <div class="col-md-4">
+                        <div class="skills-container pt-2">
+                            <button class="btn" id="skills-button">Skills</button>
+                            <div class="logo-container pt-2 pb-3 skill-logos">
+                                <i class="fa-brands pt-2 fa-html5"></i>
+                                <i class="fa-brands pt-2 fa-square-js"></i>
+                                <i class="fa-brands pt-2 fa-css3-alt"></i>
+                                <i class="fa-brands pt-2 fa-bootstrap"></i>
+                                <i class="fa-brands pt-2 fa-php"></i>
+                                <i class="fa-brands pt-2 fa-git"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 pt-2" id="experience">
+                        <button class="btn" id="experience-button">Experience</button>
+                        <div class="experience-container pt-2 pb-2">
+                            <span class="year pt-2"> 2016-2023</span><p class="experience-paragraph">Self-Employed (Taxi-Driver)</p><br>
+                            <span class="year"> 2012-2016</span><p class="experience-paragraph">Walker Love (Sheriff Court Officer/Messenger-at-Arms)</p><br>
+                            <span class="year"> 2011-2012</span><p class="experience-paragraph">Travel Break to Australia</p><br>
+                            <span class="year"> 2005-2011</span><p class="experience-paragraph">Walker Love (Administrative Assistant)</p><br>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="cv-btn-container pt-2">
+                            <a href="#cv" class="btn CV-btn">Download CV</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-       <!--Skills/Experience-->
-    <div class="container-fluid text-white p-4" style="background-color: #333333" >
-        <div class="row justify-content-center skills-content" id="skills">
-            <div class="col-md-6 mt-4">
-                <h2 class="text-left">Skills</h2>
-                <div class="skills-container">
-                    <div class="line-1"></div>
-                    <ul class="skill-logos">
-                        <li>
-                            <i class="fa-brands fa-html5"></i> - HTML
-                        </li>
-                        <li>
-                            <i class="fa-brands fa-square-js"></i> - JavaScript
-                        </li>
-                        <li>
-                            <i class="fa-brands fa-css3-alt"></i> - CSS
-                        </li>
-                        <li>
-                            <i class="fa-brands fa-bootstrap"></i> - Bootstrap
-                        </li>
-                        <li>
-                            <i class="fa-brands fa-php"></i> - PHP
-                        </li>
-                        <li>
-                            <i class="fa-brands fa-git"></i> - Git
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-md-4 mt-4 mb-2" id="experience">
-                <h2 class="text-left">Experience</h2>
-                <div class="experience-container">
-                    <div class="line"></div>
-                    <span class="year"> 2016-2023</span><p class="experience-paragraph">Self-Employed (Taxi-Driver)</p><br>
-                    <span class="year"> 2012-2016</span><p class="experience-paragraph">Walker Love (Sheriff Court Officer/Messenger-at-Arms)</p><br>
-                    <span class="year"> 2011-2012</span><p class="experience-paragraph">Travel Break to Australia</p><br>
-                    <span class="year"> 2005-2011</span><p class="experience-paragraph">Walker Love (Administrative Assistant)</p><br>
-                    <a href="#cv" class="btn CV-btn">Download CV</a>
-                </div>
-            </div>
-        </div>
-    </div>   
        <!---Portoflio Container --->
-    <div class="container-fluid text-white p-4" id="portfolio" style="background-color: #111111" >
+    <div class="container-fluid text-white p-4" id="portfolio" style="background-color: #080808" >
         <div class="row justify-content-center">
             <div class="col-md-4 mt-4 mb-2">
                 <h2 class="text-center">Portfolio</h2>
             </div>
         </div>
-        <div class="row row-cols-1 row-cols-md-3 p-4" style="background-color: #111111">
+        <div class="row row-cols-1 row-cols-md-3 p-4" style="background-color: #080808">
             <div class="col mb-4">
              <div class="card h-100">
                <a href="https://lottoluckydip.netlify.app/">
@@ -152,7 +140,7 @@
         </div>
         <div class="col mb-4">
           <div class="card h-100">
-            <a href="#">
+            <a href="gazzateer.html">
                 <img class="card-img-top card-image" src="images\earth_globe_map_maps.jpg" alt="Gazetteer">
             </a>
             <div class="card-body">
