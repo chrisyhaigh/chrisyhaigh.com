@@ -28,7 +28,7 @@
 
     // Check if any departments are associated with the given location
     
-    $query = $conn->prepare("SELECT COUNT(*) FROM department WHERE locationID = ?");
+    $query = $conn->prepare("SELECT COUNT(id) FROM department WHERE locationID = ?");
     $query->bind_param("i", $locationID);
     $query->execute();
     $query->bind_result($count);

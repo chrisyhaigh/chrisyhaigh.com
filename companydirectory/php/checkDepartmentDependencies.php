@@ -28,7 +28,7 @@
 
     // Check if any personnel are associated with the given department
 
-    $query = $conn->prepare("SELECT COUNT(*) FROM personnel WHERE departmentID = ?");
+    $query = $conn->prepare("SELECT COUNT(id) FROM personnel WHERE departmentID = ?");
     $query->bind_param("i", $departmentID);
     $query->execute();
     $query->bind_result($count);
