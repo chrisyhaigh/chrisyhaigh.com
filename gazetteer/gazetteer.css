@@ -1,0 +1,161 @@
+body {
+    font-family: 'Cantarell', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.dropdown-container {
+    position: absolute;
+    top: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+}
+
+.input-data {
+    text-align: center;
+    width: 172px;
+    padding: 0.10rem;
+    font-size: 16px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: goldenrod;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.input-data:hover {
+    cursor: pointer;
+}
+
+#map {
+    z-index: 1;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+.leaflet-bar {
+    border-radius: 50%;
+    overflow: hidden;
+}
+  
+.leaflet-bar a {
+      border-radius: 0%;
+      background-color: rgba(0, 0, 0, 0.8);
+      color: goldenrod;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.leaflet-bar button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: goldenrod;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.leaflet-bar a:hover {
+    background-color: #555555;
+    color: goldenrod;
+}
+
+.leaflet-bar button:hover {
+    background-color: #555555;
+    color: goldenrod;
+}
+
+.leaflet-control-layers {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: goldenrod;
+    width: 70px;
+}
+
+
+.leaflet-control-layers-toggle span {
+    color: goldenrod;
+}
+
+
+.leaflet-control-layers-overlays label span {
+    color: goldenrod;
+}
+
+.leaflet-control-layers {
+    border: 2px solid #333333;
+}
+
+.leaflet-control-layers label {
+    font-size: 12px;
+    font-family: 'Cantarell', sans-serif;
+}
+
+.header-color {
+    background-color: goldenrod;
+    color: white;
+}
+
+#country-flag-img {
+    width: 60px;
+    height: auto;
+    margin-right: 13px;
+}
+
+
+.input-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 0.5rem;
+}
+  
+.select-input {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: goldenrod;
+    padding: 0.275rem;
+    width: 140px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 0.5rem;
+}
+
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    overflow: hidden;
+    background: #000000;
+}
+
+#preloader::before {
+    content: "";
+    position: fixed;
+    top: calc(50% - 30px);
+    left: calc(50% - 30px);
+    border: 2px solid #000000;
+    border-top: 8px solid goldenrod;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    -webkit-animation: animate-preloader 1s linear infinite;
+    animation: animate-preloader 1s linear infinite;
+}
+
+@keyframes animate-preloader {
+     0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}

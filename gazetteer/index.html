@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gazetteer</title>
+    <link href="libraries/bootstrap/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+    <link rel="stylesheet" href="libraries/leaflet/leaflet.css"/>
+    <link rel="stylesheet" href="libraries/leaflet/MarkerCluster.Default.css"/>
+    <link rel="stylesheet" href="libraries/leaflet/MarkerCluster.css"/>
+    <link rel="stylesheet" href="libraries/leaflet/easy-button.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="stylesheet" href="libraries/leaflet/css/leaflet.extra-markers.min.css"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png"/>
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png"/>
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png"/>
+    <link rel="manifest" href="favicon/site.webmanifest"/>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cantarell&family=Poppins&family=Quicksand:wght@700&family=Readex+Pro:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="gazetteer.css"/>
+</head>
+<body>
+    <div id="map"></div>
+        <div class="dropdown-container">
+          <form class="d-flex" role="search">
+            <select title="country-list" class="input-data" id="countryselect" name="country">
+              <!----Country List---->
+            </select>
+          </form>
+        </div>
+
+        <!-----Country Modal---->
+        <div id="countrymodal" class="modal fade" data-bs-backdrop="false" tabindex="-1">
+          <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content shadow">
+              <div class="modal-header header-color">
+                <img id="country-flag-img" alt="Country Flag" class="img-fluid">
+                <h5 class="modal-title">Key insights</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <table class="table table-striped">
+                  <tr>
+
+                      <td class="text-center">
+                          <i class="fa-solid fa-globe fa-xl text-dark"></i>
+                      </td>
+                      <td>
+                        Name
+                      </td>
+                      <td id="country-name" class="text-end">
+                        value
+                      </td>
+
+                  </tr>
+
+                  <tr>
+
+                      <td class="text-center">
+                        <i class="fa-solid fa-monument fa-xl text-dark"></i>
+                      </td>
+                      <td>
+                        Capital City
+                      </td>
+                      <td id="country-capital" class="text-end">
+                        value
+                      </td>
+
+                  </tr>
+                  <tr>
+
+                    <td class="text-center">
+                      <i class="fa-solid fa-person fa-xl text-dark"></i>
+                    </td>
+                    <td>
+                      Population
+                    </td>
+                    <td id="country-population" class="text-end">
+                      value
+                    </td>
+
+                  </tr>
+                  <tr>
+
+                      <td class="text-center">
+                        <i class="fa-solid fa-earth-asia fa-xl text-dark"></i>
+                      </td>
+                      <td>
+                        Continent
+                      </td>
+                      <td id="country-continent" class="text-end">
+                        value
+                      </td>
+ 
+                  </tr>  
+                  <tr>
+
+                    <td class="text-center">
+                      <i class="fa-solid fa-hashtag fa-xl text-dark"></i>
+                    </td>
+                    <td>
+                      Country Code
+                    </td>
+                    <td id="country-code" class="text-end">
+                      value
+                    </td>
+
+                </tr>                      
+                </table>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-outline-dark btn-sm" data-bs-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!----Weather Modal---->
+        <div id="weathermodal" class="modal fade" data-bs-backdrop="false" tabindex="-1">
+          <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content shadow">
+              <div class="modal-header header-color">
+                <h5 class="modal-title">Weather</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <h5 id="current-forecast-header">Current Weather</h5>
+                <p id="current-weather"></p>
+
+                <h5 id="forecast-header">7-Day Forecast</h5>
+                <table class="table table-bordered table-striped">
+                  <tbody id="weather-table-body">
+
+                  </tbody>
+                </table>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-outline-dark btn-sm" data-bs-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!----Wiki Modal---->
+        <div id="wikimodal" class="modal fade" data-bs-backdrop="false" tabindex="-1">
+          <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content shadow">
+              <div class="modal-header header-color">
+                <h5 class="modal-title">Wikipedia</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <h5>Summary</h5>
+                <p id=country-summary></p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-outline-dark btn-sm" data-bs-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!----Currency Modal---->
+        <div id="currencymodal" class="modal fade" data-bs-backdrop="false" tabindex="-1">
+          <div class="modal-dialog modal-dialog-centered modal-sm modal-dialog-scrollable">
+            <div class="modal-content shadow">
+              <div class="modal-header header-color">
+                <h5 class="modal-title">Currency Converter</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+
+              <div class="modal-body d-flex justify-content-center">
+                <form id="currencyconversion">
+                  <div class="form-floating mb-3">
+                    <input id="fromamount" type="number" class="form-control" value="1" min="1" step="1">
+                    <label for="fromamount">From USD</label>
+                  </div>
+
+                  <div class="form-floating mb-3">
+                    <select id="exchangerate" class="form-select">
+                      <!---OPTIONS---->
+                    </select>
+                    <label for="exchangerate">Convert to</label>
+                  </div>
+
+                  <div class="form-floating">
+                    <input id="toamount" type="text" class="form-control" disabled>
+                    <label for="toamount">Result</label>
+                  </div>
+                </form>
+                
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-outline-dark btn-sm" data-bs-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-----News Modal---->
+        <div id="newsmodal" class="modal fade" tabindex="-1" data-bs-backdrop="false" data-bs-keyboard="false" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content shadow"> 
+              
+              <div class="modal-header header-color">
+                <h5 class="modal-title">Latest News</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+        
+              <div class="modal-body">
+                <div id="newscontainer">
+                  
+                </div>
+              </div>
+        
+              <div class="modal-footer">
+                <button type="button" class="btn btn-outline-secondary btn-sm" data-bs-dismiss="modal">Close</button>
+              </div>
+         
+            </div>
+            
+          </div>
+        </div>
+
+
+    <div id="preloader"></div>
+
+    <script src="libraries/jquery/jquery-3.7.0.min.js"></script>
+    <script src="libraries/bootstrap/bootstrap.min.js"></script>
+    <script src="libraries/leaflet/leaflet.js"></script>
+    <script src="libraries/leaflet/easy-button.js"></script>
+    <script src="libraries/leaflet/js/leaflet.extra-markers.min.js"></script>
+    <script src="libraries/numeral&datejs/numeral.min.js"></script>
+    <script src="libraries/numeral&datejs/date.js"></script>
+    <script src="libraries/leaflet/leaflet.markercluster-src.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
