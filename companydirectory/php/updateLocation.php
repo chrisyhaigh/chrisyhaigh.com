@@ -24,8 +24,8 @@
         exit;
     }
 
-    $id = $_POST['id'];
     $updatedData = $_POST['updatedData'];
+    $id = $_POST['id'];
 
     // Prepared Statement
     $query = $conn->prepare("UPDATE location SET name = ? WHERE id = ?");
@@ -43,7 +43,7 @@
     }
 
     // Bind parameters
-    $query->bind_param("is", $id, $updatedData['name']);
+    $query->bind_param("si", $updatedData['name'], $id,);
 
     // Execute the statement
     $query->execute();

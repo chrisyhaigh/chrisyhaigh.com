@@ -359,6 +359,7 @@
 
 
     <!----Delete Personnel Modal---->
+
     <div id="deletepersonnelmodal" class="modal fade" tabindex="-1" data-bs-backdrop="false" data-bs-keyboard="false" aria-labelledby="deletepersonnelmodallabel" aria-hidden="true">
       <div class="modal-dialog modal-sm modal-dialog-centered modal-dialog-scrollable">
         <div class="modal-content">
@@ -367,18 +368,21 @@
             <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <b>Are you sure you want to delete this entry?</b>
+              <form id="deletepersonnelform">
+                <input id="deletepersonnelID" type="hidden">
+                Are you sure that you want to delete the entry for <span id="deletepersonnelname" class="fw-bold"></span>?
           </div>
           <div class="modal-footer d-flex justify-content-between">
-            <button type="button" class="btn btn-secondary" id="deletepersonnelnobutton" data-bs-dismiss="modal">No</button>
-            <button type="submit" class="btn btn-danger" id="deletepersonnelyesbutton" data-bs-dismiss="modal">Yes</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+            <button type="submit" form="deletepersonnelform" class="btn btn-danger" data-bs-dismiss="modal">Yes</button>
           </div>
         </div>
       </div>
     </div>
 
+
     <!----Delete Department Modal---->
-    <div id="deletedepartmentmodal" class="modal fade" tabindex="-1" data-bs-backdrop="false" data-bs-keyboard="false" aria-labelledby="updatedepartmentmodallabel" aria-hidden="true">
+    <div id="deletedepartmentmodal" class="modal fade" tabindex="-1" data-bs-backdrop="false" data-bs-keyboard="false" aria-labelledby="deleteepartmentmodallabel" aria-hidden="true">
       <div class="modal-dialog modal-sm modal-dialog-centered modal-dialog-scrollable">
         <div class="modal-content">
           <div class="modal-header bg-dark text-white">
@@ -386,11 +390,13 @@
             <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <b>Are you sure you want to delete this entry?</b>
+            <form id="deletedepartmentform">
+              <input id="deletedepartmentID" type="hidden">
+              Are you sure that you want to delete the entry for <span id="deletedepartmentname" class="fw-bold"></span>?
           </div>
           <div class="modal-footer d-flex justify-content-between">
-            <button type="button" class="btn btn-secondary" id="deletedepartmentnobutton" data-bs-dismiss="modal">No</button>
-            <button type="submit" class="btn btn-danger" id="deletedepartmentyesbutton" data-bs-dismiss="modal">Yes</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+            <button type="submit" form="deletedepartmentform" class="btn btn-danger" data-bs-dismiss="modal">Yes</button>
           </div>
         </div>
       </div>
@@ -405,11 +411,13 @@
             <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <b>Are you sure you want to delete this entry?</b>
+            <form id="deletelocationform">
+              <input id="deletelocationID" type="hidden">
+              Are you sure that you want to delete the entry for <span id="deletelocationname" class="fw-bold"></span>?
           </div>
           <div class="modal-footer d-flex justify-content-between">
-            <button type="button" class="btn btn-secondary" id="deletelocationnobutton" data-bs-dismiss="modal">No</button>
-            <button type="submit" class="btn btn-danger" id="deletelocationyesbutton" data-bs-dismiss="modal">Yes</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+            <button type="submit" form="deletelocationform" class="btn btn-danger" data-bs-dismiss="modal">Yes</button>
           </div>
         </div>
       </div>

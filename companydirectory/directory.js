@@ -1,284 +1,258 @@
 
 // Search Bar Input 
 $('#searchbar').keyup(function() {
-    const searchQuery = $(this).val().toLowerCase();
-    
-    if ($('#personneldata').length > 0) {
-      displayPersonnelSearch(searchQuery);
-    }
-    if ($('#departmentdata').length > 0) {
-      displayDepartmentSearch(searchQuery);
-    }
-    if ($('#locationdata').length > 0) {
-      displayLocationSearch(searchQuery);
-    }
+  const searchQuery = $(this).val().toLowerCase();
+  
+  if ($('#personneldata').length > 0) {
+    displayPersonnelSearch(searchQuery);
+  }
+  if ($('#departmentdata').length > 0) {
+    displayDepartmentSearch(searchQuery);
+  }
+  if ($('#locationdata').length > 0) {
+    displayLocationSearch(searchQuery);
+  }
 });
 
 
 function displayPersonnelSearch(searchQuery) {
-  const personnelTable = document.getElementById('personneldata');
-  const rows = personnelTable.querySelectorAll('tr');
+const personnelTable = document.getElementById('personneldata');
+const rows = personnelTable.querySelectorAll('tr');
 
-  rows.forEach(function(row) {
-    const name = row.querySelector('td:nth-child(1)').textContent.toLowerCase();
-    const jobTitle = row.querySelector('td:nth-child(2)').textContent.toLowerCase();
-    const email = row.querySelector('td:nth-child(3)').textContent.toLowerCase();
-    const department = row.querySelector('td:nth-child(4)').textContent.toLowerCase();
-    const location = row.querySelector('td:nth-child(5)').textContent.toLowerCase();
+rows.forEach(function(row) {
+  const name = row.querySelector('td:nth-child(1)').textContent.toLowerCase();
+  const jobTitle = row.querySelector('td:nth-child(2)').textContent.toLowerCase();
+  const email = row.querySelector('td:nth-child(3)').textContent.toLowerCase();
+  const department = row.querySelector('td:nth-child(4)').textContent.toLowerCase();
+  const location = row.querySelector('td:nth-child(5)').textContent.toLowerCase();
 
-    if(name.includes(searchQuery) || jobTitle.includes(searchQuery) || email.includes(searchQuery) || department.includes(searchQuery) || location.includes(searchQuery)) {
-      row.style.display = 'table-row'
-    } else {
-      row.style.display = 'none';
-    }
-  });
+  if(name.includes(searchQuery) || jobTitle.includes(searchQuery) || email.includes(searchQuery) || department.includes(searchQuery) || location.includes(searchQuery)) {
+    row.style.display = 'table-row'
+  } else {
+    row.style.display = 'none';
+  }
+});
 }
 
 function displayDepartmentSearch(searchQuery) {
-  const departmentTable = document.getElementById('departmentdata');
-  const rows = departmentTable.querySelectorAll('tr');
+const departmentTable = document.getElementById('departmentdata');
+const rows = departmentTable.querySelectorAll('tr');
 
-  rows.forEach(function(row) {
-    const department = row.querySelector('td:nth-child(1)').textContent.toLowerCase();
-    const location = row.querySelector('td:nth-child(2)').textContent.toLowerCase();
+rows.forEach(function(row) {
+  const department = row.querySelector('td:nth-child(1)').textContent.toLowerCase();
+  const location = row.querySelector('td:nth-child(2)').textContent.toLowerCase();
 
-    if (department.includes(searchQuery) || location.includes(searchQuery)) {
-      row.style.display = 'table-row'
-    } else {
-      row.style.display = 'none';
-    }
-  });
+  if (department.includes(searchQuery) || location.includes(searchQuery)) {
+    row.style.display = 'table-row'
+  } else {
+    row.style.display = 'none';
+  }
+});
 }
 
 function displayLocationSearch(searchQuery) {
-  const locationTable = document.getElementById('locationdata');
-  const rows = locationTable.querySelectorAll('tr');
+const locationTable = document.getElementById('locationdata');
+const rows = locationTable.querySelectorAll('tr');
 
-  rows.forEach(function(row) {
-    const location = row.querySelector('td:nth-child(1)').textContent.toLowerCase();
+rows.forEach(function(row) {
+  const location = row.querySelector('td:nth-child(1)').textContent.toLowerCase();
 
-    if (location.includes(searchQuery)) {
-      row.style.display = 'table-row'
-    } else {
-      row.style.display = 'none';
-    }
-  });
+  if (location.includes(searchQuery)) {
+    row.style.display = 'table-row'
+  } else {
+    row.style.display = 'none';
+  }
+});
 }
 
 
 // Create button to open create Modals
 
 $('#createbutton').click(function() {
-    if ($('#personnelbutton').hasClass('active')) {
-        $('#createpersonnelmodal').modal('show');
-    } else if ($('#departmentbutton').hasClass('active')) {
-        $('#createdepartmentmodal').modal('show');
-    } else if ($('#locationbutton').hasClass('active')) {
-        $('#createlocationmodal').modal('show');
-    }
+  if ($('#personnelbutton').hasClass('active')) {
+      $('#createpersonnelmodal').modal('show');
+  } else if ($('#departmentbutton').hasClass('active')) {
+      $('#createdepartmentmodal').modal('show');
+  } else if ($('#locationbutton').hasClass('active')) {
+      $('#createlocationmodal').modal('show');
+  }
 });
 
 // Refreshbutton
 
 $('#refreshbutton').click(function() {
-  if ($('#personneltab').hasClass('active')) {
-      $('#refreshpersonnel').removeClass('d-none');
-      $('#personneldata').addClass('d-none');
-      setTimeout(function () {
-          $('#personneldata').removeClass('d-none');
-          $('#refreshpersonnel').addClass('d-none');
-          populatePersonnelTab();
-      }, 600);
-  } else if ($('#departmenttab').hasClass('active')) {
-      $('#refreshdepartment').removeClass('d-none');
-      $('#departmentdata').addClass('d-none');
-      setTimeout(function() {
-          $('#departmentdata').removeClass('d-none');
-          $('#refreshdepartment').addClass('d-none');
-          populateDepartmentTab();
-      }, 600);
-  } else if ($('#locationtab').hasClass('active')) {
-      $('#refreshlocation').removeClass('d-none');
-      $('#locationdata').addClass('d-none');
-      setTimeout(function() {
-          $('#locationdata').removeClass('d-none');
-          $('#refreshlocation').addClass('d-none');
-          populateLocationTab();
-      }, 600);
-  }
+if ($('#personneltab').hasClass('active')) {
+    $('#refreshpersonnel').removeClass('d-none');
+    $('#personneldata').addClass('d-none');
+    setTimeout(function () {
+        $('#personneldata').removeClass('d-none');
+        $('#refreshpersonnel').addClass('d-none');
+        populatePersonnelTab();
+    }, 600);
+} else if ($('#departmenttab').hasClass('active')) {
+    $('#refreshdepartment').removeClass('d-none');
+    $('#departmentdata').addClass('d-none');
+    setTimeout(function() {
+        $('#departmentdata').removeClass('d-none');
+        $('#refreshdepartment').addClass('d-none');
+        populateDepartmentTab();
+    }, 600);
+} else if ($('#locationtab').hasClass('active')) {
+    $('#refreshlocation').removeClass('d-none');
+    $('#locationdata').addClass('d-none');
+    setTimeout(function() {
+        $('#locationdata').removeClass('d-none');
+        $('#refreshlocation').addClass('d-none');
+        populateLocationTab();
+    }, 600);
+}
 });
 
 // Filter Button to Open filter Modals
 
 $('#filterbutton').click(function() {
-    if ($('#personnelbutton').hasClass('active')) {
-        $('#personnelfiltermodal').modal('show');
-    } else if ($('#departmentbutton').hasClass('active')) {
-        $('#departmentfiltermodal').modal('show');
-    } else if ($('#locationbutton').hasClass('active')) {
-        $('#locationfiltermodal').modal('show');
-    }
+  if ($('#personnelbutton').hasClass('active')) {
+      $('#personnelfiltermodal').modal('show');
+  } else if ($('#departmentbutton').hasClass('active')) {
+      $('#departmentfiltermodal').modal('show');
+  } else if ($('#locationbutton').hasClass('active')) {
+      $('#locationfiltermodal').modal('show');
+  }
 });
 
 // Populate Tabs with Data
 
 function populatePersonnelTab() {
 
-      $.ajax({
-          url: 'php/getAllPersonnel.php',
-          type: 'GET',
-          dataType: 'json',
-          success: function(response) {
-              let tBody = $('#personneldata');
-              tBody.empty();
+    $.ajax({
+        url: 'php/getAllPersonnel.php',
+        type: 'GET',
+        dataType: 'json',
+        success: function(response) {
+            let tBody = $('#personneldata');
+            tBody.empty();
 
-              response.data.forEach(function(person) {
-                  let row = $('<tr>');
+            response.data.forEach(function(person) {
+                let row = $('<tr>');
 
-                  row.append(`<td class="align-middle text-nowrap" id="lastname">${person.lastName}, ${person.firstName}</td>`);
-                  row.append(`<td class="align-middle text-nowrap d-none d-lg-table-cell" id="jobtitle">${person.jobTitle}</td>`);
-                  row.append(`<td class="align-middle text-nowrap d-none d-lg-table-cell" id="email">${person.email}</td>`);
-                  row.append(`<td class="align-middle text-nowrap d-none d-lg-table-cell" id="department">${person.department}</td>`);
-                  row.append(`<td class="align-middle text-nowrap d-none d-lg-table-cell" id="location">${person.location}</td>`);
-                  row.append(`<td class="align-middle">
-                                <button class="btn btn-primary btn-sm rounded-circle edit-personnel-button" data-bs-toggle="modal" data-bs-target="#updatepersonnelmodal" data-id="${person.id}">
-                                    <i class="fas fa-pencil-alt"></i>
-                                </button>
-                                <button class="btn btn-danger btn-sm rounded-circle delete-personnel-button" data-bs-toggle="modal" data-bs-target="#deletepersonnelmodal" data-id="${person.id}">
-                                    <i class="fas fa-trash"></i>
-                                </button>
-                              </td>`);
+                row.append(`<td class="align-middle text-nowrap" id="lastname">${person.lastName}, ${person.firstName}</td>`);
+                row.append(`<td class="align-middle text-nowrap d-none d-lg-table-cell" id="jobtitle">${person.jobTitle}</td>`);
+                row.append(`<td class="align-middle text-nowrap d-none d-lg-table-cell" id="email">${person.email}</td>`);
+                row.append(`<td class="align-middle text-nowrap d-none d-lg-table-cell" id="department">${person.department}</td>`);
+                row.append(`<td class="align-middle text-nowrap d-none d-lg-table-cell" id="location">${person.location}</td>`);
+                row.append(`<td class="align-middle">
+                              <button class="btn btn-primary btn-sm rounded-circle" data-bs-toggle="modal" data-bs-target="#updatepersonnelmodal" data-id="${person.id}">
+                                  <i class="fas fa-pencil-alt"></i>
+                              </button>
+                              <button class="btn btn-danger btn-sm rounded-circle delete-personnel-button" data-bs-toggle="modal" data-bs-target="#deletepersonnelmodal" data-id="${person.id}" data-name="${person.firstName} ${person.lastName}">
+                                  <i class="fas fa-trash"></i>
+                              </button>
+                            </td>`);
 
-                  tBody.append(row);
-              });
+                tBody.append(row);
+            });
 
-              tBody.on('click', '.delete-personnel-button', function() {
-                let id = $(this).closest('tr').find('.delete-personnel-button').data('id');
-                $('#deletepersonnelyesbutton').data('id', id);
-                $('#deletepersonnelmodal').modal('show');
-              });
+            tBody.on('click', '.delete-personnel-button', function() {
+              let id = $(this).data('id');
+              let name = $(this).data('name');
 
-          },
-          error: function(jqXHR, textStatus, errorThrown) {
-              console.log("Error retrieving personnel records:", jqXHR, textStatus, errorThrown);
-          },
-      });
-  }
+              $('#deletepersonnelID').val(id);
+              $('#deletepersonnelname').text(name);
+            });
 
-$('#deletepersonnelyesbutton').click(function () {
-    let id = $(this).data('id');
-    deletePersonnel(id);
-});
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+            console.log("Error retrieving personnel records:", jqXHR, textStatus, errorThrown);
+        },
+    });
+}
 
 function populateDepartmentTab() {
 
-  $.ajax({
-      url: 'php/getAllDepartments.php',
-      type: 'GET',
-      dataType: 'json',
+$.ajax({
+    url: 'php/getAllDepartments.php',
+    type: 'GET',
+    dataType: 'json',
 
-      success: function(response){
-          let tBody = $('#departmentdata');
-          tBody.empty();
+    success: function(response){
+        let tBody = $('#departmentdata');
+        tBody.empty();
 
-          response.data.forEach(function(departments){
-              let row = $(`<tr>`);
-              row.append(`<td class="align-middle">${departments.departmentName}</td>`);
-              row.append(`<td class="d-none d-md-table-cell align-middle">${departments.locationName}</td>`);
-              row.append(`<td>
-                              <button class="btn btn-primary btn-sm rounded-circle update-department-button" data-bs-toggle="modal" data-bs-toggle="modal" data-bs-target="#updatedepartmentmodal" data-id="${departments.id}">
-                                  <i class="fas fa-pencil-alt"></i>
-                              </button>
-                              <button class="btn btn-danger btn-sm rounded-circle delete-department-button" data-bs-toggle="modal" data-bs-target="#deletedepartmentmodal" data-id="${departments.id}">
-                                  <i class="fas fa-trash"></i>
-                              </button>
-                          </td>`);
+        response.data.forEach(function(departments){
+            let row = $(`<tr>`);
+            row.append(`<td class="align-middle">${departments.departmentName}</td>`);
+            row.append(`<td class="d-none d-md-table-cell align-middle">${departments.locationName}</td>`);
+            row.append(`<td>
+                            <button class="btn btn-primary btn-sm rounded-circle" data-bs-toggle="modal" data-bs-toggle="modal" data-bs-target="#updatedepartmentmodal" data-id="${departments.id}">
+                                <i class="fas fa-pencil-alt"></i>
+                            </button>
+                            <button class="btn btn-danger btn-sm rounded-circle delete-department-button" data-bs-toggle="modal" data-bs-target="#deletedepartmentmodal" data-id="${departments.id}" data-name="${departments.departmentName}">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </td>`);
 
-              tBody.append(row);
-              });
-              
-              tBody.on('click', '.delete-department-button', function() {
-                let id = $(this).closest('tr').find('.delete-department-button').data('id');
-                $('#deletedepartmentyesbutton').data('id', id);
-                $('#deletedepartmentmodal').modal('show');
-              });
-      },
+            tBody.append(row);
+            });
+            
+            tBody.on('click', '.delete-department-button', function() {
+              let id = $(this).data('id');
+              let name = $(this).data('name');
 
-      error: function(jqXHR, textStatus, errorThrown) {
-          console.log("Error retrieving department records:", jqXHR, textStatus, errorThrown);
-      },
+              $('#deletedepartmentID').val(id);
+              $('#deletedepartmentname').text(name);
+            });
+    },
+
+    error: function(jqXHR, textStatus, errorThrown) {
+        console.log("Error retrieving department records:", jqXHR, textStatus, errorThrown);
+    },
   });
 }
-
-$('#deletedepartmentyesbutton').click(function () {
-  let id = $(this).data('id');
-
-  checkDepartmentDependencies(id, function(dependenciesExist){
-    if (dependenciesExist) {
-        alert('Cannot delete this department as it has associated personnel');
-    } else {
-        deleteDepartment(id);
-        console.log('Department Deleted');
-    }
-  });
-
-});
 
 function populateLocationTab() {
 
-  $.ajax({
-      url: 'php/getAllLocations.php',
-      type: 'POST',
-      dataType: 'json',
+$.ajax({
+    url: 'php/getAllLocations.php',
+    type: 'POST',
+    dataType: 'json',
 
-      success: function(response){
-          let tBody = $('#locationdata');
+    success: function(response){
+        let tBody = $('#locationdata');
 
-          tBody.empty();
+        tBody.empty();
 
-          response.data.forEach(function(office){
-              let row = $(`<tr>`);
-              
-              row.append(`<td class="align-middle">${office.name}</td>`);
-              row.append(`<td>
-                              <button class="btn btn-primary btn-sm rounded-circle update-location-button" data-bs-toggle="modal" data-bs-target="#updatelocationmodal" data-id="${office.id}">
-                                  <i class="fas fa-pencil-alt"></i>
-                              </button>
-                              <button class="btn btn-danger btn-sm rounded-circle delete-location-button" data-bs-toggle="modal" data-bs-target="#deletelocationmodal" data-id="${office.id}">
-                                  <i class="fas fa-trash"></i>
-                              </button>
-                          </td>`);
-          
+        response.data.forEach(function(office){
+            let row = $(`<tr>`);
+            
+            row.append(`<td class="align-middle">${office.name}</td>`);
+            row.append(`<td>
+                            <button class="btn btn-primary btn-sm rounded-circle" data-bs-toggle="modal" data-bs-target="#updatelocationmodal" data-id="${office.id}">
+                                <i class="fas fa-pencil-alt"></i>
+                            </button>
+                            <button class="btn btn-danger btn-sm rounded-circle delete-location-button" data-bs-toggle="modal" data-bs-target="#deletelocationmodal" data-id="${office.id}" data-name="${office.name}">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </td>`);
+        
 
-              tBody.append(row);
-              });
-              
-              tBody.on('click', '.delete-location-button', function() {
-                let id = $(this).closest('tr').find('.delete-location-button').data('id');
-                $('#deletelocationyesbutton').data('id', id);
-                $('#deletelocationmodal').modal('show');
-              });
-      },
+            tBody.append(row);
+            });
+            
+            tBody.on('click', '.delete-location-button', function() {
+              let id = $(this).data('id');
+              let name = $(this).data('name');
 
-      error: function(jqXHR, textStatus, errorThrown) {
-          console.log("Error retrieving location records:", jqXHR, textStatus, errorThrown);
-      },
+              $('#deletelocationID').val(id);
+              $('#deletelocationname').text(name);
+              $('#deletelocationmodal').modal('show');
+            });
+    },
+
+    error: function(jqXHR, textStatus, errorThrown) {
+        console.log("Error retrieving location records:", jqXHR, textStatus, errorThrown);
+    },
   });
 }
-
-$('#deletelocationyesbutton').click(function () {
-  let id = $(this).data('id');
-
-  checkLocationDependencies(id, function(dependenciesExist) {
-    if (dependenciesExist) {
-        alert('Cannot delete this location as it has associated departments.');
-    } else {
-        deleteLocation(id);
-    }
-
-});
-
-});
 
 $(document).ready(function() {
   populatePersonnelTab();
@@ -299,7 +273,7 @@ $("#createpersonnelmodal").on("show.bs.modal", function (e) {
 // Create Personnel records
 
 $("#createpersonnelform").on("submit", function (e) {
-  // stop the default browser behavior
+
   e.preventDefault();
 
   const data = {
@@ -322,7 +296,7 @@ $("#createpersonnelform").on("submit", function (e) {
 
       if (resultCode == 200) {
         $("#createpersonnelmodal").modal("hide");
- 
+
       } else {
         console.error("Error creating personnel record");
       }
@@ -343,7 +317,7 @@ $("#createdepartmentmodal").on("show.bs.modal", function (e) {
 
 
 $("#createdepartmentform").on("submit", function (e) {
-  // stop the default browser behavior
+
   e.preventDefault();
 
   const data = {
@@ -364,7 +338,7 @@ $("#createdepartmentform").on("submit", function (e) {
       if (resultCode == 200) {
         console.log('New department created');
         $("#createdepartmentmodal").modal("hide");
- 
+
       } else {
         console.error("Error creating department record");
       }
@@ -403,7 +377,7 @@ $("#createlocationform").on("submit", function (e) {
       if (resultCode == 200) {
         console.log('New location created');
         $("#createlocationmodal").modal("hide");
- 
+
       } else {
         console.error("Error creating location record");
       }
@@ -417,6 +391,7 @@ $("#createlocationform").on("submit", function (e) {
 // Update Personnel Modal
 
 $("#updatepersonnelmodal").on("show.bs.modal", function (e) {
+
   $.ajax({
     url: 'php/fetchPersonnelByID.php',
     type: "POST",
@@ -445,6 +420,7 @@ $("#updatepersonnelmodal").on("show.bs.modal", function (e) {
         );
       }
     },
+
     error: function (jqXHR, textStatus, errorThrown) {
       $("#updatepersonnelmodal .modal-title").replaceWith(
         "Error retrieving data"
@@ -454,7 +430,7 @@ $("#updatepersonnelmodal").on("show.bs.modal", function (e) {
 });
 
 $("#updatepersonnelform").on("submit", function (e) {
-  // stop the default browser behavior
+// stop the default browser behavior
   e.preventDefault();
 
   const data = {
@@ -485,6 +461,7 @@ $("#updatepersonnelform").on("submit", function (e) {
         console.error("Error updating personnel data");
       }
     },
+
     error: function (jqXHR, textStatus, errorThrown) {
       console.error("Error updating personnel data:", errorThrown);
     },
@@ -494,10 +471,12 @@ $("#updatepersonnelform").on("submit", function (e) {
 // Populate Department dropdowns
 
 function populateDepartmentDropdown() {
+
   $.ajax({
     url: 'php/getAllDepartments.php',
     type: 'GET',
     dataType: 'json',
+    
     success: function (response) {
       const departmentDropdown = $("#update_departmentdropdown");
       departmentDropdown.empty();
@@ -511,6 +490,7 @@ function populateDepartmentDropdown() {
         );
       });
     },
+
     error: function (jqXHR, textStatus, errorThrown) {
       console.log("Error retrieving department data:", jqXHR, textStatus, errorThrown);
     },
@@ -518,10 +498,12 @@ function populateDepartmentDropdown() {
 }
 
 function populateDepartmentDropdownInCP() {
+
   $.ajax({
     url: 'php/getAllDepartments.php',
     type: 'GET',
     dataType: 'json',
+
     success: function (response) {
       const departmentDropdown = $("#departmentdropdown");
       departmentDropdown.empty();
@@ -535,6 +517,7 @@ function populateDepartmentDropdownInCP() {
         );
       });
     },
+
     error: function (jqXHR, textStatus, errorThrown) {
       console.log("Error retrieving department data:", jqXHR, textStatus, errorThrown);
     },
@@ -544,31 +527,31 @@ function populateDepartmentDropdownInCP() {
 
 $("#updatedepartmentmodal").on("show.bs.modal", function (e) {
 
-    $.ajax({
-      url: 'php/fetchDepartmentByID.php', 
-      type: "POST",
-      dataType: "json",
-      data: {
-        id: $(e.relatedTarget).attr("data-id")
-      },
-      success: function (data) {
-        let resultCode = data.status.code;
+  $.ajax({
+    url: 'php/fetchDepartmentByID.php', 
+    type: "POST",
+    dataType: "json",
+    data: {
+      id: $(e.relatedTarget).attr("data-id")
+    },
+    success: function (data) {
+      let resultCode = data.status.code;
 
-        if (resultCode == 200) {
-          $("#update_departmentid").val(data.data.id);
-          $("#update_departmentname").val(data.data.name);
-          // Populate location dropdown if needed
-          populateLocationDropdown();
+      if (resultCode == 200) {
+        $("#update_departmentid").val(data.data.id);
+        $("#update_departmentname").val(data.data.name);
+        // Populate location dropdown if needed
+        populateLocationDropdown();
 
-          $("#update_locationdropdown").val(data.data.locationID);
-        } else {
-          $("#updatedepartmentmodal .modal-title").replaceWith("Error retrieving data");
-        }
-      },
-      error: function (jqXHR, textStatus, errorThrown) {
+        $("#update_locationdropdown").val(data.data.locationID);
+      } else {
         $("#updatedepartmentmodal .modal-title").replaceWith("Error retrieving data");
       }
-    });
+    },
+    error: function (jqXHR, textStatus, errorThrown) {
+      $("#updatedepartmentmodal .modal-title").replaceWith("Error retrieving data");
+    }
+  });
 });
 
 $("#updatedepartmentform").on("submit", function (e) {
@@ -598,6 +581,7 @@ $("#updatedepartmentform").on("submit", function (e) {
         console.error("Error updating department data");
       }
     },
+
     error: function (jqXHR, textStatus, errorThrown) {
       console.error("Error updating department data:", errorThrown);
     },
@@ -608,178 +592,185 @@ $("#updatedepartmentform").on("submit", function (e) {
 // Populate Location dropdowns
 
 function populateLocationDropdown() {
-  
-  $.ajax({
-      url: 'php/getAllLocations.php',
-      type: 'GET',
-      dataType: 'json',
 
-      success: function(response) {
-          console.log(response);
-          const locationDropdown = document.getElementById('update_locationdropdown');
-          locationDropdown.innerHTML = '';
+$.ajax({
+    url: 'php/getAllLocations.php',
+    type: 'GET',
+    dataType: 'json',
 
-          response.data.forEach(function(location) {
-              const option = document.createElement('option');
-              option.value = location.id;
-              option.text = location.name;
-              locationDropdown.appendChild(option);
-          })
-      },
+    success: function(response) {
+        console.log(response);
+        const locationDropdown = document.getElementById('update_locationdropdown');
+        locationDropdown.innerHTML = '';
 
-      error: function(jqXHR, textStatus, errorThrown) {
-          console.log("Error retrieving location data:", jqXHR, textStatus, errorThrown);
-      },
-  })
+        response.data.forEach(function(location) {
+            const option = document.createElement('option');
+            option.value = location.id;
+            option.text = location.name;
+            locationDropdown.appendChild(option);
+        })
+    },
+
+    error: function(jqXHR, textStatus, errorThrown) {
+        console.log("Error retrieving location data:", jqXHR, textStatus, errorThrown);
+    },
+})
 }
 
 function populateLocationDropdownInCD() {
-  
-  $.ajax({
-      url: 'php/getAllLocations.php',
-      type: 'GET',
-      dataType: 'json',
 
-      success: function(response) {
-          console.log(response);
-          const locationDropdown = document.getElementById('locationdropdown');
-          locationDropdown.innerHTML = '';
+$.ajax({
+    url: 'php/getAllLocations.php',
+    type: 'GET',
+    dataType: 'json',
 
-          response.data.forEach(function(location) {
-              const option = document.createElement('option');
-              option.value = location.id;
-              option.text = location.name;
-              locationDropdown.appendChild(option);
-          })
-      },
+    success: function(response) {
+        console.log(response);
+        const locationDropdown = document.getElementById('locationdropdown');
+        locationDropdown.innerHTML = '';
 
-      error: function(jqXHR, textStatus, errorThrown) {
-          console.log("Error retrieving location data:", jqXHR, textStatus, errorThrown);
-      },
-  })
+        response.data.forEach(function(location) {
+            const option = document.createElement('option');
+            option.value = location.id;
+            option.text = location.name;
+            locationDropdown.appendChild(option);
+        })
+    },
+
+    error: function(jqXHR, textStatus, errorThrown) {
+        console.log("Error retrieving location data:", jqXHR, textStatus, errorThrown);
+    },
+})
 }
 
 // Update Location Data ***
 
 $("#updatelocationmodal").on("show.bs.modal", function (e) {
 
-  $.ajax({
-    url: 'php/fetchLocationByID.php',
-    type: "POST",
-    dataType: "json",
-    data: {
-      id: $(e.relatedTarget).attr("data-id")
-    },
-    success: function (data) {
-      let resultCode = data.status.code;
-
-      if (resultCode == 200) {
-        $("#update_locationid").val(data.data.id);
-        $("#update_location").val(data.data.name);
-      } else {
-        $("#updatelocationmodal .modal-title").replaceWith("Error retrieving data");
-      }
-    },
-    error: function (jqXHR, textStatus, errorThrown) {
-      $("#updatelocationmodal .modal-title").replaceWith("Error retrieving data");
-    }
-  });
-});
-
-$("#updatelocationform").on("submit", function (e) {
-
-    e.preventDefault();
-
-    const data = {
-      id: $("#update_locationid").val(),
-      updatedData: {
-        name: $("#update_location").val(),
-      }
-    };
-
     $.ajax({
-      url: 'php/updateLocation.php',
-      type: 'POST',
-      dataType: 'json',
-      data: data,
-      
+      url: 'php/fetchLocationByID.php',
+      type: "POST",
+      dataType: "json",
+      data: {
+        id: $(e.relatedTarget).attr("data-id")
+      },
+
       success: function (data) {
         let resultCode = data.status.code;
 
         if (resultCode == 200) {
-          console.log('Location record updated');
-          $("#updatelocationmodal").modal("hide");
+          $("#update_locationid").val(data.data.id);
+          $("#update_location").val(data.data.name);
         } else {
-          console.error("Error updating location data");
+          $("#updatelocationmodal .modal-title").replaceWith("Error retrieving data");
         }
       },
-
       error: function (jqXHR, textStatus, errorThrown) {
-        console.error("Error updating location data:", errorThrown);
-      },
-
+        $("#updatelocationmodal .modal-title").replaceWith("Error retrieving data");
+      }
     });
+});
+
+$("#updatelocationform").on("submit", function (e) {
+
+  e.preventDefault();
+
+  const data = {
+    id: $("#update_locationid").val(),
+    updatedData: {
+      name: $("#update_location").val(),
+    }
+  };
+
+  $.ajax({
+    url: 'php/updateLocation.php',
+    type: 'POST',
+    dataType: 'json',
+    data: data,
+    
+    success: function (data) {
+      if (data.status.code === '200') {
+        console.log('Location record updated');
+        $("#updatelocationmodal").modal("hide");
+      } else {
+        console.error("Error updating location data");
+      }
+    },
+
+    error: function (jqXHR, textStatus, errorThrown) {
+      console.error("Error updating location data:", errorThrown);
+    },
+
+  });
 });
 
 // Delete Personnel Data
 
-function deletePersonnel(id) {
+$('#deletepersonnelform').submit(function(e) {
+
+  e.preventDefault();
+  console.log('Personel deletion submission event triggered.');
 
   $.ajax({
       url: 'php/deletePersonnel.php',
       type: 'POST',
       dataType: 'json',
       data: {
-          id: id,
+          id: $('#deletepersonnelID').val(),
       },
-
       success: function(response) {
+          console.log(response);
           if (response.status.code === 200) {
               console.log('Personnel Deleted from database');
+              $('#deletepersonnelmodal').modal('hide');
           }
       },
-
       error: function(jqXHR, textStatus, errorThrown) {
           console.log("Error deleting personnel from database", jqXHR, textStatus, errorThrown);
       },
   });
-};
+});
 
 
 // Delete Department Data
 
-function deleteDepartment(id) {
+$('#deletedepartmentmodal').on('click', '.btn-danger', function(e) {
+
+  e.preventDefault();
 
   $.ajax({
       url: 'php/deleteDepartment.php',
       type: 'POST',
       dataType: 'json',
       data: {
-          id: id,
+          id: $('#deletedepartmentID').val(),
       },
-
       success: function(response) {
+          console.log(response);
           if (response.status.code === 200) {
-          console.log('Department Deleted from database');
+              console.log('Department deleted from database');
+
           }
       },
-
       error: function(jqXHR, textStatus, errorThrown) {
           console.log("Error deleting department from database", jqXHR, textStatus, errorThrown);
       },
   });
-};
+});
+
 
 // Delete Location
 
-function deleteLocation(id) {
+$('#deletelocationmodal').on('click', '.btn-danger', function(e) {
+
+  e.preventDefault();
 
   $.ajax({
       url: 'php/deleteLocation.php',
       type: 'POST',
       dataType: 'json',
       data: {
-          id: id,
+          id: $('#deletelocationID').val(),
       },
 
       success: function(response) {
@@ -791,59 +782,61 @@ function deleteLocation(id) {
       error: function(jqXHR, textStatus, errorThrown) {
           console.log("Error deleting location from database", jqXHR, textStatus, errorThrown);
       },
-  });
-};
+    });
+
+});
+
 
 // Checking Dependencies
 
 function checkLocationDependencies(locationID, callback) {
 
-  $.ajax({
-      url: 'php/checkLocationDependencies.php',
-      type: 'POST',
-      dataType: 'json',
-      data: {
-          locationID: locationID,
-      },
+$.ajax({
+    url: 'php/checkLocationDependencies.php',
+    type: 'POST',
+    dataType: 'json',
+    data: {
+        locationID: locationID,
+    },
 
-      success: function(response) {
-          if (response.dependenciesExist) {
-              callback(true);
-          } else {
-              callback(false);
-          }
-      },
+    success: function(response) {
+        if (response.dependenciesExist) {
+            callback(true);
+        } else {
+            callback(false);
+        }
+    },
 
-      error: function(jqXHR, textStatus, errorThrown) {
-          console.log("Error checking location dependencies", jqXHR, textStatus, errorThrown);
-          callback(true);
-      },
-  });
+    error: function(jqXHR, textStatus, errorThrown) {
+        console.log("Error checking location dependencies", jqXHR, textStatus, errorThrown);
+        callback(true);
+    },
+});
 }
 
 function checkDepartmentDependencies(departmentID, callback) {
 
-  $.ajax({
-      url: 'php/checkDepartmentDependencies.php',
-      type: 'POST',
-      dataType: 'json',
-      data: {
-          departmentID: departmentID,
-      },
+$.ajax({
+    url: 'php/checkDepartmentDependencies.php',
+    type: 'POST',
+    dataType: 'json',
+    data: {
+        departmentID: departmentID,
+    },
 
-      success: function(response) {
-          if (response.dependenciesExist) {
-              callback(true);
-          } else {
-              callback(false);
-          }
-      },
+    success: function(response) {
+        if (response.dependenciesExist) {
+            callback(true);
+        } else {
+            callback(false);
+        }
+    },
 
-      error: function(jqXHR, textStatus, errorThrown) {
-          console.log("Error checking department dependencies", jqXHR, textStatus, errorThrown);
-          callback(true);
-      },
-  });
+    error: function(jqXHR, textStatus, errorThrown) {
+        console.log("Error checking department dependencies", jqXHR, textStatus, errorThrown);
+        callback(true);
+    },
+});
 }
 
 // Filter Modals
@@ -852,62 +845,62 @@ function checkDepartmentDependencies(departmentID, callback) {
 
 function populatePersonnelFilterOptions() {
 
-  $.ajax({
-    url: 'php/getAllDepartments.php',
-    type: 'GET',
-    dataType: 'json',
+$.ajax({
+  url: 'php/getAllDepartments.php',
+  type: 'GET',
+  dataType: 'json',
 
-    success: function (data) {
-      if (data.status.code === '200') {
-        const departmentDropdown = $('#personnel_department');
-        departmentDropdown.empty();
+  success: function (data) {
+    if (data.status.code === '200') {
+      const departmentDropdown = $('#personnel_department');
+      departmentDropdown.empty();
 
-        data.data.forEach(function (department) {
-          departmentDropdown.append(
-            $('<option>', {
-              value: department.id,
-              text: department.departmentName,
-            })
-          );
-        });
-      } else {
-        console.error('Error fetching department data:', data.status.description);
-      }
-    },
+      data.data.forEach(function (department) {
+        departmentDropdown.append(
+          $('<option>', {
+            value: department.id,
+            text: department.departmentName,
+          })
+        );
+      });
+    } else {
+      console.error('Error fetching department data:', data.status.description);
+    }
+  },
 
-    error: function (jqXHR, textStatus, errorThrown) {
-      console.error('Error fetching department data:', jqXHR, textStatus, errorThrown);
-    },
-  });
+  error: function (jqXHR, textStatus, errorThrown) {
+    console.error('Error fetching department data:', jqXHR, textStatus, errorThrown);
+  },
+});
 
 
-  $.ajax({
-    url: 'php/getAllLocations.php',
-    type: 'GET',
-    dataType: 'json',
-    
-    success: function (data) {
-      if (data.status.code === '200') {
-        const locationDropdown = $('#personnel_location');
-        locationDropdown.empty();
+$.ajax({
+  url: 'php/getAllLocations.php',
+  type: 'GET',
+  dataType: 'json',
+  
+  success: function (data) {
+    if (data.status.code === '200') {
+      const locationDropdown = $('#personnel_location');
+      locationDropdown.empty();
 
-        data.data.forEach(function (location) {
-          locationDropdown.append(
-            $('<option>', {
-              value: location.id,
-              text: location.name,
-            })
-          );
-        });
-      } else {
-        console.error('Error fetching location data:', data.status.description);
-      }
-    },
+      data.data.forEach(function (location) {
+        locationDropdown.append(
+          $('<option>', {
+            value: location.id,
+            text: location.name,
+          })
+        );
+      });
+    } else {
+      console.error('Error fetching location data:', data.status.description);
+    }
+  },
 
-    error: function (jqXHR, textStatus, errorThrown) {
-      console.error('Error fetching location data:', jqXHR, textStatus, errorThrown);
-    },
-  });
+  error: function (jqXHR, textStatus, errorThrown) {
+    console.error('Error fetching location data:', jqXHR, textStatus, errorThrown);
+  },
+});
 }
 
 $('#personnelfiltermodal').on('show.bs.modal', function () {
@@ -934,23 +927,31 @@ function filterPersonnelData() {
       data.forEach(function (person) {
         const row = document.createElement('tr');
 
-        row.innerHTML = `
-          <td class="align-middle">${person.lastName}, ${person.firstName}</td>
-          <td class="align-middle d-none d-lg-table-cell">${person.jobTitle}</td>
-          <td class="align-middle d-none d-lg-table-cell">${person.email}</td>
-          <td class="align-middle d-none d-lg-table-cell">${person.department}</td>
-          <td class="align-middle d-none d-lg-table-cell">${person.location}</td>
-          <td class="align-middle">
-            <button class="btn btn-primary btn-sm rounded-circle edit-personnel-button" data-bs-toggle="modal" data-bs-target="#updatepersonnelmodal" data-id="${person.id}">
-              <i class="fas fa-pencil-alt"></i>
-            </button>
-            <button class="btn btn-danger btn-sm rounded-circle delete-personnel-button" data-bs-toggle="modal" data-bs-target="#deletepersonnelmodal" data-id="${person.id}">
-              <i class="fas fa-trash"></i>
-            </button>
-          </td>`;
-        
-        tBody.append(row);
-      });
+          row.innerHTML = `
+            <td class="align-middle">${person.lastName}, ${person.firstName}</td>
+            <td class="align-middle d-none d-lg-table-cell">${person.jobTitle}</td>
+            <td class="align-middle d-none d-lg-table-cell">${person.email}</td>
+            <td class="align-middle d-none d-lg-table-cell">${person.department}</td>
+            <td class="align-middle d-none d-lg-table-cell">${person.location}</td>
+            <td class="align-middle">
+              <button class="btn btn-primary btn-sm rounded-circle" data-bs-toggle="modal" data-bs-target="#updatepersonnelmodal" data-id="${person.id}">
+                <i class="fas fa-pencil-alt"></i>
+              </button>
+              <button class="btn btn-danger btn-sm rounded-circle delete-personnel-button" data-bs-toggle="modal" data-bs-target="#deletepersonnelmodal" data-id="${person.id}" data-name="${person.firstName} ${person.lastName}">
+                <i class="fas fa-trash"></i>
+              </button>
+            </td>`;
+          
+          tBody.append(row);
+        });
+
+        tBody.on('click', '.delete-personnel-button', function() {
+          let id = $(this).data('id');
+          let name = $(this).data('name');
+
+          $('#deletepersonnelID').val(id);
+          $('#deletepersonnelname').text(name);
+        });
     },
 
     error: function (jqXHR, textStatus, errorThrown) {
@@ -966,34 +967,34 @@ $('#filterpersonnelsave').on('click', function () {
 // Department Filter Modal
 
 function populateDepartmentFilterOptions() {
-  
-  $.ajax({
-      url: 'php/getAllLocations.php',
-      type: 'GET',
-      dataType: 'json',
-      
-      success: function (data) {
-        if (data.status.code === '200') {
-          const locationDropdown = $('#department_location');
-          locationDropdown.empty();
-  
-          data.data.forEach(function (location) {
-            locationDropdown.append(
-              $('<option>', {
-                value: location.id,
-                text: location.name,
-              })
-            );
-          });
-        } else {
-          console.error('Error fetching location data:', data.status.description);
-        }
-      },
 
-      error: function (jqXHR, textStatus, errorThrown) {
-        console.error('Error fetching location data:', jqXHR, textStatus, errorThrown);
-      },
-    });
+$.ajax({
+    url: 'php/getAllLocations.php',
+    type: 'GET',
+    dataType: 'json',
+    
+    success: function (data) {
+      if (data.status.code === '200') {
+        const locationDropdown = $('#department_location');
+        locationDropdown.empty();
+
+        data.data.forEach(function (location) {
+          locationDropdown.append(
+            $('<option>', {
+              value: location.id,
+              text: location.name,
+            })
+          );
+        });
+      } else {
+        console.error('Error fetching location data:', data.status.description);
+      }
+    },
+
+    error: function (jqXHR, textStatus, errorThrown) {
+      console.error('Error fetching location data:', jqXHR, textStatus, errorThrown);
+    },
+  });
 }
 
 $('#departmentfiltermodal').on('show.bs.modal', function () {
@@ -1025,12 +1026,20 @@ function filterDepartmentData() {
                               <button class="btn btn-primary btn-sm rounded-circle update-department-button" data-bs-toggle="modal" data-bs-toggle="modal" data-bs-target="#updatedepartmentmodal" data-id="${department.id}">
                                   <i class="fas fa-pencil-alt"></i>
                               </button>
-                              <button class="btn btn-danger btn-sm rounded-circle delete-department-button" data-bs-toggle="modal" data-bs-target="#deletedepartmentmodal" data-id="${department.id}">
+                              <button class="btn btn-danger btn-sm rounded-circle delete-department-button" data-bs-toggle="modal" data-bs-target="#deletedepartmentmodal" data-id="${department.id}" data-name="${department.departmentName}">
                                   <i class="fas fa-trash"></i>
                               </button>
                           </td>`);
 
               tBody.append(row);
+          });
+
+          tBody.on('click', '.delete-department-button', function() {
+            let id = $(this).data('id');
+            let name = $(this).data('name');
+
+            $('#deletedepartmentID').val(id);
+            $('#deletedepartmentname').text(name);
           });
       },
 
@@ -1047,34 +1056,34 @@ $('#filterdepartmentsave').click(function() {
 // Location filter Modal
 
 function populateLocationFilterOptions() {
-  
-  $.ajax({
-      url: 'php/getAllLocations.php',
-      type: 'POST',
-      dataType: 'json',
-      
-      success: function (data) {
-        if (data.status.code === '200') {
-          const locationDropdown = $('#location_filter');
-          locationDropdown.empty();
-  
-          data.data.forEach(function (location) {
-            locationDropdown.append(
-              $('<option>', {
-                value: location.id,
-                text: location.name,
-              })
-            );
-          });
-        } else {
-          console.error('Error fetching location data:', data.status.description);
-        }
-      },
 
-      error: function (jqXHR, textStatus, errorThrown) {
-        console.error('Error fetching location data:', jqXHR, textStatus, errorThrown);
-      },
-  });
+$.ajax({
+    url: 'php/getAllLocations.php',
+    type: 'POST',
+    dataType: 'json',
+    
+    success: function (data) {
+      if (data.status.code === '200') {
+        const locationDropdown = $('#location_filter');
+        locationDropdown.empty();
+
+        data.data.forEach(function (location) {
+          locationDropdown.append(
+            $('<option>', {
+              value: location.id,
+              text: location.name,
+            })
+          );
+        });
+      } else {
+        console.error('Error fetching location data:', data.status.description);
+      }
+    },
+
+    error: function (jqXHR, textStatus, errorThrown) {
+      console.error('Error fetching location data:', jqXHR, textStatus, errorThrown);
+    },
+});
 }
 
 $('#locationfiltermodal').on('show.bs.modal', function () {
@@ -1105,12 +1114,21 @@ function filterLocationData() {
                           <button class="btn btn-primary btn-sm rounded-circle update-location-button" data-bs-toggle="modal" data-bs-target="#updatelocationmodal" data-id="${location.id}">
                               <i class="fas fa-pencil-alt"></i>
                           </button>
-                          <button class="btn btn-danger btn-sm rounded-circle delete-location-button" data-bs-toggle="modal" data-bs-target="#deletelocationmodal" data-id="${location.id}">
+                          <button class="btn btn-danger btn-sm rounded-circle delete-location-button" data-bs-toggle="modal" data-bs-target="#deletelocationmodal" data-id="${location.id}" data-name="${location.name}">
                               <i class="fas fa-trash"></i>
                           </button>
                           </td>`);
 
               tBody.append(row);
+          });
+
+          tBody.on('click', '.delete-location-button', function() {
+            let id = $(this).data('id');
+            let name = $(this).data('name');
+
+            $('#deletelocationID').val(id);
+            $('#deletelocationname').text(name);
+            $('#deletelocationmodal').modal('show');
           });
       },
       
@@ -1128,9 +1146,9 @@ $('#filterlocationsave').click(function() {
 // Preloader
 
 $(window).on('load', function () {
-    if ($('#preloader').length) {
-        $('#preloader').delay(1000).fadeOut('slow', function () {
-            $(this).remove();
-    });
-    }
+  if ($('#preloader').length) {
+      $('#preloader').delay(1000).fadeOut('slow', function () {
+          $(this).remove();
+  });
+  }
 });
