@@ -20,12 +20,13 @@ function displayPersonnelSearch(searchQuery) {
   const rows = personnelTable.querySelectorAll('tr');
 
   rows.forEach(function(row) {
-    const firstName = row.querySelector('td:nth-child(2)').textContent.toLowerCase();
-    const lastName = row.querySelector('td:nth-child(3)').textContent.toLowerCase();
-    const department = row.querySelector('td:nth-child(6)').textContent.toLowerCase();
-    const location = row.querySelector('td:nth-child(7)').textContent.toLowerCase();
+    const name = row.querySelector('td:nth-child(1)').textContent.toLowerCase();
+    const jobTitle = row.querySelector('td:nth-child(2)').textContent.toLowerCase();
+    const email = row.querySelector('td:nth-child(3)').textContent.toLowerCase();
+    const department = row.querySelector('td:nth-child(4)').textContent.toLowerCase();
+    const location = row.querySelector('td:nth-child(5)').textContent.toLowerCase();
 
-    if(firstName.includes(searchQuery) || lastName.includes(searchQuery) || department.includes(searchQuery) || location.includes(searchQuery)) {
+    if(name.includes(searchQuery) || jobTitle.includes(searchQuery) || email.includes(searchQuery) || department.includes(searchQuery) || location.includes(searchQuery)) {
       row.style.display = 'table-row'
     } else {
       row.style.display = 'none';
@@ -38,8 +39,8 @@ function displayDepartmentSearch(searchQuery) {
   const rows = departmentTable.querySelectorAll('tr');
 
   rows.forEach(function(row) {
-    const department = row.querySelector('td:nth-child(2)').textContent.toLowerCase();
-    const location = row.querySelector('td:nth-child(3)').textContent.toLowerCase();
+    const department = row.querySelector('td:nth-child(1)').textContent.toLowerCase();
+    const location = row.querySelector('td:nth-child(2)').textContent.toLowerCase();
 
     if (department.includes(searchQuery) || location.includes(searchQuery)) {
       row.style.display = 'table-row'
@@ -54,7 +55,7 @@ function displayLocationSearch(searchQuery) {
   const rows = locationTable.querySelectorAll('tr');
 
   rows.forEach(function(row) {
-    const location = row.querySelector('td:nth-child(2)').textContent.toLowerCase();
+    const location = row.querySelector('td:nth-child(1)').textContent.toLowerCase();
 
     if (location.includes(searchQuery)) {
       row.style.display = 'table-row'

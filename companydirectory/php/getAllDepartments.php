@@ -31,7 +31,7 @@
 	
 	$query = 'SELECT department.id, department.name AS departmentName, location.name AS locationName FROM department 
 			  LEFT JOIN location ON department.locationID = location.id
-			  ORDER BY department.id';
+			  ORDER BY department.name ASC';
 
 	$result = $conn->query($query);
 	
