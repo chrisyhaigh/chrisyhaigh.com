@@ -16,45 +16,51 @@ $('#searchbar').keyup(function() {
 
 
 function displayPersonnelSearch(searchQuery) {
-const personnelTable = document.getElementById('personneldata');
-const rows = personnelTable.querySelectorAll('tr');
+
+  const personnelTable = document.getElementById('personneldata');
+  const rows = personnelTable.querySelectorAll('tr');
 
 rows.forEach(function(row) {
-  const name = row.querySelector('td:nth-child(1)').textContent.toLowerCase();
-  const jobTitle = row.querySelector('td:nth-child(2)').textContent.toLowerCase();
-  const email = row.querySelector('td:nth-child(3)').textContent.toLowerCase();
-  const department = row.querySelector('td:nth-child(4)').textContent.toLowerCase();
-  const location = row.querySelector('td:nth-child(5)').textContent.toLowerCase();
 
-  if(name.includes(searchQuery) || jobTitle.includes(searchQuery) || email.includes(searchQuery) || department.includes(searchQuery) || location.includes(searchQuery)) {
-    row.style.display = 'table-row'
-  } else {
-    row.style.display = 'none';
-  }
-});
+    const name = row.querySelector('td:nth-child(1)').textContent.toLowerCase();
+    const jobTitle = row.querySelector('td:nth-child(2)').textContent.toLowerCase();
+    const email = row.querySelector('td:nth-child(3)').textContent.toLowerCase();
+    const department = row.querySelector('td:nth-child(4)').textContent.toLowerCase();
+    const location = row.querySelector('td:nth-child(5)').textContent.toLowerCase();
+
+    if(name.includes(searchQuery) || jobTitle.includes(searchQuery) || email.includes(searchQuery) || department.includes(searchQuery) || location.includes(searchQuery)) {
+      row.style.display = 'table-row'
+    } else {
+      row.style.display = 'none';
+    }
+  });
 }
 
 function displayDepartmentSearch(searchQuery) {
-const departmentTable = document.getElementById('departmentdata');
-const rows = departmentTable.querySelectorAll('tr');
+
+  const departmentTable = document.getElementById('departmentdata');
+  const rows = departmentTable.querySelectorAll('tr');
 
 rows.forEach(function(row) {
-  const department = row.querySelector('td:nth-child(1)').textContent.toLowerCase();
-  const location = row.querySelector('td:nth-child(2)').textContent.toLowerCase();
 
-  if (department.includes(searchQuery) || location.includes(searchQuery)) {
-    row.style.display = 'table-row'
-  } else {
-    row.style.display = 'none';
-  }
-});
+    const department = row.querySelector('td:nth-child(1)').textContent.toLowerCase();
+    const location = row.querySelector('td:nth-child(2)').textContent.toLowerCase();
+
+    if (department.includes(searchQuery) || location.includes(searchQuery)) {
+      row.style.display = 'table-row'
+    } else {
+      row.style.display = 'none';
+    }
+  });
 }
 
 function displayLocationSearch(searchQuery) {
-const locationTable = document.getElementById('locationdata');
-const rows = locationTable.querySelectorAll('tr');
+
+  const locationTable = document.getElementById('locationdata');
+  const rows = locationTable.querySelectorAll('tr');
 
 rows.forEach(function(row) {
+
   const location = row.querySelector('td:nth-child(1)').textContent.toLowerCase();
 
   if (location.includes(searchQuery)) {
@@ -120,7 +126,7 @@ $('#filterbutton').click(function() {
   }
 });
 
-// Populate Tabs with Data
+// Populate Personnel Table
 
 function populatePersonnelTab() {
 
@@ -144,7 +150,7 @@ function populatePersonnelTab() {
                               <button class="btn btn-primary btn-sm rounded-circle" data-bs-toggle="modal" data-bs-target="#updatepersonnelmodal" data-id="${person.id}">
                                   <i class="fas fa-pencil-alt"></i>
                               </button>
-                              <button class="btn btn-danger btn-sm rounded-circle delete-personnel-button" data-bs-toggle="modal" data-bs-target="#deletepersonnelmodal" data-id="${person.id}" data-name="${person.firstName} ${person.lastName}">
+                              <button class="btn btn-danger btn-sm rounded-circle delete-personnel-button" data-bs-toggle="modal" data-id="${person.id}" data-name="${person.firstName} ${person.lastName}">
                                   <i class="fas fa-trash"></i>
                               </button>
                             </td>`);
@@ -158,6 +164,7 @@ function populatePersonnelTab() {
 
               $('#deletepersonnelID').val(id);
               $('#deletepersonnelname').text(name);
+              $('#deletepersonnelmodal').modal('show');
             });
 
         },
@@ -166,6 +173,35 @@ function populatePersonnelTab() {
         },
     });
 }
+
+// Delete Personnel Data
+
+$('#deletepersonnelform').submit(function(e) {
+
+  e.preventDefault();
+  console.log('Personel deletion submission event triggered.');
+
+  $.ajax({
+      url: 'php/deletePersonnel.php',
+      type: 'POST',
+      dataType: 'json',
+      data: {
+          id: $('#deletepersonnelID').val(),
+      },
+      success: function(response) {
+          console.log(response);
+          if (response.status.code === 200) {
+              console.log('Personnel Deleted from database');
+              $('#deletepersonnelmodal').modal('hide');
+          }
+      },
+      error: function(jqXHR, textStatus, errorThrown) {
+          console.log("Error deleting personnel from database", jqXHR, textStatus, errorThrown);
+      },
+  });
+});
+
+// Populate Department Table
 
 function populateDepartmentTab() {
 
@@ -186,7 +222,7 @@ $.ajax({
                             <button class="btn btn-primary btn-sm rounded-circle" data-bs-toggle="modal" data-bs-toggle="modal" data-bs-target="#updatedepartmentmodal" data-id="${departments.id}">
                                 <i class="fas fa-pencil-alt"></i>
                             </button>
-                            <button class="btn btn-danger btn-sm rounded-circle delete-department-button" data-bs-toggle="modal" data-bs-target="#deletedepartmentmodal" data-id="${departments.id}" data-name="${departments.departmentName}">
+                            <button class="btn btn-danger btn-sm rounded-circle delete-department-button" data-bs-toggle="modal" data-id="${departments.id}" data-name="${departments.departmentName}">
                                 <i class="fas fa-trash"></i>
                             </button>
                         </td>`);
@@ -194,12 +230,36 @@ $.ajax({
             tBody.append(row);
             });
             
+            // Check for dependencies before proceeding to delete
+
             tBody.on('click', '.delete-department-button', function() {
+
               let id = $(this).data('id');
               let name = $(this).data('name');
 
               $('#deletedepartmentID').val(id);
               $('#deletedepartmentname').text(name);
+
+              $.ajax({
+                  url: 'php/checkDepartmentDependencies.php',
+                  type: 'POST',
+                  dataType: 'json',
+                  data: {
+                    departmentID: $('#deletedepartmentID').val(),
+                  },
+                  success: function(response) {
+                    if (response.dependenciesExist) {
+                      $('#unabledeletedepartmentmodal').modal('show');
+                      $('#numberpersonnel').text(response.dependencyCount);
+                    } else {
+                      $('#deletedepartmentmodal').modal('show');
+                    }
+                  },
+              
+                  error: function(jqXHR, textStatus, errorThrown) {
+                    console.log("Error checking department dependencies", jqXHR, textStatus, errorThrown);
+                  },
+              });
             });
     },
 
@@ -208,6 +268,37 @@ $.ajax({
     },
   });
 }
+
+// Delete Department Data
+
+$('#deletedepartmentmodal').on('click', '.btn-danger', function(e) {
+
+  e.preventDefault();
+
+  $.ajax({
+      url: 'php/deleteDepartment.php',
+      type: 'POST',
+      dataType: 'json',
+      data: {
+          id: $('#deletedepartmentID').val(),
+      },
+      success: function(response) {
+          console.log(response);
+          if (response.status.code === 200) {
+              console.log('Department deleted from database');
+
+          } else {
+
+          }
+      },
+      error: function(jqXHR, textStatus, errorThrown) {
+          console.log("Error deleting department from database", jqXHR, textStatus, errorThrown);
+      },
+  });
+});
+
+
+// Populate Location Table
 
 function populateLocationTab() {
 
@@ -229,7 +320,7 @@ $.ajax({
                             <button class="btn btn-primary btn-sm rounded-circle" data-bs-toggle="modal" data-bs-target="#updatelocationmodal" data-id="${office.id}">
                                 <i class="fas fa-pencil-alt"></i>
                             </button>
-                            <button class="btn btn-danger btn-sm rounded-circle delete-location-button" data-bs-toggle="modal" data-bs-target="#deletelocationmodal" data-id="${office.id}" data-name="${office.name}">
+                            <button class="btn btn-danger btn-sm rounded-circle delete-location-button" data-bs-toggle="modal" data-id="${office.id}" data-name="${office.name}">
                                 <i class="fas fa-trash"></i>
                             </button>
                         </td>`);
@@ -238,13 +329,37 @@ $.ajax({
             tBody.append(row);
             });
             
+            // Check for dependencies before proceeding to delete
+
             tBody.on('click', '.delete-location-button', function() {
+
               let id = $(this).data('id');
               let name = $(this).data('name');
 
               $('#deletelocationID').val(id);
               $('#deletelocationname').text(name);
-              $('#deletelocationmodal').modal('show');
+
+              $.ajax({
+                  url: 'php/checkLocationDependencies.php',
+                  type: 'POST',
+                  dataType: 'json',
+                  data: {
+                      locationID: $('#deletelocationID').val(),
+                  },
+            
+                  success: function(response) {
+                      if (response.dependenciesExist) {
+                        $('#unabledeletelocationmodal').modal('show');
+                        $('#numberdepartments').text(response.dependencyCount);
+                      } else {
+                        $('#deletelocationmodal').modal('show');
+                      }
+                  },
+            
+                  error: function(jqXHR, textStatus, errorThrown) {
+                      console.log("Error checking location dependencies", jqXHR, textStatus, errorThrown);
+                  },
+              });
             });
     },
 
@@ -253,6 +368,32 @@ $.ajax({
     },
   });
 }
+
+// Delete Location Data
+
+$('#deletelocationmodal').on('click', '.btn-danger', function(e) {
+
+  e.preventDefault();
+
+  $.ajax({
+      url: 'php/deleteLocation.php',
+      type: 'POST',
+      dataType: 'json',
+      data: {
+        id: $('#deletelocationID').val(),
+      },
+
+      success: function(response) {
+          if (response.status.code === 200) {
+            console.log('Location Deleted from database');;
+          }
+      },
+
+      error: function(jqXHR, textStatus, errorThrown) {
+          console.log("Error deleting location from database", jqXHR, textStatus, errorThrown);
+      },
+    });
+});
 
 $(document).ready(function() {
   populatePersonnelTab();
@@ -524,67 +665,64 @@ function populateDepartmentDropdownInCP() {
   });
 }
 
+// Update Department Data
 
 $("#updatedepartmentmodal").on("show.bs.modal", function (e) {
-
   $.ajax({
-    url: 'php/fetchDepartmentByID.php', 
-    type: "POST",
-    dataType: "json",
-    data: {
-      id: $(e.relatedTarget).attr("data-id")
-    },
-    success: function (data) {
-      let resultCode = data.status.code;
+      url: 'php/fetchDepartmentByID.php',
+      type: "POST",
+      dataType: "json",
+      data: {
+          id: $(e.relatedTarget).attr("data-id"),
+      },
+      success: function (data) {
+          let resultCode = data.status.code;
 
-      if (resultCode == 200) {
-        $("#update_departmentid").val(data.data.id);
-        $("#update_departmentname").val(data.data.name);
-        // Populate location dropdown if needed
-        populateLocationDropdown();
-
-        $("#update_locationdropdown").val(data.data.locationID);
-      } else {
-        $("#updatedepartmentmodal .modal-title").replaceWith("Error retrieving data");
+          if (resultCode == 200) {
+              $("#updatedepartmentid").val(data.data.id);
+              $("#update_departmentname").val(data.data.name);
+              
+              // Populate the location dropdown here
+              populateLocationDropdown(data.data.locationID);
+          } else {
+              $("#updatedepartmentmodal .modal-title").replaceWith("Error retrieving data");
+          }
+      },
+      error: function (jqXHR, textStatus, errorThrown) {
+          $("#updatedepartmentmodal .modal-title").replaceWith("Error retrieving data");
       }
-    },
-    error: function (jqXHR, textStatus, errorThrown) {
-      $("#updatedepartmentmodal .modal-title").replaceWith("Error retrieving data");
-    }
   });
 });
 
 $("#updatedepartmentform").on("submit", function (e) {
-  // Stop the default form submission
   e.preventDefault();
 
   const data = {
-    id: $("#update_departmentid").val(),
-    updatedData: {
-      name: $("#update_departmentname").val(),
-      locationID: $("#update_locationdropdown").val()
-    }
+      id: $("#updatedepartmentid").val(),
+      updatedData: {
+          name: $("#update_departmentname").val(),
+          locationID: $("#update_locationdropdown").val()
+      }
   };
 
   $.ajax({
-    url: 'php/updateDepartment.php',
-    type: 'POST',
-    dataType: 'json',
-    data: data,
-    success: function (data) {
-      let resultCode = data.status.code;
+      url: 'php/updateDepartment.php',
+      type: 'POST',
+      dataType: 'json',
+      data: data,
+      success: function (data) {
+          let resultCode = data.status.code;
 
-      if (resultCode == 200) {
-        console.log('Department record updated');
-        $("#updatedepartmentmodal").modal("hide");
-      } else {
-        console.error("Error updating department data");
-      }
-    },
-
-    error: function (jqXHR, textStatus, errorThrown) {
-      console.error("Error updating department data:", errorThrown);
-    },
+          if (resultCode == 200) {
+              console.log('Department record updated');
+              $("#updatedepartmentmodal").modal("hide");
+          } else {
+              console.error("Error updating department data");
+          }
+      },
+      error: function (jqXHR, textStatus, errorThrown) {
+          console.error("Error updating department data:", errorThrown);
+      },
   });
 });
 
@@ -599,7 +737,6 @@ $.ajax({
     dataType: 'json',
 
     success: function(response) {
-        console.log(response);
         const locationDropdown = document.getElementById('update_locationdropdown');
         locationDropdown.innerHTML = '';
 
@@ -643,7 +780,7 @@ $.ajax({
 })
 }
 
-// Update Location Data ***
+// Update Location Data
 
 $("#updatelocationmodal").on("show.bs.modal", function (e) {
 
@@ -703,143 +840,6 @@ $("#updatelocationform").on("submit", function (e) {
 
   });
 });
-
-// Delete Personnel Data
-
-$('#deletepersonnelform').submit(function(e) {
-
-  e.preventDefault();
-  console.log('Personel deletion submission event triggered.');
-
-  $.ajax({
-      url: 'php/deletePersonnel.php',
-      type: 'POST',
-      dataType: 'json',
-      data: {
-          id: $('#deletepersonnelID').val(),
-      },
-      success: function(response) {
-          console.log(response);
-          if (response.status.code === 200) {
-              console.log('Personnel Deleted from database');
-              $('#deletepersonnelmodal').modal('hide');
-          }
-      },
-      error: function(jqXHR, textStatus, errorThrown) {
-          console.log("Error deleting personnel from database", jqXHR, textStatus, errorThrown);
-      },
-  });
-});
-
-
-// Delete Department Data
-
-$('#deletedepartmentmodal').on('click', '.btn-danger', function(e) {
-
-  e.preventDefault();
-
-  $.ajax({
-      url: 'php/deleteDepartment.php',
-      type: 'POST',
-      dataType: 'json',
-      data: {
-          id: $('#deletedepartmentID').val(),
-      },
-      success: function(response) {
-          console.log(response);
-          if (response.status.code === 200) {
-              console.log('Department deleted from database');
-
-          }
-      },
-      error: function(jqXHR, textStatus, errorThrown) {
-          console.log("Error deleting department from database", jqXHR, textStatus, errorThrown);
-      },
-  });
-});
-
-
-// Delete Location
-
-$('#deletelocationmodal').on('click', '.btn-danger', function(e) {
-
-  e.preventDefault();
-
-  $.ajax({
-      url: 'php/deleteLocation.php',
-      type: 'POST',
-      dataType: 'json',
-      data: {
-          id: $('#deletelocationID').val(),
-      },
-
-      success: function(response) {
-          if (response.status.code === 200) {
-            console.log('Location Deleted from database');;
-          }
-      },
-
-      error: function(jqXHR, textStatus, errorThrown) {
-          console.log("Error deleting location from database", jqXHR, textStatus, errorThrown);
-      },
-    });
-
-});
-
-
-// Checking Dependencies
-
-function checkLocationDependencies(locationID, callback) {
-
-$.ajax({
-    url: 'php/checkLocationDependencies.php',
-    type: 'POST',
-    dataType: 'json',
-    data: {
-        locationID: locationID,
-    },
-
-    success: function(response) {
-        if (response.dependenciesExist) {
-            callback(true);
-        } else {
-            callback(false);
-        }
-    },
-
-    error: function(jqXHR, textStatus, errorThrown) {
-        console.log("Error checking location dependencies", jqXHR, textStatus, errorThrown);
-        callback(true);
-    },
-});
-}
-
-function checkDepartmentDependencies(departmentID, callback) {
-
-$.ajax({
-    url: 'php/checkDepartmentDependencies.php',
-    type: 'POST',
-    dataType: 'json',
-    data: {
-        departmentID: departmentID,
-    },
-
-    success: function(response) {
-        if (response.dependenciesExist) {
-            callback(true);
-        } else {
-            callback(false);
-        }
-    },
-
-    error: function(jqXHR, textStatus, errorThrown) {
-        console.log("Error checking department dependencies", jqXHR, textStatus, errorThrown);
-        callback(true);
-    },
-});
-}
-
-// Filter Modals
 
 // Personnel Filter modal
 

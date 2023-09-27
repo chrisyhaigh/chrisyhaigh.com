@@ -42,6 +42,7 @@
 
   
     $output['dependenciesExist'] = ($count > 0);
+    $output['dependencyCount'] = $count;
 
     mysqli_close($conn);
 
