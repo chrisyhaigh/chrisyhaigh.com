@@ -146,7 +146,7 @@ function populatePersonnelTab() {
                 row.append(`<td class="align-middle text-nowrap d-none d-lg-table-cell" id="email">${person.email}</td>`);
                 row.append(`<td class="align-middle text-nowrap d-none d-lg-table-cell" id="department">${person.department}</td>`);
                 row.append(`<td class="align-middle text-nowrap d-none d-lg-table-cell" id="location">${person.location}</td>`);
-                row.append(`<td class="align-middle">
+                row.append(`<td class="text-end text-nowrap">
                               <button class="btn btn-primary btn-sm rounded-circle" data-bs-toggle="modal" data-bs-target="#updatepersonnelmodal" data-id="${person.id}">
                                   <i class="fas fa-pencil-alt"></i>
                               </button>
@@ -218,7 +218,7 @@ $.ajax({
             let row = $(`<tr>`);
             row.append(`<td class="align-middle">${departments.departmentName}</td>`);
             row.append(`<td class="d-none d-md-table-cell align-middle">${departments.locationName}</td>`);
-            row.append(`<td>
+            row.append(`<td class="text-end text-nowrap">
                             <button class="btn btn-primary btn-sm rounded-circle" data-bs-toggle="modal" data-bs-toggle="modal" data-bs-target="#updatedepartmentmodal" data-id="${departments.id}">
                                 <i class="fas fa-pencil-alt"></i>
                             </button>
@@ -316,7 +316,7 @@ $.ajax({
             let row = $(`<tr>`);
             
             row.append(`<td class="align-middle">${office.name}</td>`);
-            row.append(`<td>
+            row.append(`<<td class="text-end text-nowrap">
                             <button class="btn btn-primary btn-sm rounded-circle" data-bs-toggle="modal" data-bs-target="#updatelocationmodal" data-id="${office.id}">
                                 <i class="fas fa-pencil-alt"></i>
                             </button>
@@ -928,12 +928,12 @@ function filterPersonnelData() {
         const row = document.createElement('tr');
 
           row.innerHTML = `
-            <td class="align-middle">${person.lastName}, ${person.firstName}</td>
-            <td class="align-middle d-none d-lg-table-cell">${person.jobTitle}</td>
-            <td class="align-middle d-none d-lg-table-cell">${person.email}</td>
-            <td class="align-middle d-none d-lg-table-cell">${person.department}</td>
-            <td class="align-middle d-none d-lg-table-cell">${person.location}</td>
-            <td class="align-middle">
+            <td class="align-middle text-nowrap">${person.lastName}, ${person.firstName}</td>
+            <td class="align-middle text-nowrap d-none d-md-table-cell">${person.jobTitle}</td>
+            <td class="align-middle text-nowrap d-none d-md-table-cell">${person.email}</td>
+            <td class="align-middle text-nowrap d-none d-md-table-cell">${person.department}</td>
+            <td class="align-middle text-nowrap d-none d-md-table-cell">${person.location}</td>
+            <td class="text-end text-nowrap">
               <button class="btn btn-primary btn-sm rounded-circle" data-bs-toggle="modal" data-bs-target="#updatepersonnelmodal" data-id="${person.id}">
                 <i class="fas fa-pencil-alt"></i>
               </button>
@@ -1022,7 +1022,7 @@ function filterDepartmentData() {
 
               row.append(`<td class="align-middle">${department.departmentName}</td>`);
               row.append(`<td class="d-none d-md-table-cell align-middle">${department.locationName}</td>`);
-              row.append(`<td>
+              row.append(`<td class="text-end text-nowrap">
                               <button class="btn btn-primary btn-sm rounded-circle update-department-button" data-bs-toggle="modal" data-bs-toggle="modal" data-bs-target="#updatedepartmentmodal" data-id="${department.id}">
                                   <i class="fas fa-pencil-alt"></i>
                               </button>
@@ -1110,13 +1110,13 @@ function filterLocationData() {
               let row = $(`<tr>`);
               
               row.append(`<td class="align-middle">${location.name}</td>`);
-              row.append(`<td>
-                          <button class="btn btn-primary btn-sm rounded-circle update-location-button" data-bs-toggle="modal" data-bs-target="#updatelocationmodal" data-id="${location.id}">
-                              <i class="fas fa-pencil-alt"></i>
-                          </button>
-                          <button class="btn btn-danger btn-sm rounded-circle delete-location-button" data-bs-toggle="modal" data-bs-target="#deletelocationmodal" data-id="${location.id}" data-name="${location.name}">
-                              <i class="fas fa-trash"></i>
-                          </button>
+              row.append(`<td class="text-end text-nowrap">
+                            <button class="btn btn-primary btn-sm rounded-circle update-location-button" data-bs-toggle="modal" data-bs-target="#updatelocationmodal" data-id="${location.id}">
+                                <i class="fas fa-pencil-alt"></i>
+                            </button>
+                            <button class="btn btn-danger btn-sm rounded-circle delete-location-button" data-bs-toggle="modal" data-bs-target="#deletelocationmodal" data-id="${location.id}" data-name="${location.name}">
+                                <i class="fas fa-trash"></i>
+                            </button>
                           </td>`);
 
               tBody.append(row);

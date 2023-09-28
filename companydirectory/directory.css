@@ -2,11 +2,19 @@ body {
     font-family: 'Source Sans 3', sans-serif;
     margin: 0;
     padding: 0;
+    overflow: hidden;
 }
 
+section {
+    display: flex;
+    flex-flow: column;
+}
+
+
 .tab-content {
-    overflow-y: auto;
-    max-height: 550px; 
+    flex: 1;
+    overflow-y: scroll;
+    height: calc(100vh - 200px);
 }
 
 #preloader {
