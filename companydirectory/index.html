@@ -14,7 +14,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
     <link rel="manifest" href="favicons/site.webmanifest">
     <link rel="stylesheet" href="libraryFolder/bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" href="directory.css">
+    <link rel="stylesheet" href="css/directory.css">
 </head>
 <body>
 
@@ -72,16 +72,6 @@
         <!-- Personnel Tab Content -->
         <div class="tab-pane fade show active" id="personneltab" role="tabpanel" aria-labelledby="location-tab" tabindex="0">
           <table class="table table-striped table-responsive-md">
-              <thead>
-                  <tr>
-                      <th>Name</th>
-                      <th class="d-none d-lg-table-cell">Job Title</th>
-                      <th class="d-none d-lg-table-cell">Email</th>
-                      <th class="d-none d-lg-table-cell">Department</th>
-                      <th class="d-none d-lg-table-cell">Location</th>
-                      <th class="text-end text-nowrap"></th>
-                  </tr>
-              </thead>
               <tbody id="personneldata">
                 <tr class="personnel-row">
                   <!---Personnel Table Data---->
@@ -99,13 +89,6 @@
         <!-- Department Tab Content -->
         <div class="tab-pane fade" id="departmenttab" role="tabpanel" aria-labelledby="department-tab" tabindex="0">
             <table class="table table-striped table-responsive-md" id="departmenttable">
-              <thead>
-                <tr>
-                  <th>Department</th>
-                  <th class="d-none d-md-table-cell">Location</th>
-                  <th class="text-end text-nowrap"></th>
-                </tr>
-              </thead>
               <tbody id="departmentdata">
                 <!-----Department Table Data----->
               </tbody>
@@ -120,12 +103,6 @@
         <!-- Location Tab Content -->
         <div class="tab-pane fade" id="locationtab" role="tabpanel" aria-labelledby="location-tab" tabindex="0">
             <table class="table table-responsive-md table-striped" id="locationtable">
-              <thead>
-                <tr>
-                  <th>Location</th>
-                  <th class="text-end text-nowrap"></th>
-                </tr>
-              </thead>
               <tbody id="locationdata">
                 <!-----Location Table Data---->
               </tbody>
@@ -554,6 +531,6 @@
     
     <script src="libraryFolder/jquery/jquery-3.7.0.min.js"></script>
     <script src="libraryFolder/bootstrap/bootstrap.min.js"></script>
-    <script src="directory.js"></script>
+    <script src="js/directory.js"></script>
 </body>
 </html>
