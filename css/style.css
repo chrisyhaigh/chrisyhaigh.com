@@ -30,11 +30,12 @@ body {
 }
 
 .intro-text {
-    padding-top: 10px;
+    padding-top: 70px;
     text-align: left;
     font-weight: 900;
     color: white;
     font-size: 3rem;
+
 }
 
 .intro-text span {
@@ -155,6 +156,7 @@ body {
 }
 
 .timeline {
+    margin-left: 30px;
     border-left: 1px solid white;
     height: 100%;
 }
