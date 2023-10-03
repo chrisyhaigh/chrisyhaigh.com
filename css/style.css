@@ -3,7 +3,7 @@ html {
 }
 
 body {
-    background-color: #0f0f0f;
+    background-color: #000000;
     font-family: 'Rubik', sans-serif;
 }
 
@@ -30,6 +30,7 @@ body {
 }
 
 .intro-text {
+    padding-top: 10px;
     text-align: left;
     font-weight: 900;
     color: white;
@@ -50,6 +51,10 @@ body {
     .intro-text span {
         font-size: 5rem;
     }
+}
+
+#profile {
+    background-color: #0D0D0D;
 }
 
 .web-dev {
@@ -91,36 +96,83 @@ body {
     border-radius: 90%;
 }
 
-#facebook-logo {
-    background-color: #8a2be2;
-    border-radius: 100%;
-}
-
-span {
-    color: #03fa6e;
+.fa-brands {
+    font-size: 40px;
 }
 
 #cirriculumvitae {
-    background-color: #060606;
+    background-color: #121212;
     color: white;
 }
 
-#skills {
-    background-color: #080808;
-    color: #ffffff;
+.checkpoint {
+    background-color: #0D0D0D;
+    border: 1px solid white;
+    font-size: 12px;
+    padding: 15px; 
+    margin-top: 30px;
+    margin-left: 35px;
+    margin-right: 35px;
+    position: relative;
 }
+
+.checkpoint-1 {
+    background-color: #0D0D0D;
+    border: 1px solid white;
+    font-size: 12px;
+    padding: 15px; 
+    margin-top: 30px;
+    margin-left: 35px;
+    margin-right: 35px;
+    position: relative;
+}
+
+.checkpoint::before,
+.checkpoint-1::before {
+    content: '';
+    width: 35px;
+    height: 0.2%;
+    background-color: white;
+    position: absolute;
+    left: -35px;
+    top: -1px;
+}
+
+.checkpoint p em {
+    color: #03fa6e;
+}
+
+.checkpoint-1 p em {
+    color: #03fa6e;
+}
+
+.checkpoint h6 {
+    color: #8a2be2;
+}
+
+.checkpoint-1 h6 {
+    color: #8a2be2;
+}
+
+.timeline {
+    border-left: 1px solid white;
+    height: 100%;
+}
+
 .portfolio-bg-container {
-    background-color: #080808;
+    background-color: #0D0D0D;
 }
 
-.card-body {
-    background-color: #111111;
-    color: white;
-    text-align: center;
+.portfolio-image {
+    height: 270px;
 }
 
 .card-image {
-    filter: brightness(50%);
+    filter: brightness(30%);
+}
+
+.card-text {
+    font-size: 12px;
 }
 
 .card-image:hover {
@@ -131,13 +183,26 @@ span {
     text-align: center;
 }
 
-.card-text {
-    font-size: 14px;
-}
 
 .contact-bg-container {
     background-color: #000000;
 }
+
+a:hover, h5:hover {
+    color: #03fa6e;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+#name::placeholder,
+#email::placeholder,
+#message::placeholder {
+    color: grey; 
+}
+
 
 .social-media {
     margin: 0;
@@ -174,6 +239,8 @@ button {
 }
 
 .btn {
+    margin-top: 3rem;
+    margin-bottom: 1rem;
     background-color: blueviolet;
     color: white;
     transition: background-color 0.1s;
