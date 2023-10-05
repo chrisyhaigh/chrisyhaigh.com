@@ -3,31 +3,70 @@ html {
 }
 
 body {
-    background-color: #000000;
     font-family: 'Rubik', sans-serif;
+}
+
+.navbar-background {
+    background-color: #000000;
 }
 
 .landing-section {
     display: flex;
     justify-content: center;
     background-color: #000000;
-    position: relative;
+    background-size: 24%;
+    height: 95vh;
+}
+
+.image-container {
+    margin-top: 1.75rem;
+    margin-left: 8.755rem;
+    height: 184px;
+    width: 184px; 
+    background-color: #8a2be2;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-image {
     overflow: hidden;
+    border-radius: 50%
 }
 
-.nav-logo {
-    font-family: 'Bebas Neue', sans-serif;
-    background: linear-gradient(to right, #03fa6e 37%, #8a2be2 63%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    font-size: 1.705rem;
-    font-weight: light;
+.circle-image {
+    width: 75%;
 }
 
-.navbar-background {
-    background-color: #000000;
+
+.title p {
+    color: #8a2be2;
+    width: 100%;
 }
+
+.web-dev {
+    margin-bottom: 14px;
+}
+
+
+.intro-social {
+    margin-left: 3.3rem;
+    width: 100%;
+    
+}
+
+
+.intro-social-media a {
+    margin-right: 1.4rem;
+    margin-bottom: 1em;
+    margin-top: 0.8em;
+}
+
+.intro-section {
+    margin-top: 6rem;
+}
+
 
 .intro-text {
     padding-top: 70px;
@@ -35,27 +74,14 @@ body {
     font-weight: 900;
     color: white;
     font-size: 3rem;
+    margin-left: 5rem;
 
 }
 
 .intro-text span {
     color: #03fa6e;
-    font-family: 'Readex Pro', sans-serif;
-    font-size: 7rem;
-}
-
-@media (max-width: 600px) {
-    .intro-text {
-        font-size: 1.875rem;
-    }
-
-    .intro-text span {
-        font-size: 5rem;
-    }
-}
-
-#profile {
-    background-color: #0D0D0D;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 5rem;
 }
 
 .web-dev {
@@ -63,26 +89,119 @@ body {
     font-weight: 200;
     color: white;
     font-size: 1rem;
-    margin-left: .275em;
+    margin-left: 5.275em;
 }
 
-.portfolio-btn {
-    width: auto;
-    margin-left: .275em;
+@media (max-width: 900px) {
+    .intro-text span {
+        font-size: 5rem;
+        margin-right: 6rem;
+    }
+
+    .image-container {
+        margin-top: 2.5rem;
+        margin-left: 10.755rem;
+        height: 154px;
+        width: 154px; 
+    }
 }
 
-.image-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+@media (max-width: 808px) {
+    .intro-text span {
+        font-size: 4.8rem;
+        margin-right: 7rem;
+    }
+
+    .image-container {
+        margin-top: 3.5rem;
+        margin-left: 10.55rem;
+        height: 125px;
+        width: 125px; 
+    }
+
+    .web-dev {
+        margin-bottom: px;
+    }
+
+
+    .intro-social {
+        margin-left: 3.3rem;
+    }
+
+
+    .intro-social-media a {
+        margin-right: 0.8rem;
+        margin-bottom: 1em;
+        margin-top: 0.8em;
+    }
+
 }
 
-.profile-picture {
-    height: 270px;
-    margin-bottom: 1em;
-    background: #8a2be2;
-    background: linear-gradient(180deg, #0f0f0f 40%, #8a2be2);
-    border-radius: 10%;
+@media (max-width: 750px) {
+    .intro-text span {
+        font-size: 4rem;
+        margin-right: 2rem;
+    }
+
+    .image-container {
+        margin-top: 3rem;
+        margin-left: 7.85rem;
+        height: 120px;
+        width: 120px; 
+    }
+
+    .intro-social {
+        margin-left: 3.3rem;
+    }
+
+    .title p {
+        color: #8a2be2;
+        font-size: 20px;
+        margin-left: 5rem;
+
+    }
+    
+    .intro-social-media a {
+        margin-right: 0.8rem;
+        margin-bottom: 1em;
+        margin-top: 0.8em;
+    }
+
+}
+
+@media (max-width: 700px) {
+    .intro-text span {
+        font-size: 2.6rem;
+    }
+
+    .image-container {
+        margin-top: -1.8rem;
+        margin-left: 2.95rem;
+        height: 100px;
+        width: 100px; 
+    }
+
+    .intro-social {
+        margin-left: 3rem;
+    }
+
+    .title p {
+        color: #8a2be2;
+        font-size: 15px;
+        margin-left: 5rem;
+
+    }
+    
+    .intro-social-media a {
+        margin-right: 0.8rem;
+        margin-bottom: 1em;
+        margin-top: 0.8em;
+    }
+
+}
+
+#profile {
+    background-color: #050505;
 }
 
 #profile p {
@@ -102,7 +221,7 @@ body {
 }
 
 #cirriculumvitae {
-    background-color: #121212;
+    background-color: #080808;
     color: white;
 }
 
@@ -147,6 +266,15 @@ body {
     color: #03fa6e;
 }
 
+.checkpoint h4 {
+    font-size: 18px;
+}
+
+.checkpoint-1 h4 {
+    font-size: 18px;
+}
+
+
 .checkpoint h6 {
     color: #8a2be2;
 }
@@ -156,13 +284,13 @@ body {
 }
 
 .timeline {
-    margin-left: 30px;
+    margin-left: 15px;
     border-left: 1px solid white;
     height: 100%;
 }
 
 .portfolio-bg-container {
-    background-color: #0D0D0D;
+    background-color: #050505;
 }
 
 .portfolio-image {
@@ -226,11 +354,13 @@ a {
 
 .white-icons i {
     color: white;
+    font-size: 20px;
 }
 
 .white-icons i:hover {
     color: #03fa6e;
 }
+
 
 button {
     background-color: #8a2be2;
