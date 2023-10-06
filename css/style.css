@@ -15,7 +15,7 @@ body {
     justify-content: center;
     background-color: #000000;
     background-size: 24%;
-    height: 95vh;
+    height: 90vh;
 }
 
 .image-container {
@@ -171,25 +171,30 @@ body {
 
 @media (max-width: 700px) {
     .intro-text span {
-        font-size: 2.6rem;
+        font-size: 2.4rem;
+        margin-left: -3.7rem;
     }
 
     .image-container {
-        margin-top: -1.8rem;
-        margin-left: 2.95rem;
-        height: 100px;
-        width: 100px; 
+        margin-top: 3.5rem;
+        margin-left: 5rem;
+        height: 90px;
+        width: 90px; 
     }
 
     .intro-social {
-        margin-left: 3rem;
+        margin-left: 2.5rem;
     }
 
     .title p {
         color: #8a2be2;
         font-size: 15px;
-        margin-left: 5rem;
+        margin-left: 1.4rem;
 
+    }
+
+    .intro-social-media {
+        margin-left: -3rem;
     }
     
     .intro-social-media a {
@@ -201,11 +206,14 @@ body {
 }
 
 #profile {
-    background-color: #050505;
+    background-color: #121212;
 }
 
 #profile p {
-    font-size: 15px;
+    font-size: 14px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
 }
 
 .line {
@@ -226,7 +234,7 @@ body {
 }
 
 .checkpoint {
-    background-color: #0D0D0D;
+    background-color: #121212;
     border: 1px solid white;
     font-size: 12px;
     padding: 15px; 
@@ -237,7 +245,7 @@ body {
 }
 
 .checkpoint-1 {
-    background-color: #0D0D0D;
+    background-color: #121212;
     border: 1px solid white;
     font-size: 12px;
     padding: 15px; 
@@ -290,7 +298,7 @@ body {
 }
 
 .portfolio-bg-container {
-    background-color: #050505;
+    background-color: #121212;
 }
 
 .portfolio-image {

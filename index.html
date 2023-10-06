@@ -22,7 +22,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">      
 </head>
 <body>
+
     <!---Navbar-->
+    
     <nav class="navbar sticky-top navbar-background navbar-expand-lg navbar-dark">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon custom-toggler-icon"></span>
@@ -39,7 +41,8 @@
     </nav>
       
 
-    <!--Jumbotron/Banner-->
+    <!---Banner--->
+
     <div class="container-fluid landing-section pr-4">
         <div class="row intro-section">
             <div class="col-6">
@@ -64,24 +67,28 @@
         </div>
     </div>
     
-    
-    <!--About Me/Profile-->
+    <!---About Me/Skills--->
 
     <div class="container-fluid text-white text-center p-4" id="profile">
         <div class="row">
             <div class="col">
                 <div class="container d-flex flex-column pb-4 align-items-center">
-                    <h2>About Me</h2>
+                    <h2>About</h2>
                     <div class="line"></div>
                 </div>
                 <div class="container about-section"></div>
                     <p>
-                        I'm Chrisy Haigh, a web developer from Edinburgh, Scotland. I've recently qualified and have been on a self-learning journey, balancing web development with work and family.<br><br>
-                        I'm proficient in HTML, CSS, JavaScript, jQuery, and PHP.
-                        I focus on creating visually appealing and user-friendly websites that work well on different devices. I enjoy collaborating with clients, designers, and developers to turn ideas into reality.<br><br>
-                        Effective communication is one of my strengths, helping me understand project requirements and deliver satisfactory solutions.
-                        I believe in lifelong learning and personal growth. Though I'm still learning, I'm dedicated to continuous improvement and embracing new challenges.<br><br>
-                        If you're looking for a dedicated and adaptable web developer, I'd love to connect with you. Thank you for visiting my portfolio page!
+                        I'm Chrisy Haigh, a newly qualified developer who has embarked on a transformative journey in the past year.<br><br>
+                        Balancing a full-time job and parenting responsibilities, I undertook a self-learning program, immersing myself in the world of web development. <br><br>
+                        During this time, I diligently acquired proficiency in essential technologies such as HTML, CSS, JavaScript, PHP, jQuery, and SQL. Alongside this, I successfully completed two real-world portfolio projects, which have enriched my practical skills and problem-solving abilities.
+
+                        I am keenly aware that my learning journey will accelerate significantly once I am immersed in a professional work environment.
+                        I am eager to embrace the opportunity to master modern frameworks and libraries like React, Angular, or Vue, as I believe they will empower me to deliver more efficient and sophisticated solutions. <br><br>
+                        
+                        Effective communication is one of my strengths, helping me understand project requirements and deliver satisfactory solutions.<br><br>
+                        
+                        I am a firm believer in lifelong learning and personal growth. Although I am still on my learning path, I am committed to continuous improvement and welcome new challenges with enthusiasm and determination. 
+                        My journey as a developer is just beginning, and I am excited to see where it leads.
                     </p>
                 </div>
                 <div class="d-flex flex-wrap justify-content-evenly pt-2 pb-2" id="skills">
@@ -99,7 +106,7 @@
         </div>
     </div>
     
-    <!--Cirriculum Vitae-->
+    <!---Cirriculum Vitae--->
 
     <div class="container-fluid p-4" id="cirriculumvitae">
         <div class="container d-flex flex-column pb-4 align-items-center">
@@ -178,7 +185,6 @@
         </div>
     </div>
 
-    <!---Skills--->
     <!---Portoflio--->
 
     <div class="container-fluid portfolio-bg-container text-white p-4" id="portfolio">
@@ -194,7 +200,7 @@
                 <div class="card">
                     <img class="card-img-top card-image portfolio-image w-100" src="images\earth_globe_map_maps.jpg" alt="Gazetteer">
                     <div class="card-img-overlay d-flex flex-column justify-content-center align-items-center">
-                        <a href="/gazetteer.html" target="_blank">
+                        <a href="gazetteer/" target="_blank">
                         <h5 class="card-title text-white ">Gazetteer</h5>
                         <p class="text-center text-white card-text">HTML CSS Javascript & PHP with API Integration</p></a>
                     </div>
@@ -244,7 +250,8 @@
     
     
     
-       <!--Contact/Container-->
+    <!---Contact Form--->
+
     <div class="container-fluid contact-bg-container text-white" id="contact">
         <div class="row justify-content-center p-4">
             <div class="col-md-4 mt-4 mb-2">
@@ -255,7 +262,7 @@
                 <form id="contact-form">
                     <div class="form-group">
                         <label for="name" class="input-label"></label>
-                        <input type="text" class="form-control border-0 text-white bg-dark" id="name" name="name" placeholder="Name">
+                        <input type="text" class="form-control border-0 text-white bg-dark" id="name" name="name" placeholder="Name" required>
                     </div>
                     <div class="form-group">
                         <label for="email" class="input-label"></label>
@@ -273,18 +280,20 @@
         </div>
     </div>
     
-      <!--Social Media Links-->
-        <ul class="social-media white-icons">
-            <a href="https://www.facebook.com/chrisy.haigh" title="facebook-icon" rel="noopener" target="_blank"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://www.linkedin.com/in/chrisy-haigh-620a47251/" title="linkedin-icon" rel="noopener "target="_blank"><i class="fab fa-linkedin-in"></i></a>
-            <a href="https://www.instagram.com/chrisyhaigh/" title="instagram-icon" rel="noopener "target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://github.com/chrisyhaigh" title="github-icon" rel="noopener "target="_blank"><i class="fa-brands fa-github"></i></a>
-        </ul>
+    <!--Social Media Links-->
 
-        <!--Footer/Container-->
-        <footer>
-            <p>&copy; Chrisy Haigh</p>
-        </footer>
+    <ul class="social-media white-icons">
+        <a href="https://www.facebook.com/chrisy.haigh" title="facebook-icon" rel="noopener" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.linkedin.com/in/chrisy-haigh-620a47251/" title="linkedin-icon" rel="noopener "target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://www.instagram.com/chrisyhaigh/" title="instagram-icon" rel="noopener "target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://github.com/chrisyhaigh" title="github-icon" rel="noopener "target="_blank"><i class="fa-brands fa-github"></i></a>
+    </ul>
+
+    <!--Footer-->
+
+    <footer>
+        <p>&copy; Chrisy Haigh</p>
+    </footer>
 
     <div id="preloader"></div>
 

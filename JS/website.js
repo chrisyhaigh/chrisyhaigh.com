@@ -1,41 +1,38 @@
 // Contact form 
 
-$('contact-form').on('submit', function(e) {
+$('#contact-form').on('submit', function(e){
 
     e.preventDefault();
-
-    let formData = $(this).serialize();
 
     let name = $('#name').val();
     let email = $('#email').val();
     let message = $('#message').val();
 
-    if (!name || !email || !message) {
-        alert('Please fill in all the required fields.');
-        return;
-    };
-
     $.ajax({
-        url: 'PHPMailer-master/src/email-contact.php',
+        url: 'php/email-contact.php',
         type: 'POST',
         dataType: 'json',
-        data: formData,
+        data: {
+            name: name,
+            email: email,
+            message: message,
+        },
 
-        success: function(response) {
-            if (response.success) {
-                console.log('Email sent successfully')
-            } else {
-                console.log('Error sending message')
-            }
+        success: function(response){
+            console.log('Response', response);
+            if (response === 'success')
+            console.log('Contact message succesfully sent');
         },
-        error: function(xhr, status, error) {
-            console.error('AJAX error:', status, error);
+
+        error: function (jqXHR, textStatus, errorThrown) {
+            console.log('Error sending message', jqXHR, textStatus, errorThrown);
         },
-    })
-    
+    });
 });
 
-//preloader
+
+// Preloader
+
 $(window).on('load', function () {
     if ($('#preloader').length) {
         $('#preloader').delay(1000).fadeOut('slow', function () {
