@@ -1,7 +1,20 @@
-// Contact form 
+// Navbar
+document.addEventListener("DOMContentLoaded", function () {
+    const navItems = document.querySelectorAll("#collapsed-navbar .nav-item");
 
-$('#contact-form').on('submit', function(e){
+    navItems.forEach(function (navItem) {
+      navItem.addEventListener("click", function () {
+        const collapsedMenu = document.getElementById("navbarNavAltMarkup");
+        if (collapsedMenu.classList.contains("show")) {
+          collapsedMenu.classList.remove("show");
+        }
+      });
+    });
+});
 
+// Contact Form
+
+$('#contact-form').on('submit', function(e) {
     e.preventDefault();
 
     let name = $('#name').val();
@@ -18,13 +31,23 @@ $('#contact-form').on('submit', function(e){
             message: message,
         },
 
-        success: function(response){
+        success: function(response) {
             console.log('Response', response);
-            if (response === 'success')
-            console.log('Contact message succesfully sent');
+
+            const confirmation = $('#message-confirmation');
+
+            if (response.status === 'success') {
+                confirmation.html('Message Sent');
+                console.log('Contact message successfully sent');
+                $('#name').val('');
+                $('#email').val('');
+                $('#message').val('');
+            }
         },
 
-        error: function (jqXHR, textStatus, errorThrown) {
+        error: function(jqXHR, textStatus, errorThrown) {
+            const confirmation = $('#message-confirmation');
+            confirmation.html('Error sending Message');
             console.log('Error sending message', jqXHR, textStatus, errorThrown);
         },
     });

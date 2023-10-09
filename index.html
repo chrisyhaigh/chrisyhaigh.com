@@ -30,7 +30,7 @@
           <span class="navbar-toggler-icon custom-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div class="navbar-nav ms-auto mx-2">
+          <div class="navbar-nav ms-auto mx-2" id="collapsed-navbar">
             <a class="nav-item nav-link text-center" href="#profile">Profile</a>
             <a class="nav-item nav-link text-center" href="#skills">Skills</a>
             <a class="nav-item nav-link text-center" href="#cirriculumvitae">Curriculum Vitae</a>
@@ -272,14 +272,15 @@
                         <label for="message" class="input-label"></label>
                         <textarea class="form-control border-0 text-white bg-dark" id="message" name="message" rows="5" placeholder="Message" required></textarea>
                     </div>
+                    <div class="text-center pt-2" id="message-confirmation"></div>
                     <div class="text-center pt-4">
-                        <button type="submit" form="contact-form" class="btn">Message</button>
+                        <button type="submit" form="contact-form" class="btn message-button">Message</button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
-    
+
     <!--Social Media Links-->
 
     <ul class="social-media white-icons">
