@@ -566,7 +566,7 @@ $("#updatepersonnelmodal").on("show.bs.modal", function (e) {
       $("#updatepersonnelmodal .modal-title").replaceWith(
         "Error retrieving data"
       );
-    }
+    },
   });
 });
 
