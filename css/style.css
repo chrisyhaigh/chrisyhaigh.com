@@ -205,12 +205,13 @@ body {
 
 }
 
-#profile {
+#about {
     background-color: #121212;
 }
 
-#profile p {
-    font-size: 14px;
+#about p {
+    font-size: 17px;
+    text-align: left;
     margin-left: 20px;
     margin-right: 20px;
     margin-bottom: 20px;
@@ -228,7 +229,7 @@ body {
     font-size: 40px;
 }
 
-#cirriculumvitae {
+#curriculumvitae {
     background-color: #080808;
     color: white;
 }
@@ -236,7 +237,7 @@ body {
 .checkpoint {
     background-color: #121212;
     border: 1px solid white;
-    font-size: 12px;
+    font-size: 16px;
     padding: 15px; 
     margin-top: 30px;
     margin-left: 35px;
@@ -247,7 +248,7 @@ body {
 .checkpoint-1 {
     background-color: #121212;
     border: 1px solid white;
-    font-size: 12px;
+    font-size: 16px;
     padding: 15px; 
     margin-top: 30px;
     margin-left: 35px;
@@ -275,11 +276,11 @@ body {
 }
 
 .checkpoint h4 {
-    font-size: 18px;
+    font-size: 20px;
 }
 
 .checkpoint-1 h4 {
-    font-size: 18px;
+    font-size: 20px;
 }
 
 
@@ -309,8 +310,12 @@ body {
     filter: brightness(30%);
 }
 
+.card-title {
+    font-size: 25px;
+}
+
 .card-text {
-    font-size: 12px;
+    font-size: 15px;
 }
 
 .card-image:hover {
@@ -341,6 +346,9 @@ a {
     color: grey; 
 }
 
+#message-confirmation {
+    font-size: 18px;
+}
 
 .social-media {
     margin: 0;

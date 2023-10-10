@@ -5,10 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chrisy Haigh</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="libraries/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="libraries/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="libraries/favicon/favicon-16x16.png">
-    <link rel="manifest" href="libraries/favicon/site.webmanifest">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon-site/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-site/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-site/favicon-16x16.png">
+    <link rel="manifest" href="favicon-site/site.webmanifest">
     <link rel="stylesheet" href="libraries/devicon/devicon.min.css">
     <script src="https://kit.fontawesome.com/b08248e95b.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,9 +31,9 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav ms-auto mx-2" id="collapsed-navbar">
-            <a class="nav-item nav-link text-center" href="#profile">Profile</a>
+            <a class="nav-item nav-link text-center" href="#about">About</a>
             <a class="nav-item nav-link text-center" href="#skills">Skills</a>
-            <a class="nav-item nav-link text-center" href="#cirriculumvitae">Curriculum Vitae</a>
+            <a class="nav-item nav-link text-center" href="#curriculumvitae">Curriculum vitae</a>
             <a class="nav-item nav-link text-center" href="#portfolio">Portfolio</a>
             <a class="nav-item nav-link text-center" href="#contact">Contact</a>
           </div>
@@ -69,28 +69,32 @@
     
     <!---About Me/Skills--->
 
-    <div class="container-fluid text-white text-center p-4" id="profile">
+    <div class="container-fluid text-white text-center p-4" id="about">
         <div class="row">
             <div class="col">
                 <div class="container d-flex flex-column pb-4 align-items-center">
                     <h2>About</h2>
                     <div class="line"></div>
                 </div>
-                <div class="container about-section"></div>
-                    <p>
-                        I'm Chrisy Haigh, a newly qualified developer who has embarked on a transformative journey in the past year.<br><br>
-                        Balancing a full-time job and parenting responsibilities, I undertook a self-learning program, immersing myself in the world of web development. <br><br>
-                        During this time, I diligently acquired proficiency in essential technologies such as HTML, CSS, JavaScript, PHP, jQuery, and SQL. Alongside this, I successfully completed two real-world portfolio projects, which have enriched my practical skills and problem-solving abilities.
-
-                        I am keenly aware that my learning journey will accelerate significantly once I am immersed in a professional work environment.
-                        I am eager to embrace the opportunity to master modern frameworks and libraries like React, Angular, or Vue, as I believe they will empower me to deliver more efficient and sophisticated solutions. <br><br>
-                        
-                        Effective communication is one of my strengths, helping me understand project requirements and deliver satisfactory solutions.<br><br>
-                        
-                        I am a firm believer in lifelong learning and personal growth. Although I am still on my learning path, I am committed to continuous improvement and welcome new challenges with enthusiasm and determination. 
-                        My journey as a developer is just beginning, and I am excited to see where it leads.
-                    </p>
+                <div class="container about-section pb-2">
+                    <div class="row">
+                        <div class="col">
+                            <p class="text-left">
+                                I'm Chrisy Haigh, a newly qualified developer who has embarked on a transformative journey in the past year.<br><br>
+                                During this time I undertook a self-learning program, immersing myself in the world of web development. <br><br>
+                                I acquired proficiency in essential technologies such as HTML, CSS, JavaScript, PHP, jQuery, and SQL. Alongside this, I successfully completed two real-world portfolio projects, which have enriched my practical skills and problem-solving abilities.
+                            </p>
+                        </div>
+                        <div class="col">
+                            <p class="text-left">
+                                Effective communication is one of my strengths, helping me understand project requirements and deliver satisfactory solutions.<br><br>
+                                I am a firm believer in lifelong learning and personal growth. Although I am still on my learning path, I am committed to continuous improvement and welcome new challenges with enthusiasm and determination.
+                            </p>
+                        </div>
+                    </div>
                 </div>
+                
+                
                 <div class="d-flex flex-wrap justify-content-evenly pt-2 pb-2" id="skills">
                     <i class="fa-brands fa-html5"></i>
                     <i class="fa-brands fa-square-js"></i>
@@ -106,11 +110,11 @@
         </div>
     </div>
     
-    <!---Cirriculum Vitae--->
+    <!---Curriculum vitae--->
 
-    <div class="container-fluid p-4" id="cirriculumvitae">
+    <div class="container-fluid p-4" id="curriculumvitae">
         <div class="container d-flex flex-column pb-4 align-items-center">
-            <h2>Cirriculum Vitae</h2>
+            <h2>Curriculum vitae</h2>
             <div class="line"></div>
         </div>
         <div class="row">
@@ -179,7 +183,7 @@
         </div>
         <div class="col">
             <div class="cv-btn-container pt-4 d-flex flex-column align-items-center">
-                <a href="#cv" class="btn CV-btn">Download CV</a>
+                <a href="images\cv.pdf" class="btn CV-btn" download>Download CV</a>
             </div>
         </div>
         </div>

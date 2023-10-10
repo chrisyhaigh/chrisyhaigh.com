@@ -16,7 +16,7 @@ $message = $_POST['message'];
 
 try {
     //Server settings
-    $mail->SMTPDebug = SMTP::DEBUG_SERVER;    
+    $mail->SMTPDebug = 2;
     $mail->isSMTP();                                
     $mail->Host       = 'smtp.gmail.com';  
     $mail->SMTPAuth   = true;
@@ -38,13 +38,13 @@ try {
                         <tr><td>Message: $message</td></tr>
                       </table>";
 
-    $mail->SMTPOptions = array(
+    /*$mail->SMTPOptions = array(
         'ssl' => array(
             'verify_peer' => false,
             'verify_peer_name' => false,
             'allow_self_signed' => true
         )
-    );
+    );*/
 
     $mail->send();
     echo 'Message has been sent';
