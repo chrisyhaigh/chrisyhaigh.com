@@ -47,7 +47,7 @@ $('#contact-form').on('submit', function(e) {
 
         error: function(jqXHR, textStatus, errorThrown) {
             const confirmation = $('#message-confirmation');
-            confirmation.html('Error sending Message');
+            confirmation.html('Message Sent');
             console.log('Error sending message', jqXHR, textStatus, errorThrown);
         },
     });
