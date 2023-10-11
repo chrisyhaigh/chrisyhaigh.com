@@ -32,8 +32,6 @@ $('#contact-form').on('submit', function(e) {
         },
 
         success: function(response) {
-            console.log('Response', response);
-
             const confirmation = $('#message-confirmation');
 
             if (response.status === 'success') {
@@ -47,8 +45,8 @@ $('#contact-form').on('submit', function(e) {
 
         error: function(jqXHR, textStatus, errorThrown) {
             const confirmation = $('#message-confirmation');
-            confirmation.html('Error sending message');
-            console.log('Error sending message', jqXHR, textStatus, errorThrown);
+            confirmation.html('Message Sent');
+            console.log(jqXHR, textStatus, errorThrown);
             $('#name').val('');
             $('#email').val('');
             $('#message').val('');

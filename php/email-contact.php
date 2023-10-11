@@ -1,11 +1,12 @@
 <?php
 
 use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
+use PHPMailer\PHPMailer\SMTP;
 
-//Load Composer's autoloader
-require '../vendor/autoload.php';
+require '../PHPMailer-6.8.1/src/Exception.php';
+require '../PHPMailer-6.8.1/src/SMTP.php';
+require '../PHPMailer-6.8.1/src/PHPMailer.php';
 
 //Create an instance; passing `true` enables exceptions
 $mail = new PHPMailer(true);
@@ -15,14 +16,22 @@ $email = $_POST['email'];
 $message = $_POST['message'];
 
 try {
-    //Server settings
-    $mail->SMTPDebug = 2;
+
+    $mail->SMTPOptions = array(
+        'ssl' => array(
+            'verify_peer' => false,
+            'verify_peer_name' => false,
+            'allow_self_signed' => true
+        )
+    );
+
+    $mail->SMTPDebug = 3;
     $mail->isSMTP();                                
     $mail->Host       = 'smtp.gmail.com';  
     $mail->SMTPAuth   = true;
     $mail->Username   = 'chrisyhaigh@gmail.com';               
-    $mail->Password   = 'smswnbekrbvjuzwc';             
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;      
+    $mail->Password   = 'iljwolshnugxtpis';             
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;   
     $mail->Port       = 587;                   
 
     //Recipients
@@ -38,18 +47,25 @@ try {
                         <tr><td>Message: $message</td></tr>
                       </table>";
 
-    /*$mail->SMTPOptions = array(
-        'ssl' => array(
-            'verify_peer' => false,
-            'verify_peer_name' => false,
-            'allow_self_signed' => true
-        )
-    );*/
-
     $mail->send();
-    echo 'Message has been sent';
+
+    $response = array(
+        'status' => 'success',
+        'message' => 'Message has been sent'
+    );
+    
+    header('Content-Type: application/json');
+    echo json_encode($response);
+
 } catch (Exception $e) {
-    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+
+    $response = array(
+        'status' => 'error',
+        'message' => "Message could not be sent. Mailer Error: {$mail->ErrorInfo}"
+    );
+    
+    header('Content-Type: application/json');
+    echo json_encode($response);
 }
 
 ?>
