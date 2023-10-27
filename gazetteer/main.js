@@ -134,7 +134,7 @@ function getWeatherFromCoordinates(lat, lng) {
           <tr>`
       });
 
-      // Append the entire forecast content once after the loop
+
       $('#weather-table-body').html(forecastContent);
 
     },
