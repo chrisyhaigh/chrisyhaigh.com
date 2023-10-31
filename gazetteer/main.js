@@ -280,6 +280,8 @@ function getCountryInfo(countryCode) {
       country: countryCode,
     },
     success: function(response) {
+      console.log('Response', response);
+
       const country = response.data[0];
       const formattedPopulation = numeral(country.population).format("0,0");
 

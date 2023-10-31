@@ -3,7 +3,7 @@ html {
 }
 
 body {
-    font-family: 'Rubik', sans-serif;
+    font-family: 'Bellota Text', sans-serif;
 }
 
 .navbar-background {
@@ -305,7 +305,7 @@ body {
 .aspect-ratio-container {
     position: relative;
     width: 100%;
-    padding-top: 56.25%; /* 16:9 aspect ratio (9 / 16 * 100%) */
+    padding-top: 56.25%; 
     overflow: hidden;
 }
 
@@ -324,12 +324,24 @@ body {
 
 .card-title {
     font-size: 22px;
+    letter-spacing: .095rem;
+    font-weight: 600;
 }
 
 .card-text {
-    font-size: 13px;
+    font-size: 14px;
     padding-left: 20px;
     padding-right: 20px;
+}
+
+@media screen and (max-width: 1000px) {
+    .card-title {
+        font-size: 17px;
+    }
+
+    .card-text {
+        font-size: 12px;
+    }
 }
 
 .card-image:hover {
