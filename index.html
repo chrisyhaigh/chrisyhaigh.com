@@ -17,6 +17,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bellota+Text&family=Cantarell&family=Inter&family=Kantumruy+Pro&family=Karla&family=Manrope&family=Orbitron&family=Poppins&family=Quicksand:wght@400;700&family=Readex+Pro:wght@500&family=Rubik&family=Source+Sans+3&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bellota+Text&family=Cantarell&family=Inter&family=Karla&family=Manrope&family=Poppins&family=Quicksand:wght@400;700&family=Readex+Pro:wght@500&family=Rubik&family=Source+Sans+3&display=swap" rel="stylesheet">
@@ -45,7 +48,7 @@
 
     <!---Banner--->
 
-    <div class="container-fluid landing-section pr-4">
+    <div class="container-fluid landing-section fade-in pr-4">
         <div class="row intro-section">
             <div class="col-6">
                 <h1 class="intro-text"><span>ChrisyHaigh</span></h1>
@@ -90,27 +93,39 @@
                                 <p class="text-left">
                                     These projects were signed off by the head tutor, enhancing my practical skills and sharpening my problem-solving abilities.<br><br>
                                     Effective communication is one of my strengths, helping me understand project requirements and deliver solutions that work..<br><br>
-                                    I'm committed to lifelong learning and personal growth, and I'm excited to accelerate my learning by taking on real-world challenges and learning on the job.
+                                    In my spare time, I enjoy watching football and am a dedicated fan of F1. Most importantly, the role of being a father to my four-year-old daughter.
                                 </p>
                             </div>
                         </div>
                     </div>
                 </div>
-                
-                
-                <div class="d-flex flex-wrap justify-content-evenly pt-2 pb-2" id="skills">
-                    <i class="fa-brands fa-html5"></i>
-                    <i class="fa-brands fa-square-js"></i>
-                    <i class="fa-brands fa-css3-alt"></i>
-                    <i class="fa-brands fa-bootstrap"></i>
-                </div>
-                <div class="d-flex flex-wrap justify-content-evenly pt-2 pb-2">
-                    <i class="fa-brands fa-php"></i>
-                    <i class="fa-brands fa-git"></i>
-                    <i class="fa-brands fa-python"></i>
-                </div>
+
             </div>
         </div>
+    </div>
+
+    <!---Skills-->
+    <div class="container-fluid p-4 text-white" id="skills">
+    
+        <div class="row">
+            <div class="container d-flex flex-column pt2 pb-4 align-items-center" >
+                <h2>Skills</h2>
+                <div class="line"></div>
+            </div>
+        </div>
+        
+        <div class="d-flex flex-wrap justify-content-evenly pb-4">
+            <img class="tech-logo" src="techlogos\html.png">
+            <img class="tech-logo" src="techlogos\logo-css-3-2048.png">
+            <img class="tech-logo" src="techlogos\javascript-logo-0.png">
+            <img class="tech-logo" src="techlogos\php_PNG43.png">
+            <img class="tech-logo" src="techlogos\git-icon-logo-png-transparent.png">
+            <img class="tech-logo" src="techlogos\Python_logo_icon-700x697.png">
+            <img class="tech-logo" src="techlogos\mysql_PNG31.png">
+            <img class="tech-logo" src="techlogos\bootstrap-5-logo-85A1F11F4F-seeklogo.com.png">
+            <img class="tech-logo" src="techlogos\jquery.png">
+        </div>
+
     </div>
 
     <!---Portoflio--->
@@ -132,7 +147,7 @@
                     <div class="card-img-overlay d-flex flex-column justify-content-center align-items-center">
                         <a href="gazetteer/" target="_blank">
                         <h5 class="card-title text-white ">Gazetteer</h5>
-                        <p class="text-center text-white card-text">Map & API Integration to display weather, news and country Information<br><em>HTML Boostrap jQuery CSS Javascript & PHP</em></p></a>
+                        <p class="text-center text-white card-text">Map & API Integration to display weather, news and country Information<br><em>HTML Bootstrap jQuery CSS Javascript & PHP</em></p></a>
                     </div>
                 </div>
             </div>
@@ -149,15 +164,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="row ps-4 pe-4">
             <div class="col-md-4 mb-4">
                 <div class="card">
                     <div class="aspect-ratio-container">
-                        <img class="card-img-top card-image portfolio-image" src="images\tennisimage.png" alt="Tennis Scoreboard">
+                        <img class="card-image portfolio-image" src="images\b-ball.png" alt="Basketball Scoreboard">
                     </div>
                     <div class="card-img-overlay d-flex flex-column justify-content-center align-items-center">
-                        <a href="https://score-tennis.netlify.app/" rel="noopener" target="_blank"><h5 class="card-title text-white">Tennis Scoreboard</h5>
-                        <p class="text-center text-white card-text">Functioning controls for games, sets, points etc.<br><em>HTML, CSS & Javascript</em></p></a>
+                        <a href="https://basketball-score-clock.netlify.app/" rel="noopener" target="_blank"><h5 class="card-title text-white">Basketball Scoreboard</h5>
+                        <p class="text-center text-white card-text">Controls for score count and shot clock<br><em>HTML CSS & Javascript</em></p></a>
                     </div>
                 </div>
             </div>
@@ -175,11 +191,11 @@
             <div class="col-md-4 mb-4">
                 <div class="card">
                     <div class="aspect-ratio-container">
-                        <img class="card-image portfolio-image" src="images\Screenshot 2023-10-27 215231.png" alt="Lottery Number Generator">
+                        <img class="card-img-top card-image portfolio-image" src="images\tennis-score revised.png" alt="Tennis Scoreboard">
                     </div>
                     <div class="card-img-overlay d-flex flex-column justify-content-center align-items-center">
-                        <a href="https://lottoluckydip.netlify.app/" rel="noopener" target="_blank"><h5 class="card-title text-white">Lottery Number Generator</h5>
-                        <p class="text-center text-white card-text">Generating random numbers & colours.<br><em>HTML CSS & Javascript</em></p></a>
+                        <a href="https://score-tennis.netlify.app/" rel="noopener" target="_blank"><h5 class="card-title text-white">Tennis Scoreboard</h5>
+                        <p class="text-center text-white card-text">Functioning controls for games, sets, points etc.<br><em>HTML, CSS & Javascript</em></p></a>
                     </div>
                 </div>
             </div>

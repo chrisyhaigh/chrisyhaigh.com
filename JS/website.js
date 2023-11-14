@@ -12,6 +12,28 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+$(document).ready(function() {
+    function addAnimations() {
+        const windowHeight = $(window).height();
+        const scrollPosition = $(window).scrollTop();
+
+        $('.fade-in').each(function() {
+            const elementOffset = $(this).offset().top;
+            if (elementOffset < scrollPosition + windowHeight - 100) {
+                $(this).addClass('animated');
+            }
+        })   
+     }
+
+     addAnimation();
+
+     $(window).on('scroll', function() {
+        addAnimations();
+     })
+})
+
+
+
 // Contact Form
 
 $('#contact-form').on('submit', function(e) {
