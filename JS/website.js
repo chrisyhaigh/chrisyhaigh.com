@@ -1,10 +1,10 @@
 // Navbar
 document.addEventListener("DOMContentLoaded", function () {
-    const navItems = document.querySelectorAll("#collapsed-navbar .nav-item");
+    const navItems = document.querySelectorAll(".navbar-nav .nav-item");
 
     navItems.forEach(function (navItem) {
       navItem.addEventListener("click", function () {
-        const collapsedMenu = document.getElementById("navbarNavAltMarkup");
+        const collapsedMenu = document.getElementById("navbarNav");
         if (collapsedMenu.classList.contains("show")) {
           collapsedMenu.classList.remove("show");
         }
@@ -12,26 +12,36 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-$(document).ready(function() {
-    function addAnimations() {
-        const windowHeight = $(window).height();
-        const scrollPosition = $(window).scrollTop();
 
-        $('.fade-in').each(function() {
-            const elementOffset = $(this).offset().top;
-            if (elementOffset < scrollPosition + windowHeight - 100) {
-                $(this).addClass('animated');
+
+//Home Arrow Button 
+document.addEventListener('DOMContentLoaded', function() {
+    const arrowButtonContainer = document.querySelector('.arrow-button-container');
+    const navbar = document.querySelector('.navbar');
+    let isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+    window.addEventListener('scroll', function () {
+        const banner = document.querySelector('.main-banner');
+        const scrollPosition = window.scrollY;
+
+        if (banner) {
+            const bannerRect = banner.getBoundingClientRect();
+
+            if (bannerRect.top >= 0 && bannerRect.bottom <= (window.innerHeight || document.documentElement.clientHeight)) {
+                arrowButtonContainer.style.opacity = '0';
+                navbar.style.backgroundColor = 'transparent';
+            } else {
+                arrowButtonContainer.style.opacity = '1';
+                navbar.style.backgroundColor = 'black';
             }
-        })   
-     }
+        }
 
-     addAnimation();
-
-     $(window).on('scroll', function() {
-        addAnimations();
-     })
-})
-
+        if (isMobile && scrollPosition < 30) {
+            navbar.style.backgroundColor = 'transparent';
+            arrowButtonContainer.style.opacity = '0';
+        }
+    });
+});
 
 
 // Contact Form
