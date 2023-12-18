@@ -87,31 +87,31 @@ $('#createbutton').click(function() {
 // Refreshbutton
 
 $('#refreshbutton').click(function() {
-if ($('#personneltab').hasClass('active')) {
-    $('#refreshpersonnel').removeClass('d-none');
-    $('#personneldata').addClass('d-none');
-    setTimeout(function () {
-        $('#personneldata').removeClass('d-none');
-        $('#refreshpersonnel').addClass('d-none');
-        populatePersonnelTab();
-    }, 600);
-} else if ($('#departmenttab').hasClass('active')) {
-    $('#refreshdepartment').removeClass('d-none');
-    $('#departmentdata').addClass('d-none');
-    setTimeout(function() {
-        $('#departmentdata').removeClass('d-none');
-        $('#refreshdepartment').addClass('d-none');
-        populateDepartmentTab();
-    }, 600);
-} else if ($('#locationtab').hasClass('active')) {
-    $('#refreshlocation').removeClass('d-none');
-    $('#locationdata').addClass('d-none');
-    setTimeout(function() {
-        $('#locationdata').removeClass('d-none');
-        $('#refreshlocation').addClass('d-none');
-        populateLocationTab();
-    }, 600);
-}
+  if ($('#personneltab').hasClass('active')) {
+      $('#refreshpersonnel').removeClass('d-none');
+      $('#personneldata').addClass('d-none');
+      setTimeout(function () {
+          $('#personneldata').removeClass('d-none');
+          $('#refreshpersonnel').addClass('d-none');
+          populatePersonnelTab();
+      }, 600);
+  } else if ($('#departmenttab').hasClass('active')) {
+      $('#refreshdepartment').removeClass('d-none');
+      $('#departmentdata').addClass('d-none');
+      setTimeout(function() {
+          $('#departmentdata').removeClass('d-none');
+          $('#refreshdepartment').addClass('d-none');
+          populateDepartmentTab();
+      }, 600);
+  } else if ($('#locationtab').hasClass('active')) {
+      $('#refreshlocation').removeClass('d-none');
+      $('#locationdata').addClass('d-none');
+      setTimeout(function() {
+          $('#locationdata').removeClass('d-none');
+          $('#refreshlocation').addClass('d-none');
+          populateLocationTab();
+      }, 600);
+  }
 });
 
 // Filter Button to Open filter Modals

@@ -12,9 +12,30 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+// Fade in effect
+
+
+function fadeIn() {
+    const fadeInElements = document.querySelectorAll('.fade-in');
+
+    fadeInElements.forEach((element) => {
+        const elementTop = element.getBoundingClientRect().top;
+        const elementBottom = element.getBoundingClientRect().bottom;
+        const windowHeight = window.innerHeight;
+
+        if (elementTop < windowHeight && elementBottom > windowHeight) {
+            element.style.opacity = '1';
+            element.style.transform = 'translateY(0)';
+            element.style.visibility = 'visible';
+        }
+    })
+}
+
+window.addEventListener('scroll', fadeIn);
 
 
 //Home Arrow Button 
+
 document.addEventListener('DOMContentLoaded', function() {
     const arrowButtonContainer = document.querySelector('.arrow-button-container');
     const navbar = document.querySelector('.navbar');
