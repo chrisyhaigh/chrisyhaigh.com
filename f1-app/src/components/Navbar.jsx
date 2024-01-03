@@ -1,7 +1,11 @@
 import React from 'react';
 import '../css/Navbar.css';
+import { NavLink } from 'react-router-dom';
+
 
 function Navbar() {
+
+
   return (
     <nav className="navbar navbar-expand-lg navbar-light navbar-style">
       <div className="container-fluid">
@@ -12,19 +16,19 @@ function Navbar() {
         <div className="collapse navbar-collapse text-end" id="navbarNavAltMarkup">
           <ul className="navbar-nav ms-auto">
             <li>
-                <a className="nav-link text-white active" aria-current="page" href="#">Home</a>
+                <NavLink to="/home" className="nav-link text-white active" aria-current="page" href="#">Home</NavLink>
             </li>
             <li>
-                <a className="nav-link text-white" href="#">Drivers</a>
+                <NavLink to="/drivers" className="nav-link text-white" href="#">Drivers</NavLink>
             </li>
             <li>
-                <a className="nav-link text-white" href="#">Teams</a>
+                <NavLink to="/teams" className="nav-link text-white" href="#">Teams</NavLink>
             </li>
             <li>
-                <a className="nav-link text-white" href="#">Championships</a>
+                <NavLink to="/championships" className="nav-link text-white" href="#">Championships</NavLink>
             </li>
             <li>
-                <a className="nav-link text-white" href="#">Races</a>
+                <NavLink to="/races" className="nav-link text-white" href="#">Races</NavLink>
             </li>
 
           </ul>
