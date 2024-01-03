@@ -1,0 +1,23 @@
+.drivers-container {
+    font-family: 'Play', sans-serif;
+    background-color: rgb(31, 31, 31);
+    color: white;
+    height: 100vh;
+}
+
+.drivers-heading {
+    padding: 15px;
+}
+
+.drivers-select-container {
+    display: flex;
+    justify-content: space-around;
+    padding: 15px;
+}
+
+select {
+    background-color: rgb(31, 31, 31);
+    color: white;
+    max-height: 30px;
+    border-radius: 1cqb;
+}

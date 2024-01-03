@@ -1,24 +1,40 @@
 .home-container {
     display: flex;
-    font-family: 'Play', sans-serif;;
+    font-family: 'Play', sans-serif;
     justify-content: center;
     flex-wrap: wrap;
     padding: 20px;
-    background-color: mintcream;
+    background-color: rgb(31, 31, 31);
 }
 
 .component-container {
-    background-color: white;
+    background-color: rgba(42, 42, 42, 0.478);
     width: 300px;
     height: 200px;
     display: flex;
     justify-content: center;
     flex-direction: column;
-    border: 2px black solid;
+    border: 1px black solid;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
     border-radius: 5cqb;
     padding: 5px;
     margin: 20px;
+    text-decoration: none;
+}
+
+.component-container img {
+    padding: 20px;
+}
+
+.component-container h3 {
+    font-size: 20px;
+    color: rgb(10, 225, 225);
+    padding: 2px;
+
+}
+
+.component-container h3:hover {
+    font-weight: bold;
 }
 
 .comp-img-container {

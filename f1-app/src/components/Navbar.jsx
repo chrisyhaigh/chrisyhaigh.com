@@ -24,8 +24,8 @@ function Navbar() {
             <li>
                 <NavLink to="/teams" className="nav-link text-white" href="#">Teams</NavLink>
             </li>
-            <li>
-                <NavLink to="/championships" className="nav-link text-white" href="#">Championships</NavLink>
+            <li className="nav-item dropdown">
+                <NavLink to="/championships" className="nav-link dropdown-toggle text-white" href="#">Championships</NavLink>
             </li>
             <li>
                 <NavLink to="/races" className="nav-link text-white" href="#">Races</NavLink>

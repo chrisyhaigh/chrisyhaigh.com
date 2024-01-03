@@ -1,0 +1,16 @@
+.teams-container {
+    font-family: 'Play', sans-serif;
+    background-color: rgb(31, 31, 31);
+    height: 100vh;
+    color: white;
+}
+
+.teams-heading {
+    padding: 15px;
+}
+
+.teams-select-container {
+    display: flex;
+    justify-content: space-around;
+    padding: 15px;
+}
