@@ -1,0 +1,33 @@
+.home-container {
+    display: flex;
+    font-family: 'Play', sans-serif;;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 20px;
+    background-color: mintcream;
+}
+
+.component-container {
+    background-color: white;
+    width: 300px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border: 2px black solid;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+    border-radius: 5cqb;
+    padding: 5px;
+    margin: 20px;
+}
+
+.comp-img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.component-container:hover {
+    cursor: pointer;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
+}

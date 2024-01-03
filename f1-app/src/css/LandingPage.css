@@ -1,0 +1,39 @@
+.Landing-container {
+    font-family: 'Play', sans-serif;
+}
+
+.image-container {
+    position: relative;
+    height: 100vh;
+    background-image: url('../images/mercedes_amg_petronas_f1_car_4k.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.button-container {
+    position: absolute;
+    bottom: 120px; /* Adjust the distance from the bottom based on your design */
+    left: 26%;
+}
+
+.historical {
+    font-weight: bold;
+    font-size: 70px;
+    color: rgb(10, 225, 225);
+    font-style: italic;
+}
+
+.f1-title {
+    font-size: 16px;
+    color: white;
+}
+
+.enter-button {
+    background-color: red;
+    font-family: 'Play', sans-serif;
+    width: 175px;
+    padding: 5px;
+    color: white;
+    border-radius: 2cqb;
+    border-width: 0;
+}
