@@ -1,0 +1,18 @@
+.races-container {
+    font-family: 'Play', sans-serif;
+    background-color: rgb(31, 31, 31);
+    color: white;
+    height: 100vh;
+  }
+  
+  
+  .race-history-heading {
+    padding: 17px;
+  }
+  
+  
+  .select-container {
+    display: flex;
+    justify-content: space-around;
+    padding: 17px;
+  }

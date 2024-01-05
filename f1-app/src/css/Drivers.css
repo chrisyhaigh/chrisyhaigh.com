@@ -6,13 +6,13 @@
 }
 
 .drivers-heading {
-    padding: 15px;
+    padding: 17px;
 }
 
 .drivers-select-container {
     display: flex;
     justify-content: space-around;
-    padding: 15px;
+    padding: 17px;
 }
 
 select {

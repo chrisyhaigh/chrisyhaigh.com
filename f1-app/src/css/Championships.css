@@ -1,0 +1,37 @@
+.championship-container {
+    font-family: 'Play', sans-serif;
+    background-color: rgb(31, 31, 31);
+    color: white;
+    height: 100vh;
+}
+
+.championship-heading {
+    padding: 17px;
+}
+
+.nav-tabs .nav-item .nav-link {
+    background-color: rgb(31, 31, 31);
+    color: #FFF;
+}
+
+.nav-tabs .nav-item .nav-link.active {
+    background-color: rgb(10, 225, 225);
+    color: #FFFFFF;
+    border: none;
+}
+
+.tab-content .tab-pane {
+    min-height: 200px;
+    height: auto;
+}
+
+.select-container {
+    display: flex;
+    justify-content: space-around;
+    padding: 17px;
+}
+
+.standings-heading {
+    padding: 15px;
+}
+
