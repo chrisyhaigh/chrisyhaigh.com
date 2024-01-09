@@ -1,0 +1,23 @@
+.standings-container {
+    font-family: 'Play', sans-serif;
+    background-color: rgb(31, 31, 31);
+    color: white;
+    height: 100vh;
+}
+
+.standings-heading {
+    padding: 17px;
+}
+
+.standings-select-container {
+    display: flex;
+    justify-content: space-around;
+    padding: 17px;
+}
+
+select {
+    background-color: rgb(31, 31, 31);
+    color: white;
+    max-height: 30px;
+    border-radius: 1cqb;
+}
