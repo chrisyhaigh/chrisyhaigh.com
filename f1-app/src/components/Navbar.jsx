@@ -24,13 +24,20 @@ function Navbar() {
             <li>
                 <NavLink to="/teams" className="nav-link text-white" href="#">Teams</NavLink>
             </li>
-            <li>
-                <NavLink to="/championships" className="nav-link text-white" href="#">Championships</NavLink>
+            <li className="nav-item dropdown">
+              <a className="nav-link dropdown-toggle text-white" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Championships</a>
+              <ul className="dropdown-menu">
+                <li>
+                  <NavLink to="/driverstandings" className="dropdown-item text-white" href="#">Drivers</NavLink>
+                </li>
+                <li>
+                  <NavLink to="/teamstandings" className="dropdown-item text-white" href="#">Constructors</NavLink>
+                </li>
+              </ul>
             </li>
             <li>
                 <NavLink to="/races" className="nav-link text-white" href="#">Races</NavLink>
             </li>
-
           </ul>
         </div>
       </div>
