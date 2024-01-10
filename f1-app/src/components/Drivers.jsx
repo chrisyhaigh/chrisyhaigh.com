@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Axios from "axios";
 import Navbar from "./Navbar";
 import '../css/Drivers.css';
 
@@ -13,18 +12,20 @@ function Drivers() {
 
     useEffect(() => {
         const fetchDrivers = async () => {
-
             if (selectedSeason) {
                 try {
-                    const response = await fetch(`/php/getDrivers.php?season=${selectedSeason}`);
+                    const response = await fetch(`http://localhost/chrisyhaigh.com/f1-app/api/getDrivers.php?season=${selectedSeason}`);
+
                     if (!response.ok) {
                         throw new Error('Unable to fetch data');
                     }
+
                     const data = await response.json();
                     setDriversData(data.data.MRData.DriverTable.Drivers);
+                    
                     console.log(data);
                 } catch (error) {
-                    console.error('Error fetching drivers data: ', Error);
+                    console.error('Error fetching drivers data: ', error);
                 }
             }
         };
