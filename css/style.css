@@ -123,6 +123,7 @@ li a:hover {
 
 .intro-social-media a {
     background-color: #b08D57;
+    padding: 17px;
     height: 30px;
     width: 30px;
     display: flex;
@@ -163,7 +164,20 @@ h2 {
 
 #skills {
     background-color: white;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    border-radius: 50%;
+    border-style: solid;
+    border-color: #b08D57;
+    border-width: 1px;
+    margin: 10px;
+    padding: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
 }
 
 .tech-logo {
@@ -364,6 +378,10 @@ em {
 .white-icons i {
     color: white;
     font-size: 20px;
+}
+
+.social-border-links {
+    background-color: #000000;
 }
 
 .intro-social-media.white-icons a:hover i {
