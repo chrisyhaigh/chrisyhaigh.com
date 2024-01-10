@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Navbar from "./Navbar";
 import '../css/Championships.css';
 
-function Championships() {
+function DriverStandings() {
     const currentYear = new Date().getFullYear();
     const years = Array.from({ length: currentYear - 1950 }, (_, index) => 1950 + index).reverse();
 
@@ -24,7 +24,7 @@ function Championships() {
                 <h3>CHAMPIONSHIPS</h3>
             </div>
             <div className="select-container">
-                <p>Choose a season from the list to view championship standings from each season:</p>
+                <p>Choose a season from the list to view the driver standings from each season:</p>
                 <select value={selectedYear} onChange={handleYearChange}>
                     <option value=''>Season</option>
                     {years.map((year) => (
