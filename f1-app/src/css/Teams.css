@@ -3,6 +3,7 @@
     background-color: rgb(31, 31, 31);
     height: 100vh;
     color: white;
+    overflow: auto;
 }
 
 .teams-heading {

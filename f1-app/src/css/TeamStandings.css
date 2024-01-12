@@ -3,6 +3,7 @@
     background-color: rgb(31, 31, 31);
     color: white;
     height: 100vh;
+    overflow: auto;
 }
 
 .standings-heading {
