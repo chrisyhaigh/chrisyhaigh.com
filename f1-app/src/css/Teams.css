@@ -1,4 +1,4 @@
-.teams-container {
+.team-container {
     font-family: 'Play', sans-serif;
     background-color: rgb(31, 31, 31);
     height: 100vh;
@@ -6,12 +6,51 @@
     overflow: auto;
 }
 
-.teams-heading {
-    padding: 17px;
+.team-heading {
+    display: flex;
+    justify-content: left;
+    padding-top: 7px;
+    padding-left: 10px;
+    background-color: rgb(21, 21, 21);
 }
 
-.teams-select-container {
+.team-select-container {
     display: flex;
     justify-content: space-around;
     padding: 17px;
+}
+
+.team-profile-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.team-profile {
+    width: 360px;
+    height: 250px;
+    text-align: center;
+    border: 0px black solid;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+    border-radius: 5cqb;
+    padding: 5px;
+    margin: 20px;
+    text-decoration: none;
+}
+
+.team-name {
+    font-size: 20px;
+    font-weight: bolder;
+    letter-spacing: 0.154rem;
+}
+
+.team-info {
+    font-size: 15px;
+}
+
+select {
+    background-color: rgb(31, 31, 31);
+    color: white;
+    max-height: 30px;
+    border-radius: 1cqb;
 }

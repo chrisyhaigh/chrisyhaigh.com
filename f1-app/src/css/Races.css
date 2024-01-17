@@ -2,17 +2,57 @@
     font-family: 'Play', sans-serif;
     background-color: rgb(31, 31, 31);
     color: white;
+    overflow: overlay;
     height: 100vh;
   }
   
   
   .race-history-heading {
-    padding: 17px;
+    display: flex;
+    justify-content: left;
+    padding-top: 7px;
+    padding-left: 10px;
+    background-color: rgb(21, 21, 21);
   }
-  
   
   .select-container {
     display: flex;
     justify-content: space-around;
     padding: 17px;
   }
+
+  .race-list-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .race-box-container {
+      width: 360px;
+      height: 250px;
+      text-align: center;
+      border: 0px black solid;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+      border-radius: 5cqb;
+      padding: 0;
+      margin: 20px;
+      text-decoration: none;
+  }
+
+  .race-name {
+    font-size: 20px;
+    font-weight: bolder;
+    letter-spacing: 0.154rem;
+  }
+
+  .race-info {
+    font-size: 15px;
+    margin: 2px;
+  }
+
+  select {
+    background-color: rgb(31, 31, 31);
+    color: white;
+    max-height: 30px;
+    border-radius: 1cqb;
+}

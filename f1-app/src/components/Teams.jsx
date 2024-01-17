@@ -7,7 +7,7 @@ function Teams() {
     const currentYear = new Date().getFullYear();
     const years = Array.from({ length: currentYear - 1950 }, (_, index) => 1950 + index).reverse();
 
-    const [selectedSeason, setSelectedSeason] = useState('');
+    const [selectedSeason, setSelectedSeason] = useState('2023');
     const [constructorData, setConstructorData] = useState(null);
  
     useEffect(() => {
@@ -32,12 +32,12 @@ function Teams() {
     }, [selectedSeason]);
 
     return (
-        <div className="teams-container">
+        <div className="team-container">
             <Navbar />
-            <div className="teams-heading">
+            <div className="team-heading">
                 <h3>TEAM HISTORY</h3>
             </div>
-            <div className="teams-select-container">
+            <div className="team-select-container">
                 <p>Choose a season from the list to view the teams who participated in that specific season:</p>
                 <select onChange={(e) => setSelectedSeason(e.target.value)}>
                     <option value="">Season</option>
@@ -48,12 +48,17 @@ function Teams() {
                     ))}
                 </select>
             </div>
-            <div className="teams-profile-container">
+            <div className="team-profile-container">
                 {constructorData && constructorData.map(constructor => (
-                    <div key={constructor.constructorId}>
-                        <p>{`Name: ${constructor.name}`}</p>
-                        <p>{`Nationality: ${constructor.nationality}`}</p>
-                        <p>{`Wikipedia: ${constructor.url}`}</p>
+                    <div key={constructor.constructorId} className="team-profile">
+                        <div className="team-image-container">
+                            <img src="" alt=""></img>
+                        </div>
+                        <div className="team-details">
+                            <p className="team-name">{`${constructor.name}`}</p>
+                            <p className="team-info">{`Nationality: ${constructor.nationality}`}</p>
+                            <p className="team-info">{`Wikipedia: ${constructor.url}`}</p>
+                        </div>
                     </div>    
                 ))}
             </div>

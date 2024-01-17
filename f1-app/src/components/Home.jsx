@@ -13,8 +13,8 @@ import Navbar from "./Navbar";
 function Home() {
     return (
         <div>
-            <Navbar />
             <div className="main-container">
+                <Navbar />
                 <div className="home-container">
                     <Link to='/drivers' className="component-container">
                         <div className="comp-img-container">

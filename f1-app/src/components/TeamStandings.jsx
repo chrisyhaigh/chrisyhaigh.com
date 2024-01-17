@@ -7,7 +7,7 @@ function TeamStandings() {
     const currentYear = new Date().getFullYear();
     const years = Array.from({ length: currentYear - 1950}, (_, index) => 1950 + index).reverse();
 
-    const [ selectedSeason, setSelectedSeason ] = useState('');
+    const [ selectedSeason, setSelectedSeason ] = useState('2023');
     const [ standingsData, setStandingsData ] = useState(null);
 
     useEffect(() => {
@@ -54,7 +54,7 @@ function TeamStandings() {
             </div>
             <div className="standings-table-container">
                { standingsData && ( 
-               <table>
+               <table className="table text-white constructors-table">
                     <thead className="constructors-table-head">
                         <tr>
                             <th>Pos</th>

@@ -6,7 +6,11 @@
 }
 
 .championship-heading {
-    padding: 17px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding: 10px;
+    background-color: rgb(21, 21, 21);
 }
 
 .nav-tabs .nav-item .nav-link {

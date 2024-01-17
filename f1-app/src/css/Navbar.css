@@ -5,7 +5,8 @@ body .navbar-light .navbar-toggler {
 
 .navbar {
     font-family: 'Play', sans-serif;
-    padding-left: 10px;
+    padding-left: 2px;
+    z-index: 1000;
 }
 
 ul li {

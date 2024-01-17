@@ -14,19 +14,22 @@
     background-color: rgb(31, 31, 31);
 }
 
+
 .component-container {
-    background-color: rgba(42, 42, 42, 0.478);
-    width: 300px;
-    height: 200px;
     display: flex;
     justify-content: center;
     flex-direction: column;
-    border: 1px black solid;
+    background-color: rgba(42, 42, 42, 0.478);
+    width: 300px;
+    height: 200px;
+    border: 0px black solid;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
     border-radius: 5cqb;
     padding: 5px;
     margin: 20px;
     text-decoration: none;
+    z-index: 1;
+    position: relative;
 }
 
 .component-container img {

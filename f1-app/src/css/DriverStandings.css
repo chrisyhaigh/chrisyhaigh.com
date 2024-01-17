@@ -7,14 +7,41 @@
 }
 
 .standings-heading {
-    padding: 17px;
+    display: flex;
+    justify-content: left;
+    padding-top: 7px;
+    padding-left: 10px;
+    background-color: rgb(21, 21, 21);
 }
 
 .standings-select-container {
     display: flex;
     justify-content: space-around;
-    padding: 17px;
+    padding: 10px;
 }
+
+.standings-table-container {
+    display: flex;
+    justify-content: center;
+    border-top: 0px black solid;
+    border-bottom: none;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.8);
+    border-radius: 2cqb;
+    padding: 5px;
+    margin: 0px;
+    text-decoration: none;
+}
+
+.drivers-table {
+    color: white;
+    margin: 2px;
+}
+
+.driver-table-head {
+    letter-spacing: 1.5px;
+}
+
+
 
 select {
     background-color: rgb(31, 31, 31);

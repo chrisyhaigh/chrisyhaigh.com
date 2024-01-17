@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "./Navbar";
 import '../css/Drivers.css';
+import Helmet from '../images/helmetpng.png'
 
 function Drivers() {
     const currentYear = new Date().getFullYear();
@@ -52,11 +53,20 @@ function Drivers() {
             </div>
             <div className="drivers-profile-container">
                 {driverData && driverData.map(driver => (
-                    <div key={driver.driverId}>
-                        <p>{`${driver.givenName} ${driver.familyName}`}</p>
-                        <p>{`Date of Birth: ${driver.dateOfBirth}`}</p>
-                        <p>{`Nationality: ${driver.nationality}`}</p>
-                        <p>{`Wikipedia: ${driver.url} `}</p>
+                    <div key={driver.driverId} className="driver-profile">
+                        <div className="driver-image-container">
+                            <img className="driver-image" src={Helmet} width="80" alt=""></img>
+                        </div>
+                        <div className="driver-details">
+                            <p className="driver-name">{`${driver.givenName} ${driver.familyName}`}</p>
+                            <p className="driver-info">{`Date of Birth: ${driver.dateOfBirth}`}</p>
+                            <p className="driver-info">{`Nationality: ${driver.nationality}`}</p>
+                            <p className="driver-info">Championships: </p>
+                            <p className="driver-info">Wins: </p>
+                            <p className="driver-info">Pole Positions: </p>
+                            <p className="driver-info">Fastest Laps: </p>
+                            <p className="driver-info">Podiums: </p>
+                        </div>
                     </div>
                 ))}
             </div>

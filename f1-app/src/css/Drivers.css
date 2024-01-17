@@ -7,13 +7,56 @@
 }
 
 .drivers-heading {
-    padding: 17px;
+    display: flex;
+    justify-content: left;
+    padding-top: 7px;
+    padding-left: 10px;
+    background-color: rgb(21, 21, 21);
 }
+
 
 .drivers-select-container {
     display: flex;
     justify-content: space-around;
-    padding: 17px;
+    padding: 10px;
+}
+
+.drivers-profile-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.driver-profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 360px;
+    height: 280px;
+    text-align: center;
+    border: 0px black solid;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+    border-radius: 5cqb;
+    padding: 20px;
+    margin: 15px;
+    text-decoration: none;
+}
+
+.driver-image-container {
+    width: 100%;
+}
+
+.driver-name {
+    font-size: 21px;
+    font-weight: bolder;
+    letter-spacing: 0.104rem;
+    margin-bottom: 15px;
+}
+
+.driver-info {
+    font-size: 13px;
+    margin: 3px;
 }
 
 select {

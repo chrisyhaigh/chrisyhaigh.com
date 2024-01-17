@@ -7,7 +7,11 @@
 }
 
 .standings-heading {
-    padding: 17px;
+    display: flex;
+    justify-content: left;
+    padding-top: 7px;
+    padding-left: 10px;
+    background-color: rgb(21, 21, 21);
 }
 
 .standings-select-container {

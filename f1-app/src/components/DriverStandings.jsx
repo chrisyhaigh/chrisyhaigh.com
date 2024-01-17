@@ -6,7 +6,7 @@ function DriverStandings() {
     const currentYear = new Date().getFullYear();
     const years = Array.from({ length: currentYear - 1950 }, (_, index) => 1950 + index).reverse();
 
-    const [selectedSeason, setSelectedSeason] = useState('');
+    const [selectedSeason, setSelectedSeason] = useState('2023');
     const [standingsData, setStandingsData] = useState(null);
 
     useEffect(() => {
@@ -52,7 +52,7 @@ function DriverStandings() {
             </div>
             <div className="standings-table-container">
                 {standingsData && (
-                        <table className="drivers-table">
+                        <table className="table drivers-table">
                             <thead className="driver-table-head">
                                 <tr>
                                     <th>Pos</th>

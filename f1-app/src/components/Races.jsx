@@ -7,7 +7,7 @@ function Races() {
   const currentYear = new Date().getFullYear();
   const years = Array.from({ length: currentYear - 1950 }, (_, index) => 1950 + index).reverse();
 
-  const [ selectedSeason, setSelectedSeason ] = useState('')
+  const [ selectedSeason, setSelectedSeason ] = useState('2023')
   const [ raceData, setRaceData ] = useState(null);
 
   useEffect(() => {
@@ -22,7 +22,7 @@ function Races() {
 
           const data = await response.json();
           console.log('Race History Data:', data)
-          setRaceData(data.data.MRData.RaceTable.Race)
+          setRaceData(data.data.MRData.RaceTable)
 
         } catch (error) {
           console.log('Error fetching race data: ', error)
@@ -34,8 +34,8 @@ function Races() {
 
   return (
     <div>
-      <Navbar />
       <div className="races-container">
+        <Navbar />
         <div className="race-history-heading">
           <h3>RACE HISTORY</h3>
         </div>
@@ -51,17 +51,17 @@ function Races() {
           </select>
         </div>
         <div className="race-list-container"> 
-        {raceData && raceData.map((race) => (
+        {raceData?.Races && raceData.Races.map((race) => (
           <div key={race.round} className="race-box-container">
             <div className="race-img-container">
               <img className="race-img-container" alt=""></img>
             </div>
             <div className="race-details">
-                <p>Round: {race.round}</p>
-                <p>Name: {race.raceName}</p>
-                <p>Date: {race.date}</p>
-                <p>Location: {race.Circuit.Location.locality}, {race.Circuit.Location.country}</p>
-                <p>Circuit: {race.Circuit.circuitName}</p>
+                <p className="race-name">{race.raceName}</p>
+                <p className="race-info">{race.date}, Round: {race.round}</p>
+                <p className="race-info">{race.Circuit.Location.locality}, {race.Circuit.Location.country}</p>
+                <p className="race-info">{race.Circuit.circuitName}</p>
+                <p className="race-info">Race Winner:</p>
             </div>
           </div>
           ))}
