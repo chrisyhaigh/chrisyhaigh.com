@@ -1,5 +1,5 @@
 .standings-container {
-    font-family: 'Play', sans-serif;
+    font-family: 'Lexend', sans-serif;
     background-color: rgb(31, 31, 31);
     color: white;
     height: 100vh;
@@ -17,7 +17,11 @@
 .standings-select-container {
     display: flex;
     justify-content: space-around;
-    padding: 17px;
+    padding: 10px;
+}
+
+.page-heading {
+    margin-left: 2px;
 }
 
 select {

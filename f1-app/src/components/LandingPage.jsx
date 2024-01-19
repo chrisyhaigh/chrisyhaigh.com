@@ -7,7 +7,8 @@ const LandingPage = ({ onEnterClick }) => {
             <div className='image-container'>
             </div>
             <div className='button-container'>
-                <h3 className="f1-title">HISTORICAL <span className="historical">F1</span></h3>
+                <h3 className="f1-title">F <span className="one">1</span><span className="historical">DATA</span></h3>
+                <p className="sub-title text-white">Drivers | Teams | Races</p>
                 <button onClick={onEnterClick} className="enter-button">ENTER</button>
             </div>
         </div>

@@ -1,5 +1,5 @@
 .standings-container {
-    font-family: 'Play', sans-serif;
+    font-family: 'Lexend', sans-serif;
     background-color: rgb(31, 31, 31);
     color: white;
     height: 100vh;
@@ -34,14 +34,28 @@
 
 .drivers-table {
     color: white;
-    margin: 2px;
+    margin: 10px;
 }
 
 .driver-table-head {
     letter-spacing: 1.5px;
 }
 
+.position {
+    text-align: center;
+    width: 5px;
+    border-right: solid 0.1px;
+    border-left: solid 0.1px;
+}
 
+.constructor {
+    border-right: solid 0.1px;
+    border-left: solid 0.1px;
+}
+
+.wins {
+    border-right: solid 1px;
+}
 
 select {
     background-color: rgb(31, 31, 31);

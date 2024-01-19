@@ -9,7 +9,7 @@ function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-light navbar-style">
       <div className="container-fluid">
-        <h3 className="nav-title">HISTORICAL <span className="nav-span">F1</span></h3>
+      <h3 className="nav-f1-title">F <span className="nav-one">1</span><span className="nav-data">DATA</span></h3>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>

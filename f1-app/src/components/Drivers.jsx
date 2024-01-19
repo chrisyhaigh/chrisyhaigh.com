@@ -5,7 +5,7 @@ import Helmet from '../images/helmetpng.png'
 
 function Drivers() {
     const currentYear = new Date().getFullYear();
-    const years = Array.from({ length: currentYear - 1950}, (_, index) => 1950 + index).reverse();
+    const years = Array.from({ length: currentYear - 2014}, (_, index) => 2014 + index).reverse();
  
     const [selectedSeason, setSelectedSeason] = useState('');
     const [driverData, setDriversData] = useState(null);
@@ -38,8 +38,9 @@ function Drivers() {
         <div className="drivers-container">
             <Navbar />
             <div className="drivers-heading">
-                <h3>DRIVER HISTORY</h3>
+                <h3 className="page-heading">DRIVER LIST {selectedSeason}</h3>
             </div>
+            <div className="line"></div>
             <div className="drivers-select-container">
                 <p>Choose a season from the list to view the drivers who participated in that specific season:</p>
                 <select onChange={(e) => setSelectedSeason(e.target.value)}>
@@ -61,11 +62,6 @@ function Drivers() {
                             <p className="driver-name">{`${driver.givenName} ${driver.familyName}`}</p>
                             <p className="driver-info">{`Date of Birth: ${driver.dateOfBirth}`}</p>
                             <p className="driver-info">{`Nationality: ${driver.nationality}`}</p>
-                            <p className="driver-info">Championships: </p>
-                            <p className="driver-info">Wins: </p>
-                            <p className="driver-info">Pole Positions: </p>
-                            <p className="driver-info">Fastest Laps: </p>
-                            <p className="driver-info">Podiums: </p>
                         </div>
                     </div>
                 ))}

@@ -5,9 +5,9 @@ import '../css/TeamStandings.css'
 
 function TeamStandings() {
     const currentYear = new Date().getFullYear();
-    const years = Array.from({ length: currentYear - 1950}, (_, index) => 1950 + index).reverse();
+    const years = Array.from({ length: currentYear - 2014}, (_, index) => 2014 + index).reverse();
 
-    const [ selectedSeason, setSelectedSeason ] = useState('2023');
+    const [ selectedSeason, setSelectedSeason ] = useState('');
     const [ standingsData, setStandingsData ] = useState(null);
 
     useEffect(() => {
@@ -33,14 +33,40 @@ function TeamStandings() {
         fetchConstructorStandings()
     }, [ selectedSeason ]);
 
+    const getTeamColour = (teamName) => {
 
+        const teamColor = {
+            'Mercedes': '#00A19B',
+            'Red Bull': '#121F45',
+            'Ferrari': '#EF1A2D',
+            'Aston Martin': '#00594F',
+            'Williams': 'blue',
+            'Alfa Romeo': '#241F21', 
+            'McLaren': '#FF8000',
+            'Alpine F1 Team': '#02192B',
+            'Haas F1 Team': '#6C0000',
+            'AlphaTauri': '#20394C',
+            'Force India': 'green',
+            'Racing Point': '#F363B9',
+            'Renault': 'black',
+            'Caterham': '#005030',
+            'Marussia': '#6E0000',
+            'Manor Marussia': '#6E0000',
+            'Lotus F1': '#FFB800',
+            'Toro Rosso': '#0005C1',
+            'Sauber': '#0063FF'
+        }
+
+        return teamColor[teamName];
+    }
 
     return (
         <div className="standings-container">
             <Navbar />
             <div className="standings-heading">
-                <h3>CONSTRUCTORS CHAMPIONSHIP</h3>
+                <h3 className="page-heading">CONSTRUCTORS CHAMPIONSHIP {selectedSeason}</h3>
             </div>
+            <div className="line"></div>
             <div className="standings-select-container">
             <p>Choose a season from the list to view the constructor standings in that specific season:</p>
                 <select onChange={(e) => setSelectedSeason(e.target.value)}>
@@ -57,19 +83,19 @@ function TeamStandings() {
                <table className="table text-white constructors-table">
                     <thead className="constructors-table-head">
                         <tr>
-                            <th>Pos</th>
-                            <th>Team</th>
-                            <th>Points</th>
-                            <th>Wins</th>
+                            <th className="text-center">Pos</th>
+                            <th className="text-center">Team</th>
+                            <th className="text-center">Points</th>
+                            <th className="text-center">Wins</th>
                         </tr>
                     </thead>
                     <tbody className="construtors-table-body">
                         {standingsData.map((constructor, index) => (
                          <tr key={constructor.constructorId || index}>
-                            <td>{constructor.position}</td>
-                            <td>{constructor.Constructor.name}</td>
-                            <td>{constructor.points}</td>
-                            <td>{constructor.wins}</td>
+                            <td className="position" style={{ backgroundColor: 'red'}}>{constructor.position}</td>
+                            <td className="constructor" style={{backgroundColor: getTeamColour(constructor.Constructor.name)}}>{constructor.Constructor.name}</td>
+                            <td className="points text-center">{constructor.points}</td>
+                            <td className="wins text-center">{constructor.wins}</td>
                          </tr>   
                         ))}
                     </tbody>

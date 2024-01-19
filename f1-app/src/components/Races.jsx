@@ -5,7 +5,7 @@ import '../css/Races.css'
 
 function Races() {
   const currentYear = new Date().getFullYear();
-  const years = Array.from({ length: currentYear - 1950 }, (_, index) => 1950 + index).reverse();
+  const years = Array.from({ length: currentYear - 2014}, (_, index) => 2014 + index).reverse();
 
   const [ selectedSeason, setSelectedSeason ] = useState('2023')
   const [ raceData, setRaceData ] = useState(null);
@@ -37,8 +37,9 @@ function Races() {
       <div className="races-container">
         <Navbar />
         <div className="race-history-heading">
-          <h3>RACE HISTORY</h3>
+          <h3 className="page-heading">RACES {selectedSeason}</h3>
         </div>
+        <div className="line"></div>
         <div className="select-container">
           <p>Choose a season from the select menu to display the race history for that particular year:</p>
           <select onChange={(e) => setSelectedSeason(e.target.value)}>
@@ -57,11 +58,11 @@ function Races() {
               <img className="race-img-container" alt=""></img>
             </div>
             <div className="race-details">
+                <p className="race-info">Race {race.round}</p>
                 <p className="race-name">{race.raceName}</p>
-                <p className="race-info">{race.date}, Round: {race.round}</p>
-                <p className="race-info">{race.Circuit.Location.locality}, {race.Circuit.Location.country}</p>
+                <p className="race-info">{race.date}</p>
                 <p className="race-info">{race.Circuit.circuitName}</p>
-                <p className="race-info">Race Winner:</p>
+                <p className="race-info">{race.Circuit.Location.locality}, {race.Circuit.Location.country}</p>
             </div>
           </div>
           ))}

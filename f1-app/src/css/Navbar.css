@@ -4,7 +4,7 @@ body .navbar-light .navbar-toggler {
 }
 
 .navbar {
-    font-family: 'Play', sans-serif;
+    font-family: 'Lexend', sans-serif;
     padding-left: 2px;
     z-index: 1000;
 }
@@ -25,14 +25,18 @@ ul li {
     background-color: black;
 }
 
-.nav-span {
+.nav-f1-title {
     font-weight: bold;
-    font-size: 40px;
+    font-size: 55px;
     color: red;
-    font-style: italic;
 }
 
-.nav-title {
+.nav-one {
+    color: white;
+    margin-left: -22px;
+}
+
+.nav-data {
     font-size: 16px;
     color: white;
 }

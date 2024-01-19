@@ -1,5 +1,5 @@
 .team-container {
-    font-family: 'Play', sans-serif;
+    font-family: 'Lexend', sans-serif;
     background-color: rgb(31, 31, 31);
     height: 100vh;
     color: white;
@@ -17,7 +17,7 @@
 .team-select-container {
     display: flex;
     justify-content: space-around;
-    padding: 17px;
+    padding: 10px;
 }
 
 .team-profile-container {
@@ -27,8 +27,12 @@
 }
 
 .team-profile {
-    width: 360px;
-    height: 250px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: rgb(41, 41, 41);
+    width: 260px;
+    height: 160px;
     text-align: center;
     border: 0px black solid;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
@@ -39,9 +43,9 @@
 }
 
 .team-name {
+    padding-top: 20px;
     font-size: 20px;
     font-weight: bolder;
-    letter-spacing: 0.154rem;
 }
 
 .team-info {

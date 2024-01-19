@@ -1,5 +1,5 @@
 .races-container {
-    font-family: 'Play', sans-serif;
+  font-family: 'Lexend', sans-serif;
     background-color: rgb(31, 31, 31);
     color: white;
     overflow: overlay;
@@ -18,7 +18,7 @@
   .select-container {
     display: flex;
     justify-content: space-around;
-    padding: 17px;
+    padding: 10px;
   }
 
   .race-list-container {
@@ -42,7 +42,6 @@
   .race-name {
     font-size: 20px;
     font-weight: bolder;
-    letter-spacing: 0.154rem;
   }
 
   .race-info {
