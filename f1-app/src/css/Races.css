@@ -42,6 +42,12 @@
       text-decoration: none;
   }
 
+  .race-box-container:hover {
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
+  }
+
   .race-name {
     font-size: 20px;
     font-weight: bolder;

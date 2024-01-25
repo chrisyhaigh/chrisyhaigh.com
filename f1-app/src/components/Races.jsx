@@ -25,9 +25,16 @@ function Races() {
           // Fetch flags for each country
           const racesWithFlags = await Promise.all(
             data.data.MRData.RaceTable.Races.map(async (race) => {
-              const countryResponse = await fetch(`https://restcountries.com/v3.1/name/${race.Circuit.Location.country}`);
+              let countryName = race.Circuit.Location.country;
+
+              if (countryName === 'UK') {
+                countryName = 'United Kingdom';
+              }
+
+              const countryResponse = await fetch(`https://restcountries.com/v3.1/name/${countryName}`);
               const countryData = await countryResponse.json();
               const flagUrl = countryData[0]?.flags?.png;
+
 
               return { ...race, flagUrl };
             })
