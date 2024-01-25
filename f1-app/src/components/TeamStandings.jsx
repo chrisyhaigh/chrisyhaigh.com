@@ -7,7 +7,7 @@ function TeamStandings() {
     const currentYear = new Date().getFullYear();
     const years = Array.from({ length: currentYear - 2014}, (_, index) => 2014 + index).reverse();
 
-    const [ selectedSeason, setSelectedSeason ] = useState('');
+    const [ selectedSeason, setSelectedSeason ] = useState('2023');
     const [ standingsData, setStandingsData ] = useState(null);
 
     useEffect(() => {

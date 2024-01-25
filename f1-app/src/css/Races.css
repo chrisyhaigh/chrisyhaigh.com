@@ -28,6 +28,9 @@
   }
 
   .race-box-container {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
       width: 360px;
       height: 250px;
       text-align: center;
@@ -47,6 +50,17 @@
   .race-info {
     font-size: 15px;
     margin: 2px;
+  }
+
+  .race-img-container {
+    padding: 10px;
+  }
+
+  .race-img {
+    padding-top: 1px;
+    width: 120px;
+    height: 70px;
+    border-radius: 1cqb;
   }
 
   select {

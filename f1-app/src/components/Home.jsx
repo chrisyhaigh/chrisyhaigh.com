@@ -18,13 +18,13 @@ function Home() {
                 <div className="home-container">
                     <Link to='/drivers' className="component-container">
                         <div className="comp-img-container">
-                            <img src={Helmet} alt="F1 Helmet" width="180"></img>
+                            <img src={Helmet} alt="F1 Helmet" width="190"></img>
                         </div>
                         <h3 className="text-center">Drivers</h3>
                     </Link>
                     <Link to='/teams' className="component-container">
                         <div className="comp-img-container">
-                            <img src={Lotus} alt="Lotus F1 Car" width='200'></img>
+                            <img src={Lotus} alt="Lotus F1 Car" width='224'></img>
                         </div>
                         <h3 className="text-center">Teams</h3>
                     </Link>
@@ -42,7 +42,7 @@ function Home() {
                     </Link>
                     <Link to='/races' className="component-container">
                         <div className="comp-img-container">
-                            <img src={CheqFlag} alt="Chequered Flag" width="180"></img>
+                            <img src={CheqFlag} alt="Chequered Flag" width="200"></img>
                         </div>
                         <h3 className="text-center">Races</h3>
                     </Link>      

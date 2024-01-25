@@ -1,36 +1,48 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "./Navbar";
-import '../css/Races.css'
-
+import '../css/Races.css';
 
 function Races() {
   const currentYear = new Date().getFullYear();
-  const years = Array.from({ length: currentYear - 2014}, (_, index) => 2014 + index).reverse();
+  const years = Array.from({ length: currentYear - 2014 }, (_, index) => 2014 + index).reverse();
 
-  const [ selectedSeason, setSelectedSeason ] = useState('2023')
-  const [ raceData, setRaceData ] = useState(null);
+  const [selectedSeason, setSelectedSeason] = useState('2023');
+  const [raceData, setRaceData] = useState(null);
 
   useEffect(() => {
     const fetchRaceData = async () => {
       if (selectedSeason) {
         try {
-          const response = await fetch(`http://localhost/chrisyhaigh.com/f1-app/api/getRaces.php?season=${selectedSeason}`)
-          
+          const response = await fetch(`http://localhost/chrisyhaigh.com/f1-app/api/getRaces.php?season=${selectedSeason}`);
+
           if (!response.ok) {
-            throw new Error('Error fetching race data')
+            throw new Error('Error fetching race data');
           }
 
           const data = await response.json();
-          console.log('Race History Data:', data)
-          setRaceData(data.data.MRData.RaceTable)
+          console.log('Race History Data:', data);
+
+          // Fetch flags for each country
+          const racesWithFlags = await Promise.all(
+            data.data.MRData.RaceTable.Races.map(async (race) => {
+              const countryResponse = await fetch(`https://restcountries.com/v3.1/name/${race.Circuit.Location.country}`);
+              const countryData = await countryResponse.json();
+              const flagUrl = countryData[0]?.flags?.png;
+
+              return { ...race, flagUrl };
+            })
+          );
+
+          setRaceData(racesWithFlags);
 
         } catch (error) {
-          console.log('Error fetching race data: ', error)
+          console.log('Error fetching race data: ', error);
         }
       }
-    }
+    };
+
     fetchRaceData();
-  }, [ selectedSeason ]);
+  }, [selectedSeason]);
 
   return (
     <div>
@@ -51,26 +63,28 @@ function Races() {
             ))}
           </select>
         </div>
-        <div className="race-list-container"> 
-        {raceData?.Races && raceData.Races.map((race) => (
-          <div key={race.round} className="race-box-container">
-            <div className="race-img-container">
-              <img className="race-img-container" alt=""></img>
-            </div>
-            <div className="race-details">
-                <p className="race-info">Race {race.round}</p>
+        <div className="race-list-container">
+          {raceData?.map((race) => (
+            <div key={race.round} className="race-box-container">
+              <div className="round-container">
+                <p className="race-info">Round {race.round}</p>
+              </div>
+              <div className="race-img-container">
+                {/* Display the flag using the flag URL */}
+                <img className="race-img" src={race.flagUrl} alt={`Flag of ${race.Circuit.Location.country}`} />
+              </div>
+              <div className="race-details">
                 <p className="race-name">{race.raceName}</p>
                 <p className="race-info">{race.date}</p>
                 <p className="race-info">{race.Circuit.circuitName}</p>
                 <p className="race-info">{race.Circuit.Location.locality}, {race.Circuit.Location.country}</p>
+              </div>
             </div>
-          </div>
           ))}
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-
-export default Races
+export default Races;
