@@ -33,9 +33,7 @@ function DriverStandings() {
         fetchDriverStandings();
     }, [selectedSeason]);
 
-
     const getTeamColour = (teamName) => {
-
         const teamColor = {
             'Mercedes': '#00A19B',
             'Red Bull': '#121F45',
@@ -60,6 +58,20 @@ function DriverStandings() {
 
         return teamColor[teamName];
     }
+
+    // Function to determine background color based on position
+    const getPositionColor = (position) => {
+        switch (position) {
+            case '1':
+                return '#AE8625';
+            case '2':
+                return '#848484';
+            case '3':
+                return '#804A00';
+            default:
+                return 'red'; // Default color if position is not 1, 2, or 3
+        }
+    };
 
     return (
         <div className="standings-container">
@@ -93,14 +105,13 @@ function DriverStandings() {
                             </thead>
                             <tbody className="drivers-table-body">
                                 {standingsData.map((driver, index) => (
-                                <tr key={driver.Driver.driverId || index}
-                                    >
-                                    <td className="position" style={{ background: 'red'}}>{driver.position}</td>
-                                    <td>{driver.Driver.givenName} {driver.Driver.familyName}</td>
-                                    <td className="constructor text-white" style={{ background: `linear-gradient(200deg, ${getTeamColour(driver.Constructors[0].name)}, rgb(31, 31, 31) 60%)` }}>{driver.Constructors[0].name}</td>
-                                    <td className="points text-center">{driver.points}</td>
-                                    <td className="wins text-center">{driver.wins}</td>
-                                </tr>
+                                    <tr key={driver.Driver.driverId || index}>
+                                        <td className="position" style={{ backgroundColor: getPositionColor(driver.position) }}>{driver.position}</td>
+                                        <td>{driver.Driver.givenName} {driver.Driver.familyName}</td>
+                                        <td className="constructor text-white" style={{ background: `linear-gradient(200deg, ${getTeamColour(driver.Constructors[0].name)}, rgb(31, 31, 31) 60%)` }}>{driver.Constructors[0].name}</td>
+                                        <td className="points text-center">{driver.points}</td>
+                                        <td className="wins text-center">{driver.wins}</td>
+                                    </tr>
                                 ))}
                             </tbody>
                         </table>

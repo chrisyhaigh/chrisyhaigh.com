@@ -17,7 +17,7 @@
 .standings-select-container {
     display: flex;
     justify-content: space-around;
-    padding: 10px;
+    padding: 0px;
 }
 
 .standings-table-container {

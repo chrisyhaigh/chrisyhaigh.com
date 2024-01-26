@@ -60,6 +60,19 @@ function TeamStandings() {
         return teamColor[teamName];
     }
 
+    const getPositionColor = (position) => {
+        switch (position) {
+            case '1':
+                return '#AE8625';
+            case '2':
+                return '#848484';
+            case '3':
+                return '#804A00';
+            default:
+                return 'red'; 
+        }
+    }
+
     return (
         <div className="standings-container">
             <Navbar />
@@ -92,7 +105,7 @@ function TeamStandings() {
                     <tbody className="construtors-table-body">
                         {standingsData.map((constructor, index) => (
                             <tr key={constructor.constructorId || index}>
-                                <td className="position" style={{ background: 'red' }}>{constructor.position}</td>
+                                <td className="position" style={{ background: getPositionColor(constructor.position) }}>{constructor.position}</td>
                                 <td className="constructor" style={{ background: `linear-gradient(200deg, ${getTeamColour(constructor.Constructor.name)}, rgb(31, 31, 31) 70%)` }}>{constructor.Constructor.name}</td>
                                 <td className="points text-center">{constructor.points}</td>
                                 <td className="wins text-center">{constructor.wins}</td>
