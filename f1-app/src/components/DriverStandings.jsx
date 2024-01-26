@@ -95,9 +95,9 @@ function DriverStandings() {
                                 {standingsData.map((driver, index) => (
                                 <tr key={driver.Driver.driverId || index}
                                     >
-                                    <td className="position" style={{ backgroundColor: 'red'}}>{driver.position}</td>
+                                    <td className="position" style={{ background: 'red'}}>{driver.position}</td>
                                     <td>{driver.Driver.givenName} {driver.Driver.familyName}</td>
-                                    <td className="constructor" style={{ backgroundColor: getTeamColour(driver.Constructors[0].name) }}>{driver.Constructors[0].name}</td>
+                                    <td className="constructor text-white" style={{ background: `linear-gradient(200deg, ${getTeamColour(driver.Constructors[0].name)}, rgb(31, 31, 31) 60%)` }}>{driver.Constructors[0].name}</td>
                                     <td className="points text-center">{driver.points}</td>
                                     <td className="wins text-center">{driver.wins}</td>
                                 </tr>

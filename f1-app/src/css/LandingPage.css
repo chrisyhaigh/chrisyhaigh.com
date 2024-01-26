@@ -13,8 +13,8 @@
 
 .button-container {
     position: absolute;
-    bottom: 120px; /* Adjust the distance from the bottom based on your design */
-    left: 26%;
+    bottom: 200px; /* Adjust the distance from the bottom based on your design */
+    left: 28%;
 }
 
 h3 {
@@ -38,10 +38,27 @@ h3 {
 }
 
 .enter-button {
-    background-color: rgb(10, 225, 225);
-    width: 192px;
+    background-color: red;
+    width: 182px;
     padding: 5px;
     color: white;
     border-radius: 2cqb;
     border-width: 0;
+}
+
+.enter-button:hover {
+    cursor: pointer;
+    background-color: rgba(255, 0, 0, 0.815);
+}
+
+@media screen and (max-width: 800px) {
+    .Landing-container {
+        margin-left: -50px;
+    }
+
+    .button-container {
+        position: absolute;
+        bottom: 215px; /* Adjust the distance from the bottom based on your design */
+        left: 8%;
+    }
 }

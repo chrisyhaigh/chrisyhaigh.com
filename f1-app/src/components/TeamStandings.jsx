@@ -91,14 +91,15 @@ function TeamStandings() {
                     </thead>
                     <tbody className="construtors-table-body">
                         {standingsData.map((constructor, index) => (
-                         <tr key={constructor.constructorId || index}>
-                            <td className="position" style={{ backgroundColor: 'red'}}>{constructor.position}</td>
-                            <td className="constructor" style={{backgroundColor: getTeamColour(constructor.Constructor.name)}}>{constructor.Constructor.name}</td>
-                            <td className="points text-center">{constructor.points}</td>
-                            <td className="wins text-center">{constructor.wins}</td>
-                         </tr>   
+                            <tr key={constructor.constructorId || index}>
+                                <td className="position" style={{ background: 'red' }}>{constructor.position}</td>
+                                <td className="constructor" style={{ background: `linear-gradient(200deg, ${getTeamColour(constructor.Constructor.name)}, rgb(31, 31, 31) 70%)` }}>{constructor.Constructor.name}</td>
+                                <td className="points text-center">{constructor.points}</td>
+                                <td className="wins text-center">{constructor.wins}</td>
+                            </tr>
                         ))}
                     </tbody>
+
                 </table>
                )}
             </div>
