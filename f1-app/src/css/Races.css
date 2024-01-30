@@ -1,6 +1,6 @@
 .races-container {
-  font-family: 'Lexend', sans-serif;
-    background-color: rgb(31, 31, 31);
+    font-family: 'Lexend', sans-serif;
+    background-color: rgb(17, 17, 17);
     color: white;
     overflow: overlay;
     height: 100vh;
@@ -31,6 +31,7 @@
       display: flex;
       justify-content: center;
       flex-direction: column;
+      background-color: rgb(31, 31, 31);
       width: 360px;
       height: 250px;
       text-align: center;
@@ -43,14 +44,12 @@
   }
 
   .race-box-container:hover {
-    font-weight: bold;
     cursor: pointer;
-    box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
+    box-shadow: 0 0 50px rgba(0, 0, 0, 2.1);
   }
 
   .race-name {
     font-size: 20px;
-    font-weight: bolder;
   }
 
   .race-info {
