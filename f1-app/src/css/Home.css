@@ -1,6 +1,6 @@
 .main-container {
     font-family: 'Lexend', sans-serif;
-    background-color: rgb(31, 31, 31);
+    background-color: rgb(17, 17, 17);
     color: white;
     height: 100vh;
 }
@@ -11,7 +11,7 @@
     justify-content: center;
     flex-wrap: wrap;
     padding: 20px;
-    background-color: rgb(31, 31, 31);
+    background-color: rgb(17, 17, 17);
 }
 
 

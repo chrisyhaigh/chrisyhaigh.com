@@ -40,7 +40,7 @@ function DriverStandings() {
             'Ferrari': '#EF1A2D',
             'Aston Martin': '#00594F',
             'Williams': 'blue',
-            'Alfa Romeo': '#241F21', 
+            'Alfa Romeo': '#972738', 
             'McLaren': '#FF8000',
             'Alpine F1 Team': '#02192B',
             'Haas F1 Team': '#6C0000',
@@ -60,6 +60,7 @@ function DriverStandings() {
     }
 
     // Function to determine background color based on position
+    
     const getPositionColor = (position) => {
         switch (position) {
             case '1':
@@ -69,7 +70,7 @@ function DriverStandings() {
             case '3':
                 return '#804A00';
             default:
-                return 'red'; // Default color if position is not 1, 2, or 3
+                return 'red'; 
         }
     };
 
@@ -108,7 +109,7 @@ function DriverStandings() {
                                     <tr key={driver.Driver.driverId || index}>
                                         <td className="position" style={{ backgroundColor: getPositionColor(driver.position) }}>{driver.position}</td>
                                         <td>{driver.Driver.givenName} {driver.Driver.familyName}</td>
-                                        <td className="constructor text-white" style={{ background: `linear-gradient(200deg, ${getTeamColour(driver.Constructors[0].name)}, rgb(31, 31, 31) 60%)` }}>{driver.Constructors[0].name}</td>
+                                        <td className="constructor text-white" style={{ background: `linear-gradient(200deg, ${getTeamColour(driver.Constructors[0].name)}, rgb(17, 17, 17) 60%)` }}>{driver.Constructors[0].name}</td>
                                         <td className="points text-center">{driver.points}</td>
                                         <td className="wins text-center">{driver.wins}</td>
                                     </tr>

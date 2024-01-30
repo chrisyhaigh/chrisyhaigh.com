@@ -41,7 +41,7 @@ function TeamStandings() {
             'Ferrari': '#EF1A2D',
             'Aston Martin': '#00594F',
             'Williams': 'blue',
-            'Alfa Romeo': '#241F21', 
+            'Alfa Romeo': '#972738', 
             'McLaren': '#FF8000',
             'Alpine F1 Team': '#02192B',
             'Haas F1 Team': '#6C0000',
@@ -106,7 +106,7 @@ function TeamStandings() {
                         {standingsData.map((constructor, index) => (
                             <tr key={constructor.constructorId || index}>
                                 <td className="position" style={{ background: getPositionColor(constructor.position) }}>{constructor.position}</td>
-                                <td className="constructor" style={{ background: `linear-gradient(200deg, ${getTeamColour(constructor.Constructor.name)}, rgb(31, 31, 31) 70%)` }}>{constructor.Constructor.name}</td>
+                                <td className="constructor" style={{ background: `linear-gradient(200deg, ${getTeamColour(constructor.Constructor.name)}, rgb(17, 17, 17) 70%)` }}>{constructor.Constructor.name}</td>
                                 <td className="points text-center">{constructor.points}</td>
                                 <td className="wins text-center">{constructor.wins}</td>
                             </tr>
