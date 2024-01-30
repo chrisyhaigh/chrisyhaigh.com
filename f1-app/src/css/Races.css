@@ -47,6 +47,15 @@
     cursor: pointer;
     box-shadow: 0 0 50px rgba(0, 0, 0, 2.1);
   }
+  
+  .race-link {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .race-link:hover {
+    color: inherit;
+  }
 
   .race-name {
     font-size: 20px;

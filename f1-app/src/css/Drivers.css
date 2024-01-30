@@ -34,6 +34,11 @@
     flex-wrap: wrap;
 }
 
+.driver-profile:hover {
+    cursor: pointer;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 2.1);
+}
+
 .driver-profile {
     display: flex;
     justify-content: center;
@@ -60,6 +65,17 @@
     background-color: white;
     height: 1px;
 }
+
+.driver-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.driver-link:hover {
+    color: inherit;
+}
+
+.driver-details {}
 
 .driver-name {
     padding-top: 5px;

@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "./Navbar";
+import DriverResults from "./DriverResults";
+import { Link } from 'react-router-dom';
 import '../css/Drivers.css';
 import Helmet from '../images/helmetpng.png'
 import Aitken from '../driver-images/aitken.png'
@@ -209,7 +211,6 @@ function Drivers() {
                 return Helmet;
         }
     };
-    
 
     
     return (
@@ -232,21 +233,24 @@ function Drivers() {
             </div>
             <div className="drivers-profile-container">
                 {driverData && driverData.map(driver => (
-                    <div key={driver.driverId} className="driver-profile">
-                        <div className="driver-image-container">
-                            <img className="driver-image" src={getDriverImage(`${driver.givenName} ${driver.familyName}`)} width="120" alt=""></img>
+                    <Link to='/driverresults' key={driver.driverId} className="driver-link">
+                        <div className="driver-profile">
+                            <div className="driver-image-container">
+                                <img className="driver-image" src={getDriverImage(`${driver.givenName} ${driver.familyName}`)} width="120" alt=""></img>
+                            </div>
+                            <div className="driver-line"></div>
+                            <div className="driver-details">
+                                <p className="driver-name">{`${driver.givenName} ${driver.familyName}`}</p>
+                                <p className="driver-info">{`DOB: ${driver.dateOfBirth}`}</p>
+                                <p className="driver-info">{`Nationality: ${driver.nationality}`}</p>
+                            </div>
                         </div>
-                        <div className="driver-line"></div>
-                        <div className="driver-details">
-                            <p className="driver-name">{`${driver.givenName} ${driver.familyName}`}</p>
-                            <p className="driver-info">{`DOB: ${driver.dateOfBirth}`}</p>
-                            <p className="driver-info">{`Nationality: ${driver.nationality}`}</p>
-                        </div>
-                    </div>
+                    </Link>
                 ))}
             </div>
         </div>
     );
+    
 }
 
 export default Drivers;

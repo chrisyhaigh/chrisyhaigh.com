@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "./Navbar";
+import { Link } from 'react-router-dom'
+import RaceResults from "./RaceResults";
 import '../css/Races.css';
 
 function Races() {
@@ -72,21 +74,23 @@ function Races() {
         </div>
         <div className="race-list-container">
           {raceData?.map((race) => (
-            <div key={race.round} className="race-box-container">
-              <div className="round-container">
-                <p className="race-info">Round {race.round}</p>
+            <Link to="/raceresults" key={race.round} className="race-link">
+              <div className="race-box-container">
+                <div className="round-container">
+                  <p className="race-info">Round {race.round}</p>
+                </div>
+                <div className="race-img-container">
+                  {/* Display the flag using the flag URL */}
+                  <img className="race-img" src={race.flagUrl} alt={`Flag of ${race.Circuit.Location.country}`} />
+                </div>
+                <div className="race-details">
+                  <p className="race-name">{race.raceName}</p>
+                  <p className="race-info">{race.date}</p>
+                  <p className="race-info">{race.Circuit.circuitName}</p>
+                  <p className="race-info">{race.Circuit.Location.locality}, {race.Circuit.Location.country}</p>
+                </div>
               </div>
-              <div className="race-img-container">
-                {/* Display the flag using the flag URL */}
-                <img className="race-img" src={race.flagUrl} alt={`Flag of ${race.Circuit.Location.country}`} />
-              </div>
-              <div className="race-details">
-                <p className="race-name">{race.raceName}</p>
-                <p className="race-info">{race.date}</p>
-                <p className="race-info">{race.Circuit.circuitName}</p>
-                <p className="race-info">{race.Circuit.Location.locality}, {race.Circuit.Location.country}</p>
-              </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

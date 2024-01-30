@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "./Navbar";
+import TeamResults from "./TeamResults";
+import { Link } from 'react-router-dom';
 import '../css/Teams.css';
 import Mercedes from '../team-logos/Mercedes.png'
 import RedBull from '../team-logos/Red Bull.png'
@@ -117,13 +119,15 @@ function Teams() {
             </div>
             <div className="team-profile-container">
                 {constructorData && constructorData.map(constructor => (
-                    <div key={constructor.constructorId} className="team-profile">
-                        <div className="team-image-container">
-                            <img src={getTeamLogos(constructor.name)} width='180' alt=""></img>
+                    <Link to="/teamresults" key={constructor.constructorId}>
+                        <div className="team-profile">
+                            <div className="team-image-container">
+                                <img src={getTeamLogos(constructor.name)} width='180' alt=""></img>
+                            </div>
+                            <div className="team-details">
+                            </div>
                         </div>
-                        <div className="team-details">
-                        </div>
-                    </div>    
+                    </Link>    
                 ))}
             </div>
         </div>
