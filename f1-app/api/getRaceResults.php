@@ -1,13 +1,14 @@
-<?php 
+<?php
 
-    ini_set('display_errors', 'On');
+    ini_set('display_errors', 'on');
     error_reporting(E_ALL);
 
     $executionTime = microtime(true);
 
+    $round = $_GET['round'];
     $season = $_GET['season'];
 
-    $url = 'http://ergast.com/api/f1/' . $season . '/driverStandings.json?';
+    $url = 'http://ergast.com/api/f1/' . $season . '/' . $round . '/results.json';
 
     $ch = curl_init();
 
@@ -17,27 +18,27 @@
 
     $response = curl_exec($ch);
 
-    if ($response === null) {
+    if ($response === false) {
         $output = [
             'status' => [
                 'code' => '500',
                 'name' => 'error',
-                'description' => 'CURL_ERROR: ' . curl_error($ch),
-                'returnTime' => intval((microtime(true) - $executionTime)) 
+                'description' => 'curl error: ' . curl_error($ch),
+                'returnTime' => intval((microtime(true) - $executionTime))
             ]
-            ];           
+        ];
     } else {
         $decode = json_decode($response, true);
 
-        if ($decode === null) {
+        if ($decode === false) {
             $output = [
                 'status' => [
                     'code' => '500',
                     'name' => 'error',
-                    'description' => 'CURL_ERROR: ' . curl_error($ch),
+                    'description' => 'JSON decoding error',
                     'returnTime' => intval((microtime(true) - $executionTime))
                 ]
-                ];
+            ];
         } else {
             $output = [
                 'status' => [

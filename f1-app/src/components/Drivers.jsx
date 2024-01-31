@@ -217,7 +217,7 @@ function Drivers() {
         <div className="drivers-container">
             <Navbar />
             <div className="drivers-heading">
-                <h3 className="page-heading">DRIVER LIST {selectedSeason}</h3>
+                <h3 className="page-heading">Drivers {selectedSeason}</h3>
             </div>
             <div className="line"></div>
             <div className="drivers-select-container">

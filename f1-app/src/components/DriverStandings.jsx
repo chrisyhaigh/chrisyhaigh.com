@@ -78,7 +78,7 @@ function DriverStandings() {
         <div className="standings-container">
             <Navbar />
             <div className="standings-heading">
-                <h3 className="page-heading">DRIVERS CHAMPIONSHIP {selectedSeason}</h3>
+                <h3 className="page-heading">Drivers Championship {selectedSeason}</h3>
             </div>
             <div className="line"></div>
             <div className="standings-select-container">

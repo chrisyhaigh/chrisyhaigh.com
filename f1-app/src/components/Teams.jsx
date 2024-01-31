@@ -103,7 +103,7 @@ function Teams() {
         <div className="team-container">
             <Navbar />
             <div className="team-heading">
-                <h3 className="page-heading">TEAM LIST {selectedSeason}</h3>
+                <h3 className="page-heading">Teams {selectedSeason}</h3>
             </div>
             <div className="line"></div>
             <div className="team-select-container">

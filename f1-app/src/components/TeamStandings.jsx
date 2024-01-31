@@ -77,7 +77,7 @@ function TeamStandings() {
         <div className="standings-container">
             <Navbar />
             <div className="standings-heading">
-                <h3 className="page-heading">CONSTRUCTORS CHAMPIONSHIP {selectedSeason}</h3>
+                <h3 className="page-heading">Construtors Championship {selectedSeason}</h3>
             </div>
             <div className="line"></div>
             <div className="standings-select-container">

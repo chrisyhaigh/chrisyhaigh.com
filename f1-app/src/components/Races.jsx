@@ -58,7 +58,7 @@ function Races() {
       <div className="races-container">
         <Navbar />
         <div className="race-history-heading">
-          <h3 className="page-heading">RACES {selectedSeason}</h3>
+          <h3 className="page-heading">Races {selectedSeason}</h3>
         </div>
         <div className="line"></div>
         <div className="select-container">
@@ -74,7 +74,9 @@ function Races() {
         </div>
         <div className="race-list-container">
           {raceData?.map((race) => (
-            <Link to="/raceresults" key={race.round} className="race-link">
+            <Link to={`/raceresults?season=${selectedSeason}&round=${race.round}`} 
+                  key={race.round} 
+                  className="race-link">
               <div className="race-box-container">
                 <div className="round-container">
                   <p className="race-info">Round {race.round}</p>

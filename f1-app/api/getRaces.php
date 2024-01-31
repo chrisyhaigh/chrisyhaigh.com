@@ -59,4 +59,3 @@
     header("Access-Control-Allow-Headers: Content-Type");
 
     echo json_encode($output);
-?>

@@ -2,6 +2,7 @@ html {
     scroll-behavior: smooth;
 }
 
+
 body {
     font-family: 'Red Hat Text', sans-serif;
 }
@@ -26,7 +27,7 @@ body .navbar-light .navbar-toggler {
 
 li a {
     font-size: 14px;
-    letter-spacing: 1.5px;
+    letter-spacing: 0.2px;
 }
 
 li a:hover {
@@ -90,6 +91,11 @@ li a:hover {
     font-size: 44px;
 }
 
+.developer {
+    padding: 10px;
+    font-size: 16px;
+    letter-spacing: 2.5px;
+}
 
 @media (max-width: 550px) {
     .banner-content {
@@ -197,6 +203,7 @@ h2 {
     font-size: 40px;
 }
 
+
 #curriculumvitae {
     background-color: #000000f5;
     color: white;
@@ -272,7 +279,7 @@ h2 {
 }
 
 .portfolio-bg-container {
-    background-color: #000000;
+    background-color: #000000de;
 }
 
 .aspect-ratio-container {
@@ -296,11 +303,14 @@ h2 {
 }
 
 .card {
-    border: 0.4cqb solid white;
+    margin: 10px;
+    border: 10px; /* Add a black border */
+    border-radius: 2cqb;
+    box-shadow: 0 0 30px 10px rgba(0, 0, 0, 0.9);
 }
 
 .card-content {
-    background-color: #121212;
+    background:  linear-gradient(180deg, #000000, #212121);
     padding: 10px;
 }
 
