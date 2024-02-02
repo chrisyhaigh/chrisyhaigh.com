@@ -40,6 +40,7 @@
 }
 
 .driver-profile {
+    background: linear-gradient(220deg, rgba(41, 41, 41), rgba(41,21, 21));
     display: flex;
     justify-content: center;
     align-items: center;
@@ -56,9 +57,6 @@
     text-decoration: none;
 }
 
-.driver-image-container {
-    width: 100%;
-}
 
 .driver-line {
     width: 260px;
@@ -75,7 +73,6 @@
     color: inherit;
 }
 
-.driver-details {}
 
 .driver-name {
     padding-top: 5px;

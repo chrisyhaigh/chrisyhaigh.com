@@ -31,7 +31,7 @@
       display: flex;
       justify-content: center;
       flex-direction: column;
-      background-color: rgb(31, 31, 31);
+      background: linear-gradient(220deg, rgba(41, 41, 41), rgba(41,21, 21));
       width: 360px;
       height: 250px;
       text-align: center;

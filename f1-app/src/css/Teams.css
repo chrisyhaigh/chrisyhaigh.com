@@ -30,7 +30,7 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
-    background-color: rgb(41, 41, 41);
+    background: linear-gradient(220deg, rgba(41, 41, 41), rgba(41,21, 21));
     width: 260px;
     height: 160px;
     text-align: center;
