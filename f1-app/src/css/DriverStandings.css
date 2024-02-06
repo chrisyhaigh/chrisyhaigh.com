@@ -20,7 +20,6 @@
     padding: 0px;
     margin-bottom: -10px;
     font-weight: 400;
-    background: linear-gradient(220deg, rgba(41, 41, 41), rgba(41,21, 21));
 }
 
 .standings-table-container {
@@ -30,7 +29,6 @@
     border-top: 0px black solid;
     border-bottom: none;
     padding: 15px;
-    background: linear-gradient(220deg, rgba(41, 41, 41), rgba(41,21, 21));
     border-radius: 2cqb;
     padding: 5px;
     margin: 0px;
@@ -44,6 +42,10 @@
 
 .driver-table-head {
     letter-spacing: 1px;
+}
+
+.drivers-table-body {
+    background: linear-gradient(220deg, rgba(41, 41, 41), rgba(41,21, 21));
 }
 
 .position {

@@ -16,7 +16,7 @@
 
 .driver-results-table-container {
     padding: 15px;
-    background: linear-gradient(220deg, rgba(41, 41, 41), rgba(41,21, 21));
+    
 }
 
 .back-button {
@@ -35,6 +35,10 @@
     display: flex;
     justify-content: space-around;
     padding: 10px;
+}
+
+.driver-results-table-body {
+    background: linear-gradient(220deg, rgba(41, 41, 41), rgba(41,21, 21));
 }
 
 .result-grid {

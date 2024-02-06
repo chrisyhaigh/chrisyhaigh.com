@@ -20,6 +20,14 @@
     padding: 10px;
 }
 
+.standings-table-container {
+    padding: 0px 25px 25px 30px;
+}
+
+.constructors-table-body {
+    background: linear-gradient(220deg, rgba(41, 41, 41), rgba(41,21, 21));
+}
+
 .page-heading {
     margin-left: 2px;
 }

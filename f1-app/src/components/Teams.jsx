@@ -119,7 +119,8 @@ function Teams() {
             </div>
             <div className="team-profile-container">
                 {constructorData && constructorData.map(constructor => (
-                    <Link to="/teamresults" key={constructor.constructorId}>
+                    <Link to={`/teamresults?season=${selectedSeason}&constructor=${constructor.name}`} 
+                          key={constructor.constructorId}>
                         <div className="team-profile">
                             <div className="team-image-container">
                                 <img src={getTeamLogos(constructor.name)} width='180' alt=""></img>

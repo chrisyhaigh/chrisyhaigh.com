@@ -102,7 +102,7 @@ function TeamStandings() {
                             <th className="text-center">Wins</th>
                         </tr>
                     </thead>
-                    <tbody className="construtors-table-body">
+                    <tbody className="constructors-table-body">
                         {standingsData.map((constructor, index) => (
                             <tr key={constructor.constructorId || index}>
                                 <td className="position" style={{ background: getPositionColor(constructor.position) }}>{constructor.position}</td>

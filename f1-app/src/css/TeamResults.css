@@ -8,7 +8,7 @@
 
 .team-results-heading-container {
     display: flex;
-    justify-content: left;
+    justify-content: space-between;
     padding-top: 7px;
     padding-left: 14px;
     background-color: rgb(21, 21, 21);
@@ -18,6 +18,18 @@
     display: flex;
     justify-content: space-around;
     padding: 10px;
+}
+
+.back-button {
+    margin: 1px 10px 5px 0px;
+    width: 50px;
+    background: linear-gradient(220deg, rgba(41, 41, 41), rgba(41,21, 21));
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 1cqb;
+    border-top: white solid 0.5px;
+    border-left: white solid 0.5px;
 }
 
 .line {

@@ -84,19 +84,19 @@ function DriverResults() {
             case '3':
                 return '#804A00';
             case '4':
-                return 'limegreen';
+                return '#5DBB63';
             case '5':
-                return 'limegreen';
+                return '#5DBB63';
             case '6':
-                return 'limegreen';
+                return '#5DBB63';
             case '7':
-                return 'limegreen';
+                return '#5DBB63';
             case '8':
-                return 'limegreen';
+                return '#5DBB63';
             case '9':
-                return 'limegreen';
+                return '#5DBB63';
             case '10':
-                return 'limegreen';
+                return '#5DBB63';
         }
     }
 
