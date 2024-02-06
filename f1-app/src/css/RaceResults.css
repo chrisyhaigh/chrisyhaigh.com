@@ -8,10 +8,15 @@
 
 .race-results-heading-container {
     display: flex;
-    justify-content: left;
+    justify-content: space-between;
     padding-top: 7px;
     padding-left: 14px;
     background-color: rgb(21, 21, 21);
+}
+
+.race-results-table-container {
+    background: linear-gradient(220deg, rgba(41, 41, 41), rgba(41,21, 21));
+    padding: 15px;
 }
 
 .select-container {
@@ -32,6 +37,10 @@
     margin-left: 10px;
     margin-bottom: 8px;
     border-radius: 0.5cqb;
+}
+
+.race-results-table-body {
+    font-weight: 300;
 }
 
 .position {

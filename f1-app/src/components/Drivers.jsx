@@ -233,7 +233,9 @@ function Drivers() {
             </div>
             <div className="drivers-profile-container">
                 {driverData && driverData.map(driver => (
-                    <Link to='/driverresults' key={driver.driverId} className="driver-link">
+                    <Link to={`/driverresults?season=${selectedSeason}&driver=${driver.familyName}`} 
+                          key={driver.driverId} 
+                          className="driver-link">
                         <div className="driver-profile">
                             <div className="driver-image-container">
                                 <img className="driver-image" src={getDriverImage(`${driver.givenName} ${driver.familyName}`)} width="120" alt=""></img>

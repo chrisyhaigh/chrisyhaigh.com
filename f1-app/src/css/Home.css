@@ -40,11 +40,11 @@
     font-size: 18px;
     color: white;
     padding: 2px;
-
+    font-weight: 200;
 }
 
 .component-container h3:hover {
-    font-weight: bold;
+    font-weight: 400;
 }
 
 .comp-img-container {

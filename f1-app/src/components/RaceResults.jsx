@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "./Navbar";
 import { useLocation } from "react-router-dom";
+import { Link } from 'react-router-dom';
 import '../css/RaceResults.css';
 
 function RaceResults() {
@@ -103,10 +104,12 @@ function RaceResults() {
         <div className="race-results-container">
             <Navbar />
             <div className="race-results-heading-container">
-                <h3 className="race-results-heading">{selectedRace} {selectedSeason}</h3>
-                {raceFlag && raceFlag.map((flagUrl, index) => (
+                <h3 className="race-results-heading">{selectedRace} {selectedSeason}                 {raceFlag && raceFlag.map((flagUrl, index) => (
                     <img key={index} src={flagUrl} alt="Country Flag" className="race-flag" />
-                ))}
+                ))}</h3>
+                <Link to="/races">
+                    <button className="button back-button">&larr;</button>
+                </Link>
             </div>
             <div className="line"></div>
             <div className="race-results-table-container">

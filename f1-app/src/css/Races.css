@@ -59,11 +59,13 @@
 
   .race-name {
     font-size: 20px;
+    font-weight: 300;
   }
 
   .race-info {
     font-size: 15px;
     margin: 2px;
+    font-weight: 200;
   }
 
   .race-img-container {

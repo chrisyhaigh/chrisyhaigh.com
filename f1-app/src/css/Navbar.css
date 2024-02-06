@@ -13,8 +13,12 @@ ul li {
     margin-right: 15px;
 }
 
+.nav-link {
+    font-weight: 200;
+}
+
 .nav-link:hover {
-    font-weight: bold;
+    font-weight: 400;
 }
 
 .navbar-toggler-icon {
@@ -47,8 +51,12 @@ ul li {
     text-align: right;
 }
 
+.nav-item.dropdown .dropdown-item {
+    font-weight: 200;
+}
+
 .nav-item.dropdown .dropdown-item:hover {
     background-color: transparent !important;
-    font-weight: bold;
+    font-weight: 400;
 }
 

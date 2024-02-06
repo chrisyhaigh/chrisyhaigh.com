@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "./Navbar";
 import { Link } from 'react-router-dom'
-import RaceResults from "./RaceResults";
 import '../css/Races.css';
 
 function Races() {
