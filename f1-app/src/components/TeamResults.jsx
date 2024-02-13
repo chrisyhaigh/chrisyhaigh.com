@@ -5,14 +5,14 @@ import { Link } from 'react-router-dom';
 import '../css/TeamResults.css';
 
 function TeamResults() {
-    const [selectedTeam, setSelectedTeam] = useState('');
-    const [raceFlag, setRaceFlag] = useState([]);
-    const [teamResultsData, setTeamResultsData] = useState([]);
-    const [seasonFromParams, setSeasonFromParams] = useState('');
+    const [ selectedTeam, setSelectedTeam ] = useState('');
+    const [ raceFlag, setRaceFlag ] = useState([]);
+    const [ teamResultsData, setTeamResultsData ] = useState([]);
+    const [ seasonFromParams, setSeasonFromParams ] = useState('');
 
     const location = useLocation();
     const queryParams = new URLSearchParams(location.search);
-    const constructor = queryParams.get('constructor');
+    const constructor = decodeURIComponent(queryParams.get('constructor'));
 
     useEffect(() => {
         const fetchConstructorResults = async () => {
@@ -28,10 +28,7 @@ function TeamResults() {
                     const data = await response.json();
                     console.log('Fetched Constructor Results:', data);
 
-                    const races = data.MRData.RaceTable.Races;
-                    const raceRound = races[0].raceName; 
-
-                    console.log('Race:', raceRound);
+                    const races = data.data.MRData.RaceTable.Races;
 
                     const racesWithFlags = await Promise.all(
                         races.map(async (race) => {
@@ -41,7 +38,7 @@ function TeamResults() {
                             }
                             const countryResponse = await fetch(`https://restcountries.com/v3.1/name/${countryName}`);
                             const countryData = await countryResponse.json();
-                            const flagUrl = countryData[0]?.flag?.png;
+                            const flagUrl = countryData[0]?.flags?.png;
                             return flagUrl;
                         })
                     );
@@ -55,7 +52,6 @@ function TeamResults() {
                         }));
                         return raceResults;
                     });
-
 
                     const constructorName = `${constructorResults[0]?.Constructor?.name}`;
                     setSelectedTeam(constructorName);
@@ -95,7 +91,6 @@ function TeamResults() {
         }
     }
 
-
     return (
         <div className="team-results-container">
             <Navbar />
@@ -119,16 +114,16 @@ function TeamResults() {
                             <th className='text-center'>Points</th>
                         </tr>
                     </thead>
-                    <tbody className='team-resuts-table-body'>
+                    <tbody className='team-results-table-body'>
                         {teamResultsData && teamResultsData.map((result, resultIndex) => 
                             <tr key={resultIndex}>
                                 <td className='result-grid race'>{result.raceName} <img src={raceFlag[resultIndex]} ></img></td>
-                                <td className='result-grid driver-1'>{result.givenName}{result.familyName}</td>
-                                <td className='result-grid points'>{result.points}</td>
-                                <td className='result-grid position' style={{ backgroundColor: getPositionColor(result.position) }}>{result.position}</td>
-                                <td className='result-grid driver-2'>{result.givenName}{result.familyName}</td>
-                                <td className='result-grid position' style={{ backgroundColor: getPositionColor(result.position) }}>{result.position}</td>
-                                <td className='result-grid points'>{result.points}</td>
+                                <td className='result-grid driver-1'>{result.Results[0].Driver.givenName} {result.Results[0].Driver.familyName}</td>
+                                <td className='result-grid position' style={{ backgroundColor: getPositionColor(result.Results[0].position) }}>{result.Results[0].position}</td>
+                                <td className='result-grid points'>{result.Results[0].points}</td>
+                                <td className='result-grid driver-2'>{result.Results[1].Driver.givenName} {result.Results[1].Driver.familyName}</td>
+                                <td className='result-grid position' style={{ backgroundColor: getPositionColor(result.Results[1].position) }}>{result.Results[1].position}</td>
+                                <td className='result-grid points'>{result.Results[1].points}</td>
                             </tr>
                         )}
                     </tbody>

@@ -8,7 +8,9 @@
     $constructor = $_GET['constructor'];
     $season = $_GET['season'];
 
-    $url = 'http://ergast.com/api/f1/' . $season . '/constructors/' . $constructor . '/results.json';
+    $limit = isset($_GET['limit']) ? $_GET['limit'] : 50;
+    $url = 'http://ergast.com/api/f1/' . $season . '/constructors/' . $constructor . '/results.json?limit=' . $limit;
+    
 
     $ch = curl_init();
 

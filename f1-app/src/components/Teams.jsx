@@ -118,9 +118,18 @@ function Teams() {
                 </select>
             </div>
             <div className="team-profile-container">
-                {constructorData && constructorData.map(constructor => (
-                    <Link to={`/teamresults?season=${selectedSeason}&constructor=${constructor.name}`} 
-                          key={constructor.constructorId}>
+            {constructorData && constructorData.map(constructor => (
+                    <Link 
+                        to={`/teamresults?season=${selectedSeason}&constructor=${encodeURIComponent(
+                            constructor.name === 'Haas F1 Team' ? 'haas' :
+                            constructor.name === 'Alpine F1 Team' ? 'alpine' :
+                            constructor.name === 'Alfa Romeo' ? 'alfa' :
+                            constructor.name === 'Manor Marussia' ? 'manor' :
+                            constructor.name.includes('F1 Team') ? constructor.name.replace(/\s/g, "_") : 
+                            constructor.name
+                        )}`} 
+                        key={constructor.constructorId}
+                    >
                         <div className="team-profile">
                             <div className="team-image-container">
                                 <img src={getTeamLogos(constructor.name)} width='180' alt=""></img>

@@ -5,14 +5,15 @@ import { Link } from 'react-router-dom';
 import '../css/DriverResults.css';
 
 function DriverResults() {
-    const [selectedDriver, setSelectedDriver] = useState('');
-    const [driverResultsData, setDriverResultsData] = useState([]);
-    const [raceFlag, setRaceFlag] = useState([]);
-    const [seasonFromParams, setSeasonFromParams] = useState('');
+    const [ selectedDriver, setSelectedDriver ] = useState('');
+    const [ driverResultsData, setDriverResultsData ] = useState([]);
+    const [ raceFlag, setRaceFlag ] = useState([]);
+    const [ seasonFromParams, setSeasonFromParams ] = useState('');
 
     const location = useLocation();
     const queryParams = new URLSearchParams(location.search);
     const driver = queryParams.get('driver');
+
 
     useEffect(() => {
         const fetchDriverResults = async () => {
@@ -30,7 +31,6 @@ function DriverResults() {
         
                     const races = data.data.MRData.RaceTable.Races;
 
-                    // Extract race round and race name from the first race
                     const raceRound = races[0].round;
                     const raceName = races[0].raceName;
 
@@ -49,6 +49,7 @@ function DriverResults() {
                         })
                     );
         
+        
                     setRaceFlag(racesWithFlags);
         
                     const driverResults = races.flatMap(race => {
@@ -63,6 +64,7 @@ function DriverResults() {
 
         
                     const driverName = `${driverResults[0]?.Driver?.givenName} ${driverResults[0]?.Driver?.familyName}`;
+
                     setSelectedDriver(driverName);
                     setDriverResultsData(driverResults);
                     setSeasonFromParams(seasonFromParams); // Update the seasonFromParams state
