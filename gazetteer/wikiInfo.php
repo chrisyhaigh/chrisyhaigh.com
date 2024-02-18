@@ -22,7 +22,7 @@
     $summary = $pages[$pageId]['extract'];
     $fullArticleUrl = "https://en.wikipedia.org/wiki/" . urlencode($country);
 
-    $maxLength = 750;
+    $maxLength = 550;
     if (strlen($summary) > $maxLength){
         $summary = substr($summary, 0, $maxLength);
 

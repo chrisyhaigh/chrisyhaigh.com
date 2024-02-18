@@ -27,7 +27,7 @@ body .navbar-light .navbar-toggler {
 
 li a {
     font-size: 14px;
-    letter-spacing: 0.2px;
+    letter-spacing: 0.5px;
 }
 
 li a:hover {
@@ -86,10 +86,24 @@ li a:hover {
 
 
 .logo-name {
-    color: white;
-    letter-spacing: 10px;
-    font-size: 44px;
+    font-size: 64px;
+    letter-spacing: 7px;
+    font-weight: 300;
+    background: white;/* Define your gradient colors */
+    -webkit-background-clip: text; /* Clip the background to the text */
+    background-clip: text; /* Clip the background to the text */
+    color: transparent; /* Make the text transparent */
 }
+
+
+.job-name {
+    padding: 2px 10px;
+    color: white;
+    letter-spacing: 1.8px;
+    font-size: 14px;
+}
+
+.card-title
 
 .developer {
     padding: 10px;
@@ -111,7 +125,7 @@ li a:hover {
     justify-content: center;
     height: 3px;
     width: 100vw;
-    background-color: #b08D57;
+    background-image: linear-gradient(to right, #b08D57, #b08D57, white, #b08D57, #b08D57); 
 }
 
 .social-container {
@@ -190,6 +204,7 @@ h2 {
     width: 50px;
     margin: 10px;
 }
+
 
 .line {
     background-color: #b08D57;
@@ -302,16 +317,18 @@ h2 {
     padding: 20px;
 }
 
+
 .card {
     margin: 10px;
-    border: 10px; /* Add a black border */
-    border-radius: 2cqb;
+    border: none; /* Add a black border */
+    border-radius: 1cqb;
     box-shadow: 0 0 30px 10px rgba(0, 0, 0, 0.9);
 }
 
 .card-content {
     background:  linear-gradient(180deg, #000000, #212121);
     padding: 10px;
+    margin-top: 0;
 }
 
 .card-title {
@@ -320,11 +337,6 @@ h2 {
     font-weight: 600;
 }
 
-.card-text {
-    font-size: 14px;
-    padding-left: 20px;
-    padding-right: 20px;
-}
 
 @media screen and (max-width: 1000px) {
     .card-title {
@@ -344,6 +356,76 @@ h2 {
     text-align: center;
 }
 
+.project-heading-container {
+    background:  linear-gradient(180deg, #000000, #212121);
+    color: white;
+    padding: 10px;
+}
+
+.gold-line {
+    height: 1px;
+    width: 105%;
+    background-color: #b08D57;
+}
+
+.portfolio-logo {
+    width: 30px;
+    margin: .2rem;
+}
+
+.card-text {
+    font-size: 14px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 10px; /* Add margin bottom for consistent gap */
+}
+
+.project-list {
+    font-size: 13px;
+    margin-top: 10px; /* Adjust margin top for consistent gap */
+}
+
+.project-list li {
+    list-style: none;
+    margin-bottom: 1px;
+    margin-right: 30px;
+}
+
+.project-list img {
+    max-width: 25px; 
+    margin-right: 8px;
+}
+
+.project-list p {
+    margin: 0;
+}
+
+
+@media screen and (max-width: 550px) {
+    .card-text {
+        font-size: 13px;
+    }
+    
+    .project-list {
+        font-size: 13px;
+        margin-top: 10px; /* Adjust margin top for consistent gap */
+    }
+    
+    .project-list li {
+        list-style: none;
+        margin-bottom: 1px;
+        margin-right: 1px;
+    }
+    
+    .project-list img {
+        max-width: 20px; 
+        margin-right: 3px;
+    }
+    
+    .project-list p {
+        margin: 0;
+    }
+}
 
 .contact-bg-container {
     background-color: #000000;
