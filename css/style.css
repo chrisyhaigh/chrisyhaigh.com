@@ -300,7 +300,7 @@ h2 {
 .aspect-ratio-container {
     position: relative;
     width: 100%;
-    padding-top: 56.25%; 
+    padding-top: 50.95%; 
     overflow: hidden;
 }
 
@@ -400,6 +400,67 @@ h2 {
     margin: 0;
 }
 
+@media screen and (max-width: 913px) {
+    .card-title {
+        font-size: 14px;
+    }
+    
+    .card-text {
+        font-size: 10px;
+    }
+    
+    .project-list {
+        font-size: 11px;
+        margin-top: 10px;
+    }
+    
+    .project-list li {
+        list-style: none;
+        margin-bottom: 0px;
+        margin-right: 1px;
+    }
+    
+    .project-list img {
+        max-width: 20px; 
+        margin-right: 3px;
+    }
+    
+    .project-list p {
+        margin: 0;
+    }
+}
+
+@media screen and (max-width: 770px) {
+    .card-title {
+        font-size: 13px;
+        padding-bottom: 10px;
+    }
+    
+    .card-text {
+        font-size: 10px;
+        margin: -10px;
+    }
+    
+    .project-list {
+        font-size: 10px;
+        margin-top: 10px;
+    }
+    
+    .project-list li {
+        list-style: none;
+        margin-right: 1px;
+    }
+    
+    .project-list img {
+        max-width: 20px; 
+        margin-right: 3px;
+    }
+    
+    .project-list p {
+        margin: 0;
+    }
+}
+
 
 @media screen and (max-width: 550px) {
     .card-text {
@@ -408,7 +469,33 @@ h2 {
     
     .project-list {
         font-size: 13px;
-        margin-top: 10px; /* Adjust margin top for consistent gap */
+        margin-top: 10px;
+    }
+    
+    .project-list li {
+        list-style: none;
+        margin-bottom: 1px;
+        margin-right: 1px;
+    }
+    
+    .project-list img {
+        max-width: 20px; 
+        margin-right: 3px;
+    }
+    
+    .project-list p {
+        margin: 0;
+    }
+}
+
+@media screen and (max-width: 370px) {
+    .card-text {
+        font-size: 11px;
+    }
+    
+    .project-list {
+        font-size: 11px;
+        margin-top: 10px;
     }
     
     .project-list li {
