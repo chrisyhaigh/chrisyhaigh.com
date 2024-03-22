@@ -10,6 +10,9 @@
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-site/favicon-16x16.png">
     <link rel="manifest" href="favicon-site/site.webmanifest">
     <link rel="stylesheet" href="libraries/devicon/devicon.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Strait&family=Teko:wght@300..700&family=Tilt+Neon&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/b08248e95b.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,31 +37,71 @@
     <!----Navbar-Banner---->
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid">
-          <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
+            <button id="sidebar-toggle" class="navbar-toggler ms-auto" type="button" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
               <li class="nav-item">
-                <a class="nav-link text-white" aria-current="page" href="#about">ABOUT</a>
+                <a class="nav-link text-white" aria-current="page" href="#about">About</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-white" href="#skills">SKILLS</a>
+                <a class="nav-link text-white" href="#skills">Skills</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-white" href="#portfolio">PORTFOLIO</a>
+                <a class="nav-link text-white" href="#projects">Projects</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-white" href="#curriculumvitae">CURRICULUM VITAE</a>
+                <a class="nav-link text-white" href="#curriculumvitae">Curriculum Vitae</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-white" href="#contact">CONTACT</a>
+                <a class="nav-link text-white" href="#contact">Contact</a>
               </li>
             </ul>
           </div>
         </div>
       </nav>
 
+    <!----Sidebar Navbar---->
+    <div id="sidebar-container">
+        <div class="sidebar-image-container">
+            <div class="sidebar-outline">
+                <img src="images\chrisyhead.jpeg" alt="Chrisy" class="sidebar-image">
+            </div>
+        </div>
+        <ul class="side-nav-item-container">
+            <li class="side-nav-item">
+                <a class="side-nav-link" href="#about">
+                    <i class="far fa-address-card icon-color ms-2"></i>
+                    About
+                </a>
+            </li>
+            <li class="side-nav-item">
+                <a class="side-nav-link" href="#skills">
+                    <i class="fas fa-laptop-code icon-color ms-2"></i>
+                    Skills
+                </a>
+            </li>
+            <li class="side-nav-item">
+                <a class="side-nav-link" href="#projects">
+                    <i class="fas fa-briefcase icon-color ms-2"></i>
+                    Projects
+                </a>
+            </li>
+            <li class="side-nav-item">
+                <a class="side-nav-link" href="#curriculumvitae">
+                    <i class="far fa-clipboard icon-color ms-2"></i>
+                    Curriculum Vitae
+                </a>
+            </li>
+            <li class="side-nav-item">
+                <a class="side-nav-link" href="#contact">
+                    <i class="far fa-envelope icon-color ms-2"></i>
+                    Contact
+                </a>
+            </li>
+        </ul>
+    </div>
 
     <div class="main-banner">
         <img src="images\f67c3dee9fe61a6671fb6e998ddbc8e5.jpg" alt="Edinburgh-skyline" class="banner-image">
@@ -79,7 +122,7 @@
                 </div>
             </div>
             <div class="button-container">
-                <a href="#portfolio" class="text-white"><button class="btn">PORTFOLIO</button></a>
+                <a href="#projects" class="text-white"><button class="btn">MY PROJECTS</button></a>
             </div>
         </div>
     </div>
@@ -111,7 +154,7 @@
                     <div class="row">
                         <div class="col">
                             <p class="text-left about-content">
-                                I'm Chrisy Haigh, a junior developer specializing in web development. With practical experience in HTML, CSS, JavaScript, PHP, jQuery, and SQL, I've successfully completed two real-world portfolio projects, showcasing my ability to deliver effective solutions.
+                                I'm Chrisy Haigh, a junior developer specializing in web development. With practical experience in HTML, CSS, JavaScript, PHP, jQuery, React, and SQL, I've successfully completed two real-world portfolio projects, showcasing my ability to deliver effective solutions.
                             </p>
                         </div>
                         <div class="col">
@@ -137,7 +180,7 @@
             </div>
         </div>
         
-        <div class="d-flex flex-wrap justify-content-evenly pb-4 fade-in">
+        <div class="d-flex flex-wrap justify-content-center pb-1 fade-in">
             <div class="logo-container">
                 <img alt="HTML" class="tech-logo" src="techlogos\html.png">
             </div>
@@ -153,6 +196,9 @@
             <div class="logo-container">
                 <img alt="Git" class="tech-logo" src="techlogos\git-icon-logo-png-transparent.png">
             </div>
+        </div>
+
+        <div class="d-flex flex-wrap justify-content-center pb-4 fade-in">
             <div class="logo-container">
                 <img alt="Python" class="tech-logo" src="techlogos\Python_logo_icon-700x697.png">
             </div>
@@ -165,15 +211,18 @@
             <div class="logo-container">
                 <img alt="jquery" class="tech-logo" src="techlogos\jquery.png">
             </div>
+            <div class="logo-container">
+                <img alt="react" class="tech-logo" src="techlogos\react.png">
+            </div>
         </div>
     </div>
 
     <!---Portoflio--->
 
-    <div class="container-fluid portfolio-bg-container text-white p-4" id="portfolio">
+    <div class="container-fluid portfolio-bg-container text-white p-4" id="projects">
         <div class="row">
             <div class="container d-flex flex-column pt2 pb-4 align-items-center">
-                <h2 class="text-white">PORTFOLIO</h2>
+                <h2 class="text-white">PROJECTS</h2>
                 <div class="line"></div>
             </div>
         </div>

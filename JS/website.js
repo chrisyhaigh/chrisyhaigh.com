@@ -12,6 +12,40 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+    const sidebar = document.getElementById('sidebar-container');
+    const sidebarToggle = document.getElementById('sidebar-toggle');
+    const navItem = document.querySelector('.side-nav-link');
+
+    navItem.addEventListener('click', function() {
+        sidebar.classList.toggle('show-sidebar');
+
+        if (sidebar.classList.contains('show-sidebar')) {
+            sidebarToggle.style.visibility = 'hidden';
+        } else {
+            sidebarToggle.style.visibility = 'visible';
+        }
+    })
+
+    sidebarToggle.addEventListener('click', function() {
+        sidebar.classList.toggle('show-sidebar');
+
+        if (sidebar.classList.contains('show-sidebar')) {
+            sidebarToggle.style.visibility = 'hidden';
+        } else {
+            sidebarToggle.style.visibility = 'visible';
+        }
+    });
+
+    document.body.addEventListener('click', function(event) {
+        if (!sidebar.contains(event.target) && !sidebarToggle.contains(event.target)) {
+            sidebar.classList.remove('show-sidebar');
+            sidebarToggle.style.visibility = 'visible';
+        }
+    });
+
+});
+
 // Fade in effect
 
 
