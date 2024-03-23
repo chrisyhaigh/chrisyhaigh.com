@@ -49,10 +49,10 @@ document.addEventListener('DOMContentLoaded', function() {
 // Fade in effect
 
 
-function fadeIn() {
-    const fadeInElements = document.querySelectorAll('.fade-in');
+function fadeUp() {
+    const fadeUpElements = document.querySelectorAll('.fade-up');
 
-    fadeInElements.forEach((element) => {
+    fadeUpElements.forEach((element) => {
         const elementTop = element.getBoundingClientRect().top;
         const elementBottom = element.getBoundingClientRect().bottom;
         const windowHeight = window.innerHeight;
@@ -65,7 +65,45 @@ function fadeIn() {
     })
 }
 
-window.addEventListener('scroll', fadeIn);
+function fadeRight() {
+    const fadeRightElements = document.querySelectorAll('.fade-right');
+
+    fadeRightElements.forEach((element) => {
+        const elementTop = element.getBoundingClientRect().top;
+        const elementBottom = element.getBoundingClientRect().bottom;
+        const windowHeight = window.innerHeight;
+
+        if (elementTop < windowHeight && elementBottom > windowHeight) {
+            element.style.opacity = '1';
+            element.style.transform = 'translateX(0)';
+            element.style.visibility = 'visible';
+        }
+    })
+}
+
+function fadeLeft() {
+    const fadeLeftElements = document.querySelectorAll('.fade-left');
+
+    fadeLeftElements.forEach((element) => {
+        const elementTop = element.getBoundingClientRect().top;
+        const elementBottom = element.getBoundingClientRect().bottom;
+        const windowHeight = window.innerHeight;
+
+        if (elementTop < windowHeight && elementBottom > windowHeight) {
+            element.style.opacity = '1';
+            element.style.transform = 'translateX(0)';
+            element.style.visibility = 'visible';
+        }
+    })
+}
+
+function handleScroll() {
+    fadeUp();
+    fadeLeft();
+    fadeRight();
+}
+
+window.addEventListener('scroll', handleScroll);
 
 
 //Home Arrow Button 

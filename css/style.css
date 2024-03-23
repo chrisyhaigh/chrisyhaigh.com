@@ -1,3 +1,8 @@
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -236,13 +241,26 @@ li a:hover {
     margin-top: 0.8em;
 }
 
-.fade-in {
+.fade-up {
     opacity: 0;
     transform: translateY(20vh);
     visibility: hidden;
     transition: ease-in-out, transform 0.7s ease-out;
 }
 
+.fade-right {
+    opacity: 0;
+    transform: translateX(-20vw);
+    visibility: hidden;
+    transition: ease-in, transform 0.7s ease-out;
+}
+
+.fade-left {
+    opacity: 0;
+    transform: translateX(20vw);
+    visibility: hidden;
+    transition: ease-in, transform 0.7s ease-out;
+}
 
 #about {
     background-color: white;
