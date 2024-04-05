@@ -1,5 +1,7 @@
 .races-container {
-    font-family: 'Lexend', sans-serif;
+    font-family: "Strait", sans-serif;
+    font-weight: 400;
+    font-style: normal;
     background-color: rgb(17, 17, 17);
     color: white;
     overflow: overlay;
@@ -12,13 +14,13 @@
     justify-content: left;
     padding-top: 7px;
     padding-left: 10px;
-    background-color: rgb(21, 21, 21);
+    background-color: rgb(131, 2, 2);
   }
   
   .select-container {
     display: flex;
     justify-content: space-around;
-    padding: 10px;
+    padding: 17px;
   }
 
   .race-list-container {
@@ -29,17 +31,16 @@
 
   .race-box-container {
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
       flex-direction: column;
-      background: linear-gradient(220deg, rgba(41, 41, 41), rgba(41,21, 21));
-      width: 360px;
-      height: 250px;
+      background: linear-gradient(220deg, rgba(41, 41, 41), rgb(73, 31, 31));
+      width: 270px;
+      height: 210px;
       text-align: center;
       border: 0px black solid;
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
-      border-radius: 5cqb;
-      padding: 0;
-      margin: 20px;
+      border-radius: 2cqb;
+      margin: 15px;
       text-decoration: none;
   }
 
@@ -58,24 +59,20 @@
   }
 
   .race-name {
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 300;
   }
 
   .race-info {
-    font-size: 15px;
+    font-size: 13px;
     margin: 2px;
     font-weight: 200;
   }
 
-  .race-img-container {
-    padding: 10px;
-  }
-
   .race-img {
     padding-top: 1px;
-    width: 120px;
-    height: 70px;
+    width: 80px;
+    height: 50px;
     border-radius: 1cqb;
   }
 
@@ -85,3 +82,92 @@
     max-height: 30px;
     border-radius: 1cqb;
 }
+
+@media screen and (max-width: 1110px) {
+    .race-box-container {
+      width: 220px;
+      height: 180px;
+    }
+
+    .race-name {
+      font-size: 14px;
+    }
+
+    .race-info {
+      font-size: 10px;
+    }
+    
+    .race-img {
+      width: 80px;
+      height: 40px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+  .race-box-container {
+    width: 170px;
+    height: 140px;
+  }
+
+  .race-round {
+    font-size: 8px;
+    padding-top: 3px;
+  }
+
+  .race-name {
+    font-size: 10px;
+  }
+
+
+  .race-info {
+    font-size: 8px;
+  }
+
+  .race-img {
+    width: 60px;
+    height: 30px;
+    border-radius: 0.6cqb;
+  }
+
+
+}
+
+@media screen and (max-width: 430px) {
+  .select-container {
+    font-size: 11px;
+  }
+
+  .race-box-container {
+    width: 160px;
+    height: 110px;
+    margin: 10px;
+  }
+
+  .race-round {
+    padding-top: 3px;
+    font-size: 9px;
+  }
+
+  .race-name {
+    font-size: 11.5px;
+  }
+
+  .race-info {
+    display: none;
+    font-size: 7px;
+  }
+
+  .race-img-container {
+    padding-bottom: 9px;
+  }
+
+  .race-img {
+    width: 75px;
+    height: 45px;
+    border-radius: 0.6cqb;
+    margin-bottom: 2px;
+  }
+
+
+}
+

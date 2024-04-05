@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "./Navbar";
 import TeamResults from "./TeamResults";
+import LotusCar from '../images/lotus.png'
 import { Link } from 'react-router-dom';
+import SpinnerLoader from "./SpinnerLoader";
 import '../css/Teams.css';
 import Mercedes from '../team-logos/Mercedes.png'
 import RedBull from '../team-logos/Red Bull.png'
@@ -30,12 +32,14 @@ function Teams() {
 
     const [selectedSeason, setSelectedSeason] = useState('2023');
     const [constructorData, setConstructorData] = useState(null);
+    const [isLoading, setIsLoading] = useState(true);
  
     useEffect(() => {
         const fetchConstructorData = async () => {
             if (selectedSeason) 
               try {
-                const response = await fetch(`http://localhost/chrisyhaigh.com/f1-app/api/getConstructors.php?season=${selectedSeason}`);
+                setIsLoading(true);
+                const response = await fetch(`http://localhost/F1-Hybrid-Data/f1-app/api/getConstructors.php?season=${selectedSeason}`);
 
                 if (!response.ok) {
                     throw Error('Unable to fetch season data');
@@ -46,6 +50,8 @@ function Teams() {
                 console.log(data);
             } catch (error) {
                 console.log('No Data could be found', error)
+            } finally {
+                setIsLoading(false);
             }
         }
 
@@ -107,9 +113,9 @@ function Teams() {
             </div>
             <div className="line"></div>
             <div className="team-select-container">
-                <p>Choose a season from the list to view the teams who participated in that specific season:</p>
+                <p className="select-font">Choose a season from the list to view the teams who participated in that specific season:</p>
                 <select onChange={(e) => setSelectedSeason(e.target.value)}>
-                    <option value="">Season</option>
+                    <option value="">{selectedSeason}</option>
                     {years.map((year) => (
                         <option key={year} value={year}>
                             {year}
@@ -117,6 +123,7 @@ function Teams() {
                     ))}
                 </select>
             </div>
+            {isLoading && <SpinnerLoader />}
             <div className="team-profile-container">
             {constructorData && constructorData.map(constructor => (
                     <Link 
@@ -125,6 +132,12 @@ function Teams() {
                             constructor.name === 'Alpine F1 Team' ? 'alpine' :
                             constructor.name === 'Alfa Romeo' ? 'alfa' :
                             constructor.name === 'Manor Marussia' ? 'manor' :
+                            constructor.name === 'Red Bull' ? 'Red_Bull' :
+                            constructor.name === 'Aston Martin' ? 'Aston_Martin' :
+                            constructor.name === 'Force India' ? 'Force_India' :
+                            constructor.name === 'Lotus F1' ? 'Lotus_F1' :
+                            constructor.name === 'Toro Rosso' ? 'Toro_Rosso' :
+                            constructor.name === 'Racing Point' ? 'Racing_Point' :
                             constructor.name.includes('F1 Team') ? constructor.name.replace(/\s/g, "_") : 
                             constructor.name
                         )}`} 
@@ -132,7 +145,7 @@ function Teams() {
                     >
                         <div className="team-profile">
                             <div className="team-image-container">
-                                <img src={getTeamLogos(constructor.name)} width='180' alt=""></img>
+                                <img className="team-logo" src={getTeamLogos(constructor.name)} width='160' alt=""></img>
                             </div>
                             <div className="team-details">
                             </div>

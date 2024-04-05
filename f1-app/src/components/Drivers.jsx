@@ -3,6 +3,7 @@ import Navbar from "./Navbar";
 import DriverResults from "./DriverResults";
 import { Link } from 'react-router-dom';
 import '../css/Drivers.css';
+import SpinnerLoader from "./SpinnerLoader";
 import Helmet from '../images/helmetpng.png'
 import Aitken from '../driver-images/aitken.png'
 import Albon from '../driver-images/albon.png'
@@ -66,15 +67,17 @@ function Drivers() {
     const currentYear = new Date().getFullYear();
     const years = Array.from({ length: currentYear - 2014}, (_, index) => 2014 + index).reverse();
  
-    const [selectedSeason, setSelectedSeason] = useState('2023');
-    const [driverData, setDriversData] = useState(null);
+    const [ selectedSeason, setSelectedSeason ] = useState('2023');
+    const [ driverData, setDriversData ] = useState(null);
+    const [ isLoading, setIsLoading ]= useState(true);
 
 
     useEffect(() => {
         const fetchDrivers = async () => {
             if (selectedSeason) {
                 try {
-                    const response = await fetch(`http://localhost/chrisyhaigh.com/f1-app/api/getDrivers.php?season=${selectedSeason}`);
+                    setIsLoading(true);
+                    const response = await fetch(`http://localhost/F1-Hybrid-Data/f1-app/api/getDrivers.php?season=${selectedSeason}`);
 
                     if (!response.ok) {
                         throw new Error('Unable to fetch data');
@@ -82,16 +85,19 @@ function Drivers() {
 
                     const data = await response.json();
                     setDriversData(data.data.MRData.DriverTable.Drivers);
-                    
+                    setIsLoading(false);
                     console.log(data);
                 } catch (error) {
                     console.error('Error fetching drivers data: ', error);
+                } finally {
+                    setIsLoading(false);
                 }
             }
         };
 
         fetchDrivers();
     }, [selectedSeason]);
+
 
     const getDriverImage = (driver) => {
         switch (driver) {
@@ -223,7 +229,7 @@ function Drivers() {
             <div className="drivers-select-container">
                 <p className="select-font">Choose a season from the list to view the drivers who participated in that specific season:</p>
                 <select onChange={(e) => setSelectedSeason(e.target.value)}>
-                    <option value="">Season</option>
+                    <option value="">{selectedSeason}</option>
                     {years.map((year) => (
                         <option key={year} value={year}>
                             {year}
@@ -231,10 +237,11 @@ function Drivers() {
                     ))}
                 </select>
             </div>
+            {isLoading && <SpinnerLoader />}
             <div className="drivers-profile-container">
                 {driverData && driverData.map(driver => (
                     <Link
-                        to={`/driverresults?season=${selectedSeason}&driver=${encodeURIComponent(driver.givenName === 'Max' ? 'max_verstappen' : driver.familyName === 'de Vries' ? 'de_vries' : driver.familyName)}`}
+                    to={`/driverresults?season=${selectedSeason}&driver=${encodeURIComponent(driver.givenName === 'Max' ? 'max_verstappen' : driver.familyName === 'de Vries' ? 'de_vries' : driver.familyName === 'Magnussen' ? 'kevin_magnussen' : driver.familyName)}`}
                         key={driver.driverId}
                         className="driver-link"
                         >
@@ -245,8 +252,6 @@ function Drivers() {
                             <div className="driver-line"></div>
                             <div className="driver-details">
                                 <p className="driver-name">{`${driver.givenName} ${driver.familyName}`}</p>
-                                <p className="driver-info">{`DOB: ${driver.dateOfBirth}`}</p>
-                                <p className="driver-info">{`Nationality: ${driver.nationality}`}</p>
                             </div>
                         </div>
                     </Link>

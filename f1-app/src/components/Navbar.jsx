@@ -9,7 +9,10 @@ function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-light navbar-style">
       <div className="container-fluid">
-      <h3 className="nav-f1-title">F <span className="nav-one">1</span><span className="nav-data">DATA</span></h3>
+        <div className="nav-logo-container">
+          <h3 className="nav-logo-f1-title">F <span className="nav-logo-one">1</span></h3>
+          <h6 className="nav-logo-data">DATA</h6>
+        </div>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>

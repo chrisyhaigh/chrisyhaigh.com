@@ -1,7 +1,7 @@
-import React from "react";
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 import Navbar from "./Navbar";
-import '../css/TeamStandings.css'
+import SpinnerLoader from "./SpinnerLoader";
+import '../css/TeamStandings.css';
 
 function TeamStandings() {
     const currentYear = new Date().getFullYear();
@@ -9,28 +9,30 @@ function TeamStandings() {
 
     const [ selectedSeason, setSelectedSeason ] = useState('2023');
     const [ standingsData, setStandingsData ] = useState(null);
+    const [ isLoading, setIsLoading ] = useState(true);
 
     useEffect(() => {
         const fetchConstructorStandings = async () => {
             if (selectedSeason) {
-                try {const response = await fetch(`http://localhost/chrisyhaigh.com/f1-app/api/getConstructorStandings.php?season=${selectedSeason}`)
+                try {
+                    setIsLoading(true);
+                    const response = await fetch(`http://localhost/F1-Hybrid-Data/f1-app/api/getConstructorStandings.php?season=${selectedSeason}`);
 
-                if (!response.ok) {
-                    throw new error('Unable to fetch Constructor Standings Data')
-                }
+                    if (!response.ok) {
+                        throw new Error('Unable to fetch Constructor Standings Data');
+                    }
 
-                const data = await response.json();
-                console.log('Constructor Data:', data)
-
-                setStandingsData(data.data.MRData.StandingsTable.StandingsLists[0].ConstructorStandings)
-
+                    const data = await response.json();
+                    setStandingsData(data.data.MRData.StandingsTable.StandingsLists[0].ConstructorStandings);
                 } catch (error) {
-                    console.log('Error fetching constructor standings data: ', error)
+                    console.log('Error fetching constructor standings data: ', error);
+                } finally {
+                    setIsLoading(false);
                 }
             }
         };
 
-        fetchConstructorStandings()
+        fetchConstructorStandings();
     }, [ selectedSeason ]);
 
     const getTeamColour = (teamName) => {
@@ -81,9 +83,10 @@ function TeamStandings() {
             </div>
             <div className="line"></div>
             <div className="standings-select-container">
-            <p>Choose a season from the list to view the constructor standings in that specific season:</p>
+                <p>Choose a season from the list to view the constructor standings in that specific season:</p>
                 <select onChange={(e) => setSelectedSeason(e.target.value)}>
-                    <option value="">Season</option>
+                {isLoading && <SpinnerLoader />}
+                    <option value="">{selectedSeason}</option>
                     {years.map((year) => (
                         <option key={year} value={year}>
                             {year}
@@ -92,33 +95,32 @@ function TeamStandings() {
                 </select>
             </div>
             <div className="standings-table-container">
-               { standingsData && ( 
-               <table className="table text-white constructors-table">
-                    <thead className="constructors-table-head">
-                        <tr>
-                            <th className="text-center">Pos</th>
-                            <th className="text-center">Team</th>
-                            <th className="text-center">Points</th>
-                            <th className="text-center">Wins</th>
-                        </tr>
-                    </thead>
-                    <tbody className="constructors-table-body">
-                        {standingsData.map((constructor, index) => (
-                            <tr key={constructor.constructorId || index}>
-                                <td className="position" style={{ background: getPositionColor(constructor.position) }}>{constructor.position}</td>
-                                <td className="constructor" style={{ background: `linear-gradient(200deg, ${getTeamColour(constructor.Constructor.name)}, rgb(17, 17, 17) 70%)` }}>{constructor.Constructor.name}</td>
-                                <td className="points text-center">{constructor.points}</td>
-                                <td className="wins text-center">{constructor.wins}</td>
+            {isLoading ? <SpinnerLoader /> : null}
+                {!isLoading && standingsData && (
+                    <table className="table text-white constructors-table">
+                        <thead className="constructors-table-head">
+                            <tr>
+                                <th className="text-center">Pos</th>
+                                <th className="text-left">Team</th>
+                                <th className="text-center">Points</th>
+                                <th className="text-center">Wins</th>
                             </tr>
-                        ))}
-                    </tbody>
-
-                </table>
-               )}
+                        </thead>
+                        <tbody className="constructors-table-body">
+                            {standingsData.map((constructor, index) => (
+                                <tr key={constructor.constructorId || index}>
+                                    <td className="constructor-standing-position" style={{ background: getPositionColor(constructor.position) }}>{constructor.position}</td>
+                                    <td className="constructor" style={{ background: `linear-gradient(200deg, ${getTeamColour(constructor.Constructor.name)}, rgb(17, 17, 17) 70%)` }}>{constructor.Constructor.name}</td>
+                                    <td className="points text-center">{constructor.points}</td>
+                                    <td className="wins text-center">{constructor.wins}</td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                )}
             </div>
         </div>
-               
     );
 }
 
-export default TeamStandings
+export default TeamStandings;

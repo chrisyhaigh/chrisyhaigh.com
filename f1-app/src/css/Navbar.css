@@ -4,9 +4,52 @@ body .navbar-light .navbar-toggler {
 }
 
 .navbar {
-    font-family: 'Lexend', sans-serif;
+    font-family: "Strait", sans-serif;
+    font-weight: 400;
+    font-style: normal;
     padding-left: 2px;
     z-index: 1000;
+    margin: 0;
+    padding: 0;
+    height: auto;
+}
+
+.nav-logo-container {
+    width: 70px;
+    background: linear-gradient(135deg, black, rgba(31, 31, 31), black);
+    border-radius: 1cqb;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px 10px;
+}
+
+.nav-logo-f1-title {
+    font-family: "Teko", sans-serif;
+    font-weight: bold;
+    font-size: 52px;
+    color: red;
+    font-weight: 400;
+    margin-top: 2px;
+    margin-left: 1px;
+    margin-right: 1px;
+    letter-spacing: 4px;
+}
+
+
+.nav-logo-data {
+    font-family: "Teko", sans-serif;
+    margin-top: -24px;
+    color: white;
+    font-size: 22px;
+    letter-spacing: 1.2px;
+    font-weight: lighter;
+}
+
+.nav-logo-one {
+    color: white;
+    margin-left: -11px;
 }
 
 ul li {
@@ -26,8 +69,10 @@ ul li {
 }
 
 .navbar-style {
-    background-color: black;
+    background-image: url('../images/checkered-flag-slider-grad.webp');
+    background-size: cover;
 }
+
 
 .nav-f1-title {
     font-weight: 300;
@@ -48,13 +93,15 @@ ul li {
 }
 
 .dropdown-menu {
-    background-color: black;
-    border-radius: 2cqb;
+    background-color: transparent !important;
+    border: none;
+    border-radius: 1cqb;
     text-align: right;
 }
 
 .nav-item.dropdown .dropdown-item {
     font-weight: 200;
+    background-color: transparent !important;
 }
 
 .nav-item.dropdown .dropdown-item:hover {

@@ -1,0 +1,22 @@
+.loader {
+    border: 3px solid red;
+    border-top: 3px solid white;
+    border-bottom: 3px solid white;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 1.4s linear infinite;
+}
+
+.loader-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

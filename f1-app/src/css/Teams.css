@@ -1,5 +1,7 @@
 .team-container {
-    font-family: 'Lexend', sans-serif;
+    font-family: "Strait", sans-serif;
+    font-weight: 400;
+    font-style: normal;
     background-color: rgb(17, 17, 17);
     height: 100vh;
     color: white;
@@ -11,13 +13,17 @@
     justify-content: left;
     padding-top: 7px;
     padding-left: 10px;
-    background-color: rgb(21, 21, 21);
+    background-color: rgb(131, 2, 2);
 }
 
 .team-select-container {
     display: flex;
     justify-content: space-around;
     padding: 10px;
+}
+
+.select-font {
+    font-weight: 300;
 }
 
 .team-profile-container {
@@ -30,15 +36,15 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
-    background: linear-gradient(220deg, rgba(41, 41, 41), rgba(41,21, 21));
-    width: 260px;
-    height: 160px;
+    background: linear-gradient(220deg, rgba(41, 41, 41), rgb(73, 31, 31));
+    width: 280px;
+    height: 150px;
     text-align: center;
     border: 0px black solid;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
-    border-radius: 5cqb;
-    padding: 5px;
-    margin: 20px;
+    border-radius: 2cqb;
+    padding: 0;
+    margin: 15px;
     text-decoration: none;
 }
 
@@ -47,19 +53,53 @@
     box-shadow: 0 0 50px rgba(0, 0, 0, 2.1);
 }
 
-.team-name {
-    padding-top: 20px;
-    font-size: 20px;
-    font-weight: bolder;
-}
-
-.team-info {
-    font-size: 15px;
-}
 
 select {
     background-color: rgb(31, 31, 31);
     color: white;
     max-height: 30px;
     border-radius: 1cqb;
+}
+
+@media screen and (max-width: 920px) {
+    .team-select-container {
+        padding: 10px;
+        font-size: 12px;
+    }
+
+    .team-profile {
+        width: 160px;
+        height: 120px;
+        padding: 0;
+        margin: 12px;
+    }
+
+    .team-logo {
+        width: 125px;
+    }
+}
+
+@media screen and (max-width: 390px) {
+    .team-select-container {
+        padding: 15px;
+        font-size: 11px;
+    }
+}
+
+@media screen and (max-width: 361px) {
+    .team-select-container {
+        padding: 15px;
+        font-size: 10px;
+    }
+
+    .team-profile {
+        width: 130px;
+        height: 100px;
+        padding: 0;
+        margin: 10px;
+    }
+
+    .team-logo {
+        width: 105px;
+    }
 }

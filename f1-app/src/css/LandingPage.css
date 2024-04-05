@@ -6,65 +6,76 @@
 .image-container {
     position: relative;
     height: 100vh;
-    background-image: url('../images/mercedes_amg_petronas_f1_car_4k.jpg');
+    background-image: url('../images/mercedes-track-wet.jpg');
     background-size: cover;
     background-position: center;
 }
 
 .button-container {
     position: absolute;
-    bottom: 200px; /* Adjust the distance from the bottom based on your design */
-    left: 28%;
+    bottom: 200px;
+    left: 34%;
+    top: 25%;
 }
 
 .logo-container {
-    width: 100px;
-    background: linear-gradient(50deg, black, rgba(31, 31, 31));
-    border-radius: 2cqb;
+    width: 90px;
+    background: linear-gradient(135deg, black, rgba(31, 31, 31), black);
+    border-radius: 1cqb;
+    padding: 8px;
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-.hybrid {
-    margin-bottom: -15px;
-    color: white;
-    font-size: 21px;
-}
-
-.data {
-    margin-top: -20px;
-    color: white;
-    font-size: 30px;
+    margin-bottom: 10px;
 }
 
 h3 {
     margin-left: -5px;
 }
 
+.data {
+    font-family: "Teko", sans-serif;
+    margin-top: -38px;
+    color: white;
+    font-size: 36px;
+    letter-spacing: 1.4px;
+    font-weight: lighter;
+}
+
+
 .f1-title {
+    font-family: "Teko", sans-serif;
     font-weight: bold;
-    font-size: 70px;
+    font-size: 90px;
     color: red;
+    font-weight: 400;
+    letter-spacing: 1.3px;
+    margin-left: 1px;
+    margin-right: 1px;
 }
 
 .one {
     color: white;
-    margin-left: -28px;
+    margin-left: -10px
 }
 
-.historical {
-    font-size: 16px;
-    color: white;
+.sub-title {
+    font-weight: 400;
+    font-size: 27.7px;
+    font-family: "Teko", sans-serif;
+    letter-spacing: 1px;
 }
 
 .enter-button {
+    font-family: "Teko", sans-serif;
     background-color: red;
-    width: 182px;
-    padding: 5px;
+    font-size: 30px;
+    letter-spacing: 2px;
+    width: 250px;
+    padding: 1px;
     color: white;
-    border-radius: 2cqb;
-    border-width: 0;
+    border-radius: 1cqb;
+    border: none;
 }
 
 .enter-button:hover {
@@ -72,14 +83,85 @@ h3 {
     background-color: rgba(255, 0, 0, 0.815);
 }
 
-@media screen and (max-width: 800px) {
-    .Landing-container {
-        margin-left: -50px;
+@media screen and (max-width: 1350px) {
+    .button-container {
+        left: 27%;
+        top: 40%;
+    }
+
+    
+}
+
+@media screen and (max-width: 1040px) {
+    .button-container {
+        left: 22%;
+        top: 57%;
+    }
+
+    .sub-title {
+        font-weight: lighter;
+        font-size: 27.7px;
+    }
+
+    .enter-button {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .button-container {
+        left: 20%;
+        top: 32%;
+    }
+
+    .sub-title {
+        font-weight: lighter;
+        font-size: 22.7px;
+    }
+
+    .enter-button {
+        width: 100%;
+    }
+}
+
+
+@media screen and (max-width: 830px) {
+    .image-container {
+        background-position: 62% center;
     }
 
     .button-container {
-        position: absolute;
-        bottom: 215px; /* Adjust the distance from the bottom based on your design */
         left: 8%;
+        top: 50%;
+    }
+
+    .sub-title {
+        font-weight: lighter;
+        font-size: 23.7px;
+    }
+
+    .enter-button {
+        width: 105%;
     }
 }
+
+@media screen and (max-width: 430px) {
+    .image-container {
+        background-position: 60% center;
+    }
+
+    .button-container {
+        left: 10%;
+        top: 58%;
+    }
+
+    .sub-title {
+        font-weight: lighter;
+        font-size: 18.7px;
+    }
+
+    .enter-button {
+        width: 105%;
+    }
+}
+

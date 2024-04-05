@@ -1,5 +1,7 @@
 .drivers-container {
-    font-family: 'Lexend', sans-serif;
+    font-family: "Strait", sans-serif;
+    font-weight: 400;
+    font-style: normal;
     background-color: rgb(17, 17, 17);
     color: white;
     height: 100vh;
@@ -11,9 +13,13 @@
     justify-content: left;
     padding-top: 7px;
     padding-left: 10px;
-    background-color: rgb(21, 21, 21);
+    background-color: rgba(245, 4, 4, 0.473);
 }
 
+.page-heading-image {
+    margin-top: -5px;
+    height: auto;
+}
 
 .drivers-select-container {
     display: flex;
@@ -44,19 +50,19 @@
 }
 
 .driver-profile {
-    background: linear-gradient(220deg, rgba(41, 41, 41), rgba(41,21, 21));
+    background: linear-gradient(220deg, rgba(41, 41, 41), rgb(73, 31, 31));
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     background-color: rgb(31, 31, 31);
     width: 260px;
-    height: 260px;
+    height: 210px;
     text-align: center;
     border: 0px black solid;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
-    border-radius: 5cqb;
-    padding: 20px;
+    border-radius: 2cqb;
+    padding: 0;
     margin: 15px;
     text-decoration: none;
 }
@@ -66,6 +72,7 @@
     width: 260px;
     background-color: white;
     height: 1px;
+    margin-bottom: 20px;
 }
 
 .driver-link {
@@ -96,4 +103,72 @@ select {
     color: white;
     max-height: 30px;
     border-radius: 1cqb;
+}
+
+@media screen and (max-width: 660px) {
+    .drivers-select-container {
+        display: flex;
+        justify-content: space-around;
+        padding: 19px;
+        font-size: 12px;
+    }
+
+
+    .driver-profile {
+        width: 160px;
+        height: 150px;
+    }
+
+    .driver-line {
+        width: 160px;
+        background-color: white;
+        height: 1px;
+        margin-bottom: 15px;
+    }
+
+    .driver-image {
+        width: 75px;
+    }
+
+    .driver-name {
+        font-size: 14px;
+    }
+
+    .driver-info {
+        font-size: 7px;
+    }
+}
+
+@media screen and (max-width: 390px) {
+    .drivers-select-container {
+        display: flex;
+        justify-content: space-around;
+        padding: 12px;
+        font-size: 12px;
+    }
+
+    .driver-profile {
+        width: 130px;
+        height: 130px;
+        margin: 10px;
+    }
+
+    .driver-line {
+        width: 130px;
+        background-color: white;
+        height: 1px;
+        margin-bottom: 15px;
+    }
+
+    .driver-image {
+        width: 70px;
+    }
+
+    .driver-name {
+        font-size: 11px;
+    }
+
+    .driver-info {
+        font-size: 7px;
+    }
 }

@@ -1,5 +1,7 @@
 .main-container {
-    font-family: 'Lexend', sans-serif;
+    font-family: "Strait", sans-serif;
+    font-weight: 400;
+    font-style: normal;
     background-color: rgb(17, 17, 17);
     color: white;
     height: 100vh;
@@ -7,10 +9,9 @@
 
 .home-container {
     display: flex;
-    font-family: 'Lexend', sans-serif;
     justify-content: center;
     flex-wrap: wrap;
-    padding: 20px;
+    padding: 5px;
     background-color: rgb(17, 17, 17);
 }
 
@@ -19,12 +20,12 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
-    background: linear-gradient(220deg, rgba(41, 41, 41), rgba(41,21, 21));
+    background: linear-gradient(220deg, rgba(41, 41, 41), rgb(73, 31, 31));
     width: 300px;
     height: 200px;
     border: 0px black solid;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
-    border-radius: 5cqb;
+    border-radius: 3cqb;
     padding: 5px;
     margin: 20px;
     text-decoration: none;
@@ -56,4 +57,76 @@
 .component-container:hover {
     cursor: pointer;
     box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
+}
+
+@media screen and (max-width: 680px) {
+    .component-container {
+        width: 150px;
+        height: 150px;
+        margin: 14px;
+        margin-top: 25px;
+    }
+
+    .f1-helmet {
+        width: 136px;
+    }
+
+    .lotus {
+        width: 160px;
+    }
+
+    .trophy {
+        width: 100px;
+    }
+
+    .team-trophy {
+        width: 100px;
+    }
+
+    .cheq-flag {
+        width: 140px;
+    }
+    
+    .component-container h3 {
+        font-size: 14px;
+        color: white;
+        padding: 2px;
+        font-weight: 200;
+    }
+}
+
+@media screen and (max-width: 366px) {
+    .component-container {
+        width: 125px;
+        height: 125px;
+        margin: 10px;
+        margin-top: 25px;
+    }
+
+    .f1-helmet {
+        width: 106px;
+    }
+
+    .lotus {
+        width: 120px;
+    }
+
+    .trophy {
+        width: 80px;
+    }
+
+    .team-trophy {
+        width: 80px;
+    }
+
+    .cheq-flag {
+        width: 100px;
+    }
+    
+    .component-container h3 {
+        font-size: 14px;
+        color: white;
+        padding: 2px;
+        font-weight: 200;
+    }
 }

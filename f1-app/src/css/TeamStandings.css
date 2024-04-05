@@ -1,6 +1,8 @@
 .standings-container {
-    font-family: 'Lexend', sans-serif;
-    background-color: rgb(31, 31, 31);
+    font-family: "Strait", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    background-color: rgb(17, 17, 17);
     color: white;
     height: 100vh;
     overflow: auto;
@@ -11,7 +13,7 @@
     justify-content: left;
     padding-top: 7px;
     padding-left: 10px;
-    background-color: rgb(21, 21, 21);
+    background-color: rgb(131, 2, 2);
 }
 
 .standings-select-container {
@@ -21,15 +23,18 @@
 }
 
 .standings-table-container {
-    padding: 0px 25px 25px 30px;
+    padding: 10px 205px 40px 205px;
 }
 
-.constructors-table-body {
-    background: linear-gradient(220deg, rgba(41, 41, 41), rgba(41,21, 21));
-}
 
 .page-heading {
-    margin-left: 2px;
+    margin-left: 0px;
+}
+
+.constructor-standing-position {
+    text-align: center;
+    width: 1px;
+    border-left: solid 1px white;
 }
 
 select {
@@ -37,4 +42,52 @@ select {
     color: white;
     max-height: 30px;
     border-radius: 1cqb;
+}
+
+@media screen and (max-width: 770px) {
+    .standings-table-container {
+        padding: 10px 86px 40px 86px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .standings-table-container {
+        padding: 10px 55px 40px 55px;
+    }
+
+        .constructors-table-body {
+            font-size: 12px;
+    }
+
+        .page-heading {
+            font-size: 20px;
+        }
+}
+
+@media screen and (max-width: 410px) {
+    .standings-table-container {
+        padding: 10px 35px 40px 35px;
+    }
+
+        .constructors-table-body {
+            font-size: 12px;
+    }
+
+        .page-heading {
+            font-size: 20px;
+        }
+}
+
+@media screen and (max-width: 350px) {
+    .standings-table-container {
+        padding: 10px 15px 40px 5px;
+    }
+
+        .constructors-table-body {
+            font-size: 12px;
+    }
+
+        .page-heading {
+            font-size: 20px;
+        }
 }

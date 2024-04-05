@@ -3,6 +3,7 @@ import Navbar from "./Navbar";
 import { useLocation } from "react-router-dom";
 import { Link } from 'react-router-dom';
 import '../css/RaceResults.css';
+import SpinnerLoader from "./SpinnerLoader";
 
 function RaceResults() {
     const currentYear = new Date().getFullYear();
@@ -12,6 +13,7 @@ function RaceResults() {
     const [ selectedRace, setSelectedRace ] = useState('');
     const [ raceData, setRaceData ] = useState(null);
     const [ raceFlag, setRaceFlag ] = useState('');
+    const [ isLoading, setIsLoading ] = useState(true);
 
     const location = useLocation();
     const queryParams = new URLSearchParams(location.search);
@@ -24,7 +26,7 @@ function RaceResults() {
                 setSelectedSeason(seasonFromParams);
 
                 try {
-                    const response = await fetch(`http://localhost/chrisyhaigh.com/f1-app/api/getRaceResults.php?season=${seasonFromParams}&round=${round}`);
+                    const response = await fetch(`http://localhost/F1-Hybrid-Data/f1-app/api/getRaceResults.php?season=${seasonFromParams}&round=${round}`);
                     if (!response.ok) {
                         throw new Error('Error fetching Race Results');
                     }
@@ -52,13 +54,13 @@ function RaceResults() {
                     setRaceData(data.data.MRData.RaceTable.Races);
                 } catch (error) {
                     console.log('Error fetching race results: ', error);
+                } finally {
+                    setIsLoading(false);
                 }
             }
         };
         fetchRaceResults();
     }, [round, queryParams]);
-
-    {/*insert getRaceColours function*/}
 
     const getTeamColour = (teamName) => {
 
@@ -112,16 +114,17 @@ function RaceResults() {
                 </Link>
             </div>
             <div className="line"></div>
+            {isLoading && <SpinnerLoader />}
             <div className="race-results-table-container">
                 <table className="table text-white race-results-table">
                     <thead className="race-results-table-head">
                         <tr>
                             <th className="text-center">Pos</th>
-                            <th className="text-center">Driver</th>
-                            <th className="text-center">Constructor</th>
-                            <th className="text-center">Laps</th>
+                            <th className="text-left">Driver</th>
+                            <th className="text-left">Constructor</th>
+                            <th className="text-center laps">Laps</th>
                             <th className="text-center">Grid</th>
-                            <th className="text-center">Status</th>
+                            <th className="text-center status">Status</th>
                             <th className="text-center">Points</th>
                         </tr>
                     </thead>
@@ -129,8 +132,8 @@ function RaceResults() {
                         {raceData && raceData.map((race, raceIndex) => (
                             race.Results.map((result, resultIndex) => (
                                 <tr key={`${raceIndex}-${resultIndex}`}>
-                                    <td className="race-grid position text-center" style={{ backgroundColor: getPositionColor(result.position) }}>{result.position}</td>
-                                    <td className="race-grid driver text-left">{result.Driver.givenName} {result.Driver.familyName}</td>
+                                    <td className="race-grid race-position text-center" style={{ backgroundColor: getPositionColor(result.position) }}>{result.position}</td>
+                                    <td className="race-grid race-driver text-left">{result.Driver.givenName} {result.Driver.familyName}</td>
                                     <td className="race-grid constructor text-left" style={{ background:  `linear-gradient(200deg, ${getTeamColour(result.Constructor.name)}, rgb(17, 17, 17) 70%)` }}>{result.Constructor.name}</td>
                                     <td className="race-grid laps text-center">{result.laps}</td>
                                     <td className="race-grid grid text-center">{result.grid}</td>

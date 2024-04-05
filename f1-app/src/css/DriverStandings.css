@@ -1,5 +1,7 @@
 .standings-container {
-    font-family: 'Lexend', sans-serif;
+    font-family: "Strait", sans-serif;
+    font-weight: 400;
+    font-style: normal;
     background-color: rgb(31, 31, 31);
     color: white;
     height: 100vh;
@@ -11,7 +13,7 @@
     justify-content: left;
     padding-top: 7px;
     padding-left: 10px;
-    background-color: rgb(21, 21, 21);
+    background-color: rgb(131, 2, 2);
 }
 
 .standings-select-container {
@@ -22,35 +24,33 @@
     font-weight: 400;
 }
 
-.standings-table-container {
+.driver-standings-table-container {
+    padding: 10px 155px 40px 155px;
     font-weight: 300;
     display: flex;
     justify-content: center;
-    border-top: 0px black solid;
-    border-bottom: none;
-    padding: 15px;
-    border-radius: 2cqb;
-    padding: 5px;
     margin: 0px;
     text-decoration: none;
 }
 
 .drivers-table {
     color: white;
-    margin: 10px;
+    margin: 0;
+    padding: 0;
 }
 
 .driver-table-head {
-    letter-spacing: 1px;
+    font-size: 16px;
 }
 
-.drivers-table-body {
-    background: linear-gradient(220deg, rgba(41, 41, 41), rgba(41,21, 21));
+.driver-table-body {
+    font-size: 16px;
 }
 
-.position {
+
+.driver-standing-position {
+    width: 1px;
     text-align: center;
-    width: 5px;
     border-right: solid 0.1px;
     border-left: solid 0.1px;
 }
@@ -60,8 +60,13 @@
     border-left: solid 0.1px;
 }
 
+.points {
+    border-right: solid 1px;
+}
+
 .wins {
     border-right: solid 1px;
+    width: 1px;
 }
 
 select {
@@ -69,4 +74,80 @@ select {
     color: white;
     max-height: 30px;
     border-radius: 1cqb;
+}
+
+@media screen and (max-width: 750px) {
+    .driver-standings-table-container {
+        padding: 10px 85px 40px 85px;
+    }
+
+    .standings-select-container {
+        font-size: 14px;
+    }
+
+    .driver-table-head {
+        font-size: 12px;
+    }
+    
+    .driver-table-body {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .driver-standings-table-container {
+        padding: 10px 55px 40px 55px;
+    }
+
+
+    .standings-select-container {
+        font-size: 14px;
+    }
+
+    .driver-table-head {
+        font-size: 12px;
+    }
+    
+    .driver-table-body {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 460px) {
+    .driver-standings-table-container {
+        padding: 10px 35px 40px 35px;
+    }
+
+
+    .standings-select-container {
+        font-size: 12px;
+        padding: 15px;
+    }
+
+    .driver-table-head {
+        font-size: 10px;
+    }
+    
+    .driver-table-body {
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width: 360px) {
+
+    .driver-standings-table-container {
+        padding: 10px 25px 40px 25px;
+    }
+
+    .standings-select-container {
+        font-size: 11px;
+    }
+
+    .driver-table-head {
+        font-size: 9px;
+    }
+    
+    .driver-table-body {
+        font-size: 9px;
+    }
 }
