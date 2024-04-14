@@ -26,7 +26,7 @@ function RaceResults() {
                 setSelectedSeason(seasonFromParams);
 
                 try {
-                    const response = await fetch(`http://localhost/F1-Hybrid-Data/f1-app/api/getRaceResults.php?season=${seasonFromParams}&round=${round}`);
+                    const response = await fetch(`http://chrisyhaigh/f1-app/api/getRaceResults.php?season=${seasonFromParams}&round=${round}`);
                     if (!response.ok) {
                         throw new Error('Error fetching Race Results');
                     }

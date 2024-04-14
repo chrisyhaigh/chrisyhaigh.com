@@ -78,7 +78,7 @@ function DriverResults() {
             const seasonFromParams = queryParams.get('season');
             if (seasonFromParams && driver) {
                 try {
-                    const response = await fetch(`http://localhost/chrisyhaigh.com/f1-app/api/getDriverResults.php?season=${seasonFromParams}&driver=${driver}`);
+                    const response = await fetch(`http://chrisyhaigh.com/f1-app/api/getDriverResults.php?season=${seasonFromParams}&driver=${driver}`);
         
                     if (!response.ok) {
                         throw new Error('Error fetching Driver results');

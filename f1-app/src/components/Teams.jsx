@@ -39,7 +39,7 @@ function Teams() {
             if (selectedSeason) 
               try {
                 setIsLoading(true);
-                const response = await fetch(`http://localhost/F1-Hybrid-Data/f1-app/api/getConstructors.php?season=${selectedSeason}`);
+                const response = await fetch(`http://chrisyhaigh.com/f1-app/api/getConstructors.php?season=${selectedSeason}`);
 
                 if (!response.ok) {
                     throw Error('Unable to fetch season data');

@@ -77,7 +77,7 @@ function Drivers() {
             if (selectedSeason) {
                 try {
                     setIsLoading(true);
-                    const response = await fetch(`http://localhost/F1-Hybrid-Data/f1-app/api/getDrivers.php?season=${selectedSeason}`);
+                    const response = await fetch(`http://chrisyhaigh.com/f1-app/api/getDrivers.php?season=${selectedSeason}`);
 
                     if (!response.ok) {
                         throw new Error('Unable to fetch data');
