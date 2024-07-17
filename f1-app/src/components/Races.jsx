@@ -8,7 +8,7 @@ function Races() {
   const currentYear = new Date().getFullYear();
   const years = Array.from({ length: currentYear - 2014 }, (_, index) => 2014 + index).reverse();
 
-  const [ selectedSeason, setSelectedSeason ] = useState('2023');
+  const [ selectedSeason, setSelectedSeason ] = useState('2024');
   const [ raceData, setRaceData ] = useState(null);
   const [ isLoading, setIsLoading ] = useState(true);
 
@@ -17,7 +17,7 @@ function Races() {
       if (selectedSeason) {
         try {
           setIsLoading(true);
-          const response = await fetch(`http://chrisyhaigh.com/f1-app/api/getRaces.php?season=${selectedSeason}`);
+          const response = await fetch(`http://localhost/chrisyhaigh.com/f1-app/api/getRaces.php?season=${selectedSeason}`);
 
           if (!response.ok) {
             throw new Error('Error fetching race data');

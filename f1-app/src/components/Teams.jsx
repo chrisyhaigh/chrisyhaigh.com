@@ -23,6 +23,7 @@ import RacingPoint from '../team-logos/Racing Point.png'
 import Renault from '../team-logos/Renault.png'
 import Sauber from '../team-logos/Sauber.png'
 import ToroRosso from '../team-logos/Toro Rosso.png'
+import RBTeam from '../team-logos/RB Team.png'
 
 
 function Teams() {
@@ -30,7 +31,7 @@ function Teams() {
     const currentYear = new Date().getFullYear();
     const years = Array.from({ length: currentYear - 2014}, (_, index) => 2014 + index).reverse();
 
-    const [selectedSeason, setSelectedSeason] = useState('2023');
+    const [selectedSeason, setSelectedSeason] = useState('2024');
     const [constructorData, setConstructorData] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
  
@@ -39,7 +40,7 @@ function Teams() {
             if (selectedSeason) 
               try {
                 setIsLoading(true);
-                const response = await fetch(`http://chrisyhaigh.com/f1-app/api/getConstructors.php?season=${selectedSeason}`);
+                const response = await fetch(`http://localhost/chrisyhaigh.com/f1-app/api/getConstructors.php?season=${selectedSeason}`);
 
                 if (!response.ok) {
                     throw Error('Unable to fetch season data');
@@ -98,6 +99,8 @@ function Teams() {
                 return Sauber;
             case 'Toro Rosso':
                 return ToroRosso;
+            case 'RB F1 Team':
+                return RBTeam;
 
             default:
                 return null;

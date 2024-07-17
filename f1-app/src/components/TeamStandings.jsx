@@ -7,7 +7,7 @@ function TeamStandings() {
     const currentYear = new Date().getFullYear();
     const years = Array.from({ length: currentYear - 2014}, (_, index) => 2014 + index).reverse();
 
-    const [ selectedSeason, setSelectedSeason ] = useState('2023');
+    const [ selectedSeason, setSelectedSeason ] = useState('2024');
     const [ standingsData, setStandingsData ] = useState(null);
     const [ isLoading, setIsLoading ] = useState(true);
 
@@ -16,7 +16,7 @@ function TeamStandings() {
             if (selectedSeason) {
                 try {
                     setIsLoading(true);
-                    const response = await fetch(`http://chrisyhaigh.com/f1-app/api/getConstructorStandings.php?season=${selectedSeason}`);
+                    const response = await fetch(`http://localhost/chrisyhaigh.com/f1-app/api/getConstructorStandings.php?season=${selectedSeason}`);
 
                     if (!response.ok) {
                         throw new Error('Unable to fetch Constructor Standings Data');

@@ -22,7 +22,7 @@ function TeamResults() {
             try {
                 const seasonFromParams = queryParams.get('season');
                 const response = await fetch(
-                    `http://chrisyhaigh.com/f1-app/api/getConstructorResults.php?season=${seasonFromParams}&constructor=${constructor}`
+                    `http://localhost/chrisyhaigh.com/f1-app/api/getConstructorResults.php?season=${seasonFromParams}&constructor=${constructor}`
                 );
 
                 if (!response.ok) {
